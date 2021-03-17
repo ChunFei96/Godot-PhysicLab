@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Characters/logo-icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Characters/pq.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/light.png" type="Texture" id=5]
+[ext_resource path="res://MainLevels/GameWorld/topic-selection.gd" type="Script" id=6]
+
+[node name="topic-selection" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_right = -2.0
+rect_pivot_offset = Vector2( 511.352, 176.836 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selection-intro" type="Node" parent="."]
+
+[node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
+margin_left = 38.0
+margin_top = 16.0
+margin_right = 989.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo" type="TextureRect" parent="selection-intro/pagetitle"]
+margin_right = 951.0
+margin_bottom = 86.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="selection-intro/pagetitle"]
+margin_top = 90.0
+margin_right = 951.0
+margin_bottom = 104.0
+text = "Game World Selection"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="selection-intro"]
+margin_left = 137.243
+margin_top = 169.586
+margin_right = 971.243
+margin_bottom = 593.586
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="selection-intro/HBoxContainer"]
+margin_right = 282.0
+margin_bottom = 424.0
+texture_normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="selection-intro/HBoxContainer/TextureButton"]
+margin_left = -14.7555
+margin_top = 247.905
+margin_right = 289.245
+margin_bottom = 284.905
+text = "Units of Measurements and Physical Quantities"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton4" type="TextureButton" parent="selection-intro/HBoxContainer"]
+margin_left = 286.0
+margin_right = 575.0
+margin_bottom = 424.0
+texture_normal = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="selection-intro/HBoxContainer/TextureButton4"]
+margin_left = 117.986
+margin_top = 242.614
+margin_right = 202.986
+margin_bottom = 279.614
+text = "Light"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="Node2D" parent="."]
+
+[node name="Leaderboard" type="Button" parent="buttons"]
+margin_left = 657.551
+margin_top = 121.302
+margin_right = 817.551
+margin_bottom = 141.302
+text = "Leaderboard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Profile" type="Button" parent="buttons"]
+margin_left = 200.495
+margin_top = 119.025
+margin_right = 340.495
+margin_bottom = 139.025
+text = "Profile"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="selection-intro/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="selection-intro/HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="buttons/Leaderboard" to="." method="_on_Leaderboard_pressed"]
+[connection signal="pressed" from="buttons/Profile" to="." method="_on_Profile_pressed"]

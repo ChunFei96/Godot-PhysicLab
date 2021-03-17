@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="questionHolder" type="Node"]
+
+[node name="question" type="Node" parent="."]
+
+[node name="question1" type="Node" parent="."]
+
+[node name="question2" type="Node" parent="."]
+
+[node name="question3" type="Node" parent="."]
+
+[node name="question4" type="Node" parent="."]
