@@ -24,6 +24,10 @@ Data="*res://Scenes/Characters/data.gd"
 Global="*res://src/Global.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
+[display]
+
+window/size/width=800
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
