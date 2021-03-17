@@ -1,5 +1,10 @@
 extends Control
 
+export (NodePath) var dropdown_path
+onready var dropdown = get_node(dropdown_path)
+
+onready var Database =  preload("res://Scenes/API/Database.gd")
+
 #Create account nodes
 onready var name_input = get_node("Background/Name")
 onready var gender_male_button = get_node("Background/Male")
@@ -15,50 +20,63 @@ onready var cancel_button = get_node("Background/Cancel")
 #Test Daat
 onready var Data =  preload("userData.gd")
 
-#for the Gender ratio Button
-var group
+
+
+var studentList = ['Select a Student']
+
+
+func GetStudentListRequest():
+	var headers = ["Content-Type: application/json"]
+	$HTTPRequest.connect("request_completed",self,"GetStudentListResponse")
+	
+	var User = Database.new().User
+	var user = User.new()
+	var url = user.setGetStudentListURL()
+	$HTTPRequest.request(url,headers,false,HTTPClient.METHOD_GET,"")
+	
+# Has return value
+func GetStudentListResponse(result, response_code, headers, body):
+	var ErrorNotificate = get_node("ErrorNotification")
+
+	if result == HTTPRequest.RESULT_SUCCESS:
+		if response_code == 200:
+			var r_data = body.get_string_from_utf8()
+			var data = JSON.parse(r_data)
+			
+			if typeof(data.result) == TYPE_ARRAY:
+				#var tt = true
+				if data.result.size() > 0:  #and tt == false : use to toggle invalid case
+					#This will return a List
+					for i in data.result:
+						studentList.append(i)
+					#print(studentList)
+				else:
+					ErrorNotificate.text = "No result found!"
+			else:
+				ErrorNotificate.text = "No result found!"
+		else:
+			ErrorNotificate.text = "No result found!"
+	else:
+		ErrorNotificate.text = "No result found!"
+	addStudentOption()
+	disable_option(0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	define_gender()
-
-#To define gender
-func define_gender():
-	group = ButtonGroup.new()
-	$Background/Male.set_button_group(group)
-	$Background/Female.set_button_group(group)
-	
-#define gender with button
-func _on_Male_toggled(button_pressed):
+	GetStudentListRequest()
+	dropdown.connect("item_selected",self,"on_item_selected")
 	pass
 
-	
-#define gender with button
-func _on_Female_toggled(button_pressed):
-	pass
+func addStudentOption():
+	for i in studentList:
+		dropdown.add_item(i)
 
+func on_item_selected(id):
+	print(studentList[id])
 
-#Link API
-#var current_token := ""
+func disable_option(id):
+	dropdown.set_item_disabled(id,true)
 
-#func _get_token_id_from_result(result: Array) -> String:
-#	var result_body := JSON.parse(result[0].get_string_from_ascii()).result as Dictionary
-#	return result_body.idToken
-	
-
-#func register(name: String, age: int, email: String, password: String, http: HTTPRequest) -> void:
-#	var body:={
-#		"name" : name,
-#		"gender" : gender,
-#		"age" : age,
-#		"email" : email,
-#		"password" : password,}
-	#http.request([], false, HTTPClient.METHOD_POST, to_json(body))
-	#var result := yield(http, "request_completed") as Array 
-	#if result[1] == 200:
-	#	current_token = _get_token_id_from_result(result)
-		
-		
 
 #Get user details to create account
 func _on_Register_pressed():
@@ -131,3 +149,7 @@ func _on_Cancel_pressed():
 
 
 
+
+
+#func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+#	pass # Replace with function body.

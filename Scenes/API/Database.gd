@@ -111,9 +111,14 @@ class User:
 	
 	func setGetStudentListURL():
 		var localhost = "http://localhost:53921"
+		var url = localhost + "/api/user/get-student-for-registration"
+		return str(url)
+	
+	func setGetStudentProfileURL():
+		var localhost = "http://localhost:53921"
 		var url = localhost + "/api/user/get-student-profile"
 		return str(url)
-		
+	
 	# Set API's param.
 	func setGetStudentProfileQuery(username):
 		return JSON.print({

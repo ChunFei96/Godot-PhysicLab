@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-BoldIt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-SemiboldIt.ttf" type="DynamicFontData" id=2]
@@ -11,26 +11,6 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 25
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 25
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 25
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 30
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 30
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 30
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=8]
@@ -58,25 +38,26 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+dropdown_path = NodePath("Background/dropdown")
 
 [node name="Background" type="NinePatchRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -957.958
-margin_top = -536.966
-margin_right = 962.042
-margin_bottom = 543.034
+margin_left = -950.101
+margin_top = -519.007
+margin_right = 969.899
+margin_bottom = 560.993
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CreateAccountTitle" type="Label" parent="Background"]
-margin_left = 579.161
-margin_top = 224.96
-margin_right = 1413.16
-margin_bottom = 338.96
+margin_left = 571.304
+margin_top = 221.593
+margin_right = 1405.3
+margin_bottom = 335.593
 custom_fonts/font = SubResource( 1 )
 text = "Create Account"
 align = 1
@@ -86,119 +67,20 @@ __meta__ = {
 }
 
 [node name="NameTitle" type="Label" parent="Background"]
-margin_left = 394.676
-margin_top = 357.935
-margin_right = 674.676
-margin_bottom = 396.935
+margin_left = 730.553
+margin_top = 410.136
+margin_right = 946.553
+margin_bottom = 455.136
 custom_fonts/font = SubResource( 2 )
 text = "Student Name"
 
 [node name="Name" type="LineEdit" parent="Background"]
-margin_left = 707.016
-margin_top = 355.427
-margin_right = 1307.02
-margin_bottom = 385.427
+visible = false
+margin_left = 767.613
+margin_top = 350.51
+margin_right = 1367.61
+margin_bottom = 404.51
 rect_min_size = Vector2( 600, 30 )
-
-[node name="GenderTitle" type="Label" parent="Background"]
-margin_left = 396.895
-margin_top = 413.0
-margin_right = 619.895
-margin_bottom = 467.0
-custom_fonts/font = SubResource( 3 )
-text = "Gender"
-valign = 1
-
-[node name="Male" type="Button" parent="Background"]
-margin_left = 711.113
-margin_top = 408.99
-margin_right = 911.113
-margin_bottom = 448.99
-rect_min_size = Vector2( 200, 40 )
-toggle_mode = true
-action_mode = 0
-text = "Male"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Female" type="Button" parent="Background"]
-margin_left = 1107.35
-margin_top = 407.056
-margin_right = 1307.35
-margin_bottom = 447.056
-rect_min_size = Vector2( 200, 40 )
-toggle_mode = true
-action_mode = 0
-text = "Female"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AgeTitle" type="Label" parent="Background"]
-margin_left = 399.986
-margin_top = 478.142
-margin_right = 615.986
-margin_bottom = 517.142
-custom_fonts/font = SubResource( 4 )
-text = "Age"
-
-[node name="Age" type="LineEdit" parent="Background"]
-margin_left = 711.032
-margin_top = 478.201
-margin_right = 1311.03
-margin_bottom = 508.201
-rect_min_size = Vector2( 600, 30 )
-
-[node name="EmailTitle" type="Label" parent="Background"]
-margin_left = 399.678
-margin_top = 531.081
-margin_right = 604.678
-margin_bottom = 570.081
-custom_fonts/font = SubResource( 5 )
-text = "Email"
-
-[node name="Email" type="LineEdit" parent="Background"]
-margin_left = 711.0
-margin_top = 536.371
-margin_right = 1311.0
-margin_bottom = 566.371
-rect_min_size = Vector2( 600, 30 )
-
-[node name="PasswordTitle" type="Label" parent="Background"]
-margin_left = 395.544
-margin_top = 595.68
-margin_right = 584.544
-margin_bottom = 634.68
-custom_fonts/font = SubResource( 6 )
-text = "Password"
-
-[node name="Password" type="LineEdit" parent="Background"]
-margin_left = 711.0
-margin_top = 601.564
-margin_right = 1311.0
-margin_bottom = 631.564
-rect_min_size = Vector2( 600, 30 )
-secret = true
-
-[node name="ConfirmPasswordTitle" type="Label" parent="Background"]
-margin_left = 393.727
-margin_top = 646.89
-margin_right = 695.727
-margin_bottom = 685.89
-custom_fonts/font = SubResource( 7 )
-text = "Confirm Password"
-
-[node name="ConfirmPassword" type="LineEdit" parent="Background"]
-margin_left = 710.458
-margin_top = 655.482
-margin_right = 1310.46
-margin_bottom = 685.482
-rect_min_size = Vector2( 600, 30 )
-secret = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ErrorMessage" type="Label" parent="Background"]
 anchor_right = 0.113
@@ -214,10 +96,10 @@ __meta__ = {
 }
 
 [node name="Register" type="Button" parent="Background"]
-margin_left = 713.0
-margin_top = 733.0
-margin_right = 1313.0
-margin_bottom = 790.0
+margin_left = 1036.29
+margin_top = 608.368
+margin_right = 1277.29
+margin_bottom = 677.368
 custom_fonts/font = SubResource( 9 )
 text = "Register"
 __meta__ = {
@@ -225,17 +107,40 @@ __meta__ = {
 }
 
 [node name="Cancel" type="Button" parent="Background"]
-margin_left = 715.0
-margin_top = 819.0
-margin_right = 1315.0
-margin_bottom = 876.0
+margin_left = 737.553
+margin_top = 611.734
+margin_right = 990.553
+margin_bottom = 674.734
 rect_min_size = Vector2( 0, 57 )
 custom_fonts/font = SubResource( 10 )
 text = "Cancel"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="toggled" from="Background/Male" to="." method="_on_Male_toggled"]
-[connection signal="toggled" from="Background/Female" to="." method="_on_Female_toggled"]
+
+[node name="dropdown" type="OptionButton" parent="Background"]
+anchor_left = 0.286
+anchor_top = 0.347
+anchor_right = 0.286
+anchor_bottom = 0.347
+margin_left = 429.969
+margin_top = 43.6938
+margin_right = 709.969
+margin_bottom = 76.6938
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="ErrorNotification" type="Label" parent="."]
+margin_left = 710.954
+margin_top = 368.274
+margin_right = 1280.95
+margin_bottom = 416.274
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Background/Register" to="." method="_on_Register_pressed"]
 [connection signal="pressed" from="Background/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
