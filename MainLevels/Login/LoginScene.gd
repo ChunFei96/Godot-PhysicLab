@@ -14,33 +14,7 @@ var Password;
 
 # =====================================================================================
 
-func GetStudentProfileRequest(username:String = ""):
-	var headers = ["Content-Type: application/json"]
-	$HttpPost.connect("request_completed",self,"GetStudentProfileResponse")
 
-	var User = Database.new().User
-	var user = User.new()
-	var query = user.setGetStudentProfileQuery(username)
-	var url = user.setGetStudentListURL()
-	$HttpPost.request(url,headers,false,HTTPClient.METHOD_POST,query)
-	
-	
-# Has return value
-func GetStudentProfileResponse(result, response_code, headers, body):
-	print('inner')
-	if result == HTTPRequest.RESULT_SUCCESS:
-		if response_code == 200:
-			var r_data = body.get_string_from_utf8()
-			var data = JSON.parse(r_data)
-			if data == null:
-				print('no data returned')
-			else:
-				print(data.result)
-		else:
-			print('HTTP Post error ')
-			return null
-	else:
-		return null
 		
 func ValidateLoginRequest(username:String = "",password:String = ""):
 	var headers = ["Content-Type: application/json"]

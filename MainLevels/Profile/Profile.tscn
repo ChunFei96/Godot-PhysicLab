@@ -41,7 +41,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="."]
+[node name="NameInput" type="Label" parent="."]
 margin_left = 872.812
 margin_top = -475.722
 margin_right = 971.812
@@ -56,7 +56,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name2" type="Label" parent="."]
+[node name="Name" type="Label" parent="."]
 margin_left = 710.897
 margin_top = -477.309
 margin_right = 809.897
@@ -71,7 +71,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Email" type="Label" parent="."]
+[node name="EmailInput" type="Label" parent="."]
 margin_left = 871.682
 margin_top = -402.092
 margin_right = 1034.68
@@ -84,7 +84,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Email2" type="Label" parent="."]
+[node name="Email" type="Label" parent="."]
 margin_left = 709.767
 margin_top = -402.092
 margin_right = 872.767
@@ -98,7 +98,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Age" type="Label" parent="."]
+[node name="AgeInput" type="Label" parent="."]
 margin_left = 879.353
 margin_top = -346.498
 margin_right = 1042.35
@@ -111,7 +111,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Age2" type="Label" parent="."]
+[node name="Age" type="Label" parent="."]
 margin_left = 714.264
 margin_top = -343.323
 margin_right = 877.264
@@ -125,7 +125,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="City" type="Label" parent="."]
+[node name="GenderInput" type="Label" parent="."]
 margin_left = 877.861
 margin_top = -293.325
 margin_right = 1040.86
@@ -138,7 +138,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="City2" type="Label" parent="."]
+[node name="Gender" type="Label" parent="."]
 margin_left = 712.771
 margin_top = -290.15
 margin_right = 875.771
@@ -147,7 +147,7 @@ rect_pivot_offset = Vector2( 37.5325, 0 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "City:"
+text = "Gender:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
