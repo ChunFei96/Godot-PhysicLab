@@ -140,5 +140,8 @@ margin_bottom = 671.0
 rect_min_size = Vector2( 500, 100 )
 custom_fonts/font = SubResource( 6 )
 text = "Create Account"
+
+[node name="HttpPost" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="Background/VBoxContainer/Login" to="." method="_on_Login_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/CreateAccount" to="." method="_on_CreateAccount_pressed"]
+[connection signal="request_completed" from="HttpPost" to="." method="_on_HttpPost_request_completed"]

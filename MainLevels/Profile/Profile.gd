@@ -1,52 +1,62 @@
 extends Control
 
 onready var Data =  preload("Data.gd")
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var Database =  preload("res://Scenes/API/Database.gd")
+
+
+func GetStudentProfileRequest(username:String = ""):
+	print('inner request')
+	var headers = ["Content-Type: application/json"]
+	$HTTPRequest.connect("request_completed",self,"GetStudentProfileResponse")
+
+	var User = Database.new().User
+	var user = User.new()
+	var query = user.setGetStudentProfileQuery(username)
+	var url = user.setGetStudentProfileURL()
+	$HTTPRequest.request(url,headers,false,HTTPClient.METHOD_POST,query)
+	
+	
+# Has return value
+func GetStudentProfileResponse(result, response_code, headers, body):
+	print('inner response')
+	if result == HTTPRequest.RESULT_SUCCESS:
+		if response_code == 200:
+			var r_data = body.get_string_from_utf8()
+			var data = JSON.parse(r_data)
+			#data = null #testing to toggle invalid case
+			
+			if data == null:
+				var ErrorNotificate = get_node("ErrorNotification")
+				ErrorNotificate.text = "No result found!"
+			else:
+				#print(data.result)
+				
+				#	#Get your text fields
+				var name = get_node("NameInput")
+				var age = get_node("AgeInput")
+				var gender = get_node("GenderInput")
+				var selectedChar = get_node("SelectedCharInput")
+				
+				#Update UI's text fields  
+				name.text = data.result['studentName']
+				age.text = str(data.result['age'])
+				gender.text = data.result['gender']
+				selectedChar.text = data.result['selectedCharacter']
+		else:
+			print('HTTP Post error ')
+			return null
+	else:
+		return null
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-	
-	var data = JSON.parse(Data.new().data2)
-	
-	#Get your text fields
-	var name = get_node("Name")
-	var email = get_node("Email")
-	var age = get_node("Age")
-	var city = get_node("City")
-	
-	#Display result as JSON
-	print("Json result: " + str(data.result))
-	
-	#Get Property's value from data.result
-	var getName = str(data.result['name'])
-	var getEmail = str(data.result['email'])
-	var getAge = str(data.result['age'])
-	var getCity = str(data.result['city'])
-	
-	#Print result to "Output" console
-	print("Name2: " + getName)
-	print("Email2: " + getEmail)
-	print("Age2: " + getAge)
-	print("City2: " + getCity)
-	
-	#Update UI's text fields  
-	name.text = getName
-	email.text = getEmail
-	age.text = getAge
-	city.text = getCity
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+	GetStudentProfileRequest("Student1")
 
 func _on_Back_pressed():
 	get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
+
+#
+#func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+#	pass # Replace with function body.

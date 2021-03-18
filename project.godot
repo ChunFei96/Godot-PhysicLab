@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Physics Lab"
-run/main_scene="res://MainLevels/Mass/Level2/Level2.tscn"
+run/main_scene="res://MainLevels/Login/LoginScene.tscn"
 
 [autoload]
 
@@ -24,9 +24,9 @@ Data="*res://Scenes/Characters/data.gd"
 Global="*res://src/Global.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
-[editor_plugins]
+[display]
 
-enabled=PoolStringArray( "silent_wolf" )
+window/size/width=800
 
 [input_devices]
 
