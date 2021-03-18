@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Mass/Level2/Arrow/Arrow.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Mass/Level2/Arrow/Arrow.gd" type="Script" id=2]
 
 [sub_resource type="RayShape2D" id=1]
 length = 11.7441
 
-[node name="Arrow" type="RigidBody2D"]
-mode = 3
+[node name="Arrow" type="Area2D"]
+gravity = 9.8
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.335, 0.335 )
@@ -17,3 +19,4 @@ position = Vector2( 50.975, 0.626 )
 rotation = -1.5708
 scale = Vector2( 3.803, 1.482 )
 shape = SubResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_Arrow_area_entered"]

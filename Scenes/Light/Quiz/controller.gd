@@ -33,7 +33,7 @@ func set_question():
 	var whichQuestion 
 	
 	if childAmount > 0:
-		whichQuestion = questionHolder.get_child(randi(0,childAmount)%childAmount)
+		whichQuestion = questionHolder.get_child(rand_range(0,5))
 		questionText.set_text(whichQuestion.fact)
 		answer = whichQuestion.answer
 	else:
@@ -45,28 +45,29 @@ func set_question():
 	if whichQuestion != null:
 		questionHolder.remove_child(whichQuestion)
 
-func _on_falseButton_released():
-	if answer == true:
-		falseAnswer.set_text("Wrong")
-	else:
-		falseAnswer.set_text("Correct")
-		score += 1
-		scoreText.set_text("Score: " + str(score))
-	animator.play("falseSlide")
-	timer.start()
+func _on_timer_timeout():
+	#animator.play_backwards(animator.get_current_animation())
+	set_question()
 	
 
-func _on_trueButton_released():
+
+func _on_trueButton_button_up():
 	if answer == false:
 		trueAnswer.set_text("Wrong")
 	else:
 		trueAnswer.set_text("Correct")
 		score += 1
 		scoreText.set_text("Score: " + str(score))
-	animator.play("trueSlide")
+	#animator.play("trueSlide")
 	timer.start()
 
-func _on_timer_timeout():
-	animator.play_backwards(animator.get_current_animation())
-	set_question()
-	
+
+func _on_falseButton_button_up():
+	if answer == true:
+		falseAnswer.set_text("Wrong")
+	else:
+		falseAnswer.set_text("Correct")
+		score += 1
+		scoreText.set_text("Score: " + str(score))
+	#animator.play("falseSlide")
+	timer.start()

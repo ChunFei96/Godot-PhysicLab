@@ -1,0 +1,374 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/Big_Bottom_Cartoon_AD_24.font" type="BitmapFont" id=1]
+[ext_resource path="res://pngtree-creative-gradient-color-performance-leaderboard-background-material-pointbattle-reportperformancepersonal-war-image_78947.jpg" type="Texture" id=2]
+[ext_resource path="res://ScoreBoard.gd" type="Script" id=3]
+
+[node name="ScoreBoard" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="pngtree-creative-gradient-color-performance-leaderboard-background-material-pointbattle-reportperformancepersonal-war-image_78947" type="Sprite" parent="."]
+position = Vector2( 324.188, 428.405 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="pngtree-creative-gradient-color-performance-leaderboard-background-material-pointbattle-reportperformancepersonal-war-image_78947"]
+margin_left = 84.1456
+margin_top = 269.973
+margin_right = 227.146
+margin_bottom = 336.973
+text = "add score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RankLabel" type="RichTextLabel" parent="."]
+margin_left = 49.2594
+margin_top = 101.568
+margin_right = 213.259
+margin_bottom = 150.568
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Rank"
+text = "Rank"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="RichTextLabel" parent="."]
+margin_left = 243.714
+margin_top = 98.0329
+margin_right = 407.714
+margin_bottom = 147.033
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Name"
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="RichTextLabel" parent="."]
+margin_left = 479.18
+margin_top = 101.568
+margin_right = 643.18
+margin_bottom = 150.568
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Score"
+text = "Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rank1" type="RichTextLabel" parent="."]
+margin_left = 79.6066
+margin_top = 155.121
+margin_right = 126.607
+margin_bottom = 204.121
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "1"
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rank2" type="RichTextLabel" parent="."]
+margin_left = 82.0107
+margin_top = 218.054
+margin_right = 129.011
+margin_bottom = 267.054
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "2"
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rank3" type="RichTextLabel" parent="."]
+margin_left = 83.8492
+margin_top = 282.4
+margin_right = 130.849
+margin_bottom = 331.4
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "3"
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rank4" type="RichTextLabel" parent="."]
+margin_left = 85.9705
+margin_top = 350.283
+margin_right = 132.971
+margin_bottom = 399.283
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "4"
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rank5" type="RichTextLabel" parent="."]
+margin_left = 87.3847
+margin_top = 420.286
+margin_right = 134.385
+margin_bottom = 469.286
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "5"
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rank6" type="RichTextLabel" parent="."]
+margin_left = 86.6776
+margin_top = 490.29
+margin_right = 133.678
+margin_bottom = 539.29
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "6"
+text = "6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rank7" type="RichTextLabel" parent="."]
+margin_left = 87.3847
+margin_top = 557.182
+margin_right = 134.385
+margin_bottom = 606.182
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "7"
+text = "7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rank8" type="RichTextLabel" parent="."]
+margin_left = 86.2534
+margin_top = 623.792
+margin_right = 133.253
+margin_bottom = 672.792
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "8"
+text = "8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1Name" type="RichTextLabel" parent="."]
+margin_left = 206.237
+margin_top = 155.309
+margin_right = 370.237
+margin_bottom = 204.309
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Player 1"
+text = "Player 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2Name" type="RichTextLabel" parent="."]
+margin_left = 204.257
+margin_top = 216.544
+margin_right = 368.257
+margin_bottom = 265.544
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Player 2"
+text = "Player 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player3Name" type="RichTextLabel" parent="."]
+margin_left = 204.964
+margin_top = 280.184
+margin_right = 368.964
+margin_bottom = 329.184
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Player 3"
+text = "Player 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player4Name" type="RichTextLabel" parent="."]
+margin_left = 204.964
+margin_top = 346.652
+margin_right = 368.964
+margin_bottom = 395.652
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Player 4"
+text = "Player 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player5Name" type="RichTextLabel" parent="."]
+margin_left = 204.964
+margin_top = 418.776
+margin_right = 368.964
+margin_bottom = 467.776
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Player 5"
+text = "Player 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player6Name" type="RichTextLabel" parent="."]
+margin_left = 204.257
+margin_top = 486.659
+margin_right = 368.257
+margin_bottom = 535.659
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Player 6"
+text = "Player 6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player7Name" type="RichTextLabel" parent="."]
+margin_left = 201.429
+margin_top = 555.955
+margin_right = 365.429
+margin_bottom = 604.955
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Player 7"
+text = "Player 7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player8Name" type="RichTextLabel" parent="."]
+margin_left = 200.722
+margin_top = 621.009
+margin_right = 364.722
+margin_bottom = 670.009
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Player 8"
+text = "Player 8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1Score" type="RichTextLabel" parent="."]
+margin_left = 453.017
+margin_top = 156.016
+margin_right = 617.017
+margin_bottom = 205.016
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "000000"
+text = "000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2Score" type="RichTextLabel" parent="."]
+margin_left = 454.431
+margin_top = 218.241
+margin_right = 618.431
+margin_bottom = 267.241
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "000000"
+text = "000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player3Score" type="RichTextLabel" parent="."]
+margin_left = 454.431
+margin_top = 277.638
+margin_right = 618.431
+margin_bottom = 326.638
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "000000"
+text = "000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player4Score" type="RichTextLabel" parent="."]
+margin_left = 455.846
+margin_top = 344.106
+margin_right = 619.846
+margin_bottom = 393.106
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "000000"
+text = "000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player5Score" type="RichTextLabel" parent="."]
+margin_left = 455.138
+margin_top = 414.11
+margin_right = 619.138
+margin_bottom = 463.11
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "000000"
+text = "000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player6Score" type="RichTextLabel" parent="."]
+margin_left = 456.553
+margin_top = 484.82
+margin_right = 620.553
+margin_bottom = 533.82
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "000000"
+text = "000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player7Score" type="RichTextLabel" parent="."]
+margin_left = 455.846
+margin_top = 551.288
+margin_right = 619.846
+margin_bottom = 600.288
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "000000"
+text = "000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player8Score" type="RichTextLabel" parent="."]
+margin_left = 456.553
+margin_top = 618.463
+margin_right = 620.553
+margin_bottom = 667.463
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "000000"
+text = "000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="pngtree-creative-gradient-color-performance-leaderboard-background-material-pointbattle-reportperformancepersonal-war-image_78947/Button" to="." method="_on_Button_pressed"]
