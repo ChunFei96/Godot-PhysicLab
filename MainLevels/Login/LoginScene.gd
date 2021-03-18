@@ -32,16 +32,16 @@ func ValidateLoginResponse(result, response_code, headers, body):
 			var r_data = body.get_string_from_utf8()
 			var data = JSON.parse(r_data)
 		
-			print(data.result)
-			print(data.result[0])
-			print(data.result[1])
-			print('----')
+#			print(data.result)
+#			print(data.result[0])
+#			print(data.result[1])
+#			print('----')
 			var isValidLogin = bool(data.result[0])
 			
-			print(isValidLogin)
+			#print(isValidLogin)
 			if isValidLogin == true:
 				var SelectedCharacter = data.result[1]
-				print('SelectedCharacter: ' + str(SelectedCharacter))
+				#print('SelectedCharacter: ' + str(SelectedCharacter))
 				if SelectedCharacter == '':
 					#print("Selected Character Page")
 					get_tree().change_scene("res://MainLevels/Characters/character-selection.tscn")
@@ -54,9 +54,9 @@ func ValidateLoginResponse(result, response_code, headers, body):
 				ErrorNotificate.text = "Please provide a vaild email and password"
 		else:
 			print('HTTP Post error ')
-			return null
+			ErrorNotificate.text = "HTTP Post error"
 	else:
-		return null
+		ErrorNotificate.text = "HTTP Post error"
 
 # =====================================================================================
 

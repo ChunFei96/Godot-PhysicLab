@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-BoldIt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-SemiboldIt.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scenes/Login/CreateAccount.gd" type="Script" id=4]
@@ -13,15 +12,11 @@ font_data = ExtResource( 3 )
 size = 25
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=8]
-size = 25
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=3]
 size = 40
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=4]
 size = 40
 font_data = ExtResource( 2 )
 
@@ -82,25 +77,12 @@ margin_right = 1367.61
 margin_bottom = 404.51
 rect_min_size = Vector2( 600, 30 )
 
-[node name="ErrorMessage" type="Label" parent="Background"]
-anchor_right = 0.113
-anchor_bottom = 0.208
-margin_left = 713.992
-margin_top = 684.911
-margin_right = 1092.03
-margin_bottom = 492.271
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0.501961, 0.0313726, 0.0313726, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Register" type="Button" parent="Background"]
 margin_left = 1036.29
 margin_top = 608.368
 margin_right = 1277.29
 margin_bottom = 677.368
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 3 )
 text = "Register"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -112,7 +94,7 @@ margin_top = 611.734
 margin_right = 990.553
 margin_bottom = 674.734
 rect_min_size = Vector2( 0, 57 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 4 )
 text = "Cancel"
 __meta__ = {
 "_edit_use_anchors_": false

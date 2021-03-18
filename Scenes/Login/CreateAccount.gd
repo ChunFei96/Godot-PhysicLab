@@ -2,28 +2,13 @@ extends Control
 
 export (NodePath) var dropdown_path
 onready var dropdown = get_node(dropdown_path)
-
 onready var Database =  preload("res://Scenes/API/Database.gd")
-
-#Create account nodes
-onready var name_input = get_node("Background/Name")
-onready var gender_male_button = get_node("Background/Male")
-onready var gender_female_button = get_node("Background/Female")
-onready var age_input = get_node("Background/Age")
-onready var email_input = get_node("Background/Email")
-onready var password_input = get_node("Background/Password")
-onready var password_repeat_input = get_node("Background/ConfirmPassword")
-onready var errorMessage = get_node("Background/ErrorMessage")
+onready var ErrorNotificate = get_node("ErrorNotification")
 onready var register_button = get_node("Background/RegisterButton")
 onready var cancel_button = get_node("Background/Cancel")
 
-#Test Daat
-onready var Data =  preload("userData.gd")
-
-
-
 var studentList = ['Select a Student']
-
+var selectedStudent
 
 func GetStudentListRequest():
 	var headers = ["Content-Type: application/json"]
@@ -36,8 +21,6 @@ func GetStudentListRequest():
 	
 # Has return value
 func GetStudentListResponse(result, response_code, headers, body):
-	var ErrorNotificate = get_node("ErrorNotification")
-
 	if result == HTTPRequest.RESULT_SUCCESS:
 		if response_code == 200:
 			var r_data = body.get_string_from_utf8()
@@ -72,74 +55,53 @@ func addStudentOption():
 		dropdown.add_item(i)
 
 func on_item_selected(id):
+	selectedStudent = studentList[id]
 	print(studentList[id])
-
+	
 func disable_option(id):
 	dropdown.set_item_disabled(id,true)
+	
+func remove_all():
+	dropdown.clear()
+	dropdown.add_item('Select a Student')
+	
+func RegisterStudentRequest(username:String = ""):
+	var headers = ["Content-Type: application/json"]
+	$HTTPRequest.connect("request_completed",self,"RegisterStudentResponse")
+	var User = Database.new().User
+	var user = User.new()
+	var query = user.setRegisterStudentQuery(username)  
+	var url = user.setRegisterStudentURL()
+	$HTTPRequest.request(url,headers,false,HTTPClient.METHOD_POST,query)
+	
+# Has return value
+func RegisterStudentResponse(result, response_code, headers, body):
+	if result == HTTPRequest.RESULT_SUCCESS:
+		if response_code == 200:
+			var r_data = body.get_string_from_utf8()
+			var data = JSON.parse(r_data)
+			
+			#var tt = false
+			if typeof(data.result) == TYPE_BOOL: # and tt == true
+				#print(data.result)
+				remove_all()
+				ErrorNotificate.text = "Registration Sucessful"
+				yield(get_tree().create_timer(1.0), "timeout")
+				get_tree().change_scene("res://MainLevels/Login/LoginScene.tscn")
+			else:
+				print("Unexpected results.")
+				ErrorNotificate.text = "HTTP Post error"
+		else:
+			print('HTTP Post error ')
+			ErrorNotificate.text = "HTTP Post error"
+			return null
+	else:
+		ErrorNotificate.text = "HTTP Post error"
 
 
 #Get user details to create account
 func _on_Register_pressed():
-	#email verify
-	var data = JSON.parse(Data.new().User)
-	var getEmail = str(data.result['email'])
-
-	#Verficate and get gender value 
-	var getGender = ""
-	if str($Background/Male.pressed) == "True" and str($Background/Female.pressed) == "False":
-		getGender = $Background/Male.get_name()
-		print("if male press: " + getGender)
-	#if str($Background/Female.pressed):
-	else:
-		getGender = $Background/Female.get_name()
-		print("else female press: " + getGender)
-		
-	if name_input.get_text() == "":
-		errorMessage.text = "Invalid Name"
-		print("Please provide a valid username")
-		
-	elif str($Background/Male.pressed) == "False" and str($Background/Female.pressed) == "False":
-		errorMessage.text = "Gender not selected"
-		
-	elif age_input.get_text() == "":
-		errorMessage.text = "Invalid Age"
-		print("Please provide a valid age")
-		
-	elif email_input.get_text() == "":
-		errorMessage.text = "Invalid Email"
-		print("Please provide a valid Email")
-		
-	elif email_input.get_text() == getEmail:
-		errorMessage.text = "Existing Email"
-		print("existing Email")
-		
-	elif password_input.get_text() == "" or password_repeat_input.get_text() == "":
-		errorMessage.text = "Invalid Password"
-		print("Please provide a valid password")
-		
-	elif password_input.get_text() != password_repeat_input.get_text():
-		errorMessage.text = "Password does not match!"
-		print("Password don't match!")
-		
-	else:
-		cancel_button.disabled = true
-		var name = name_input.get_text()
-		print("name: "+ name)
-		var gender = getGender
-		print("gender: "+ gender)
-		var age = age_input.get_text() 
-		print("age: " + age)
-		var email = email_input.get_text()
-		print("emial: " + email)
-		var password = password_input.get_text()
-		print("password: " + password)
-		
-		#After sucessful register, will auto transfer to login page in 1sec
-		errorMessage.text = "Registration Sucessful"
-		yield(get_tree().create_timer(1.0), "timeout")
-		get_tree().change_scene("res://MainLevels/Login/LoginScene.tscn")
-	#register(name_input, age_input,email_input, password_input, http)
-	 
+	RegisterStudentRequest(selectedStudent)	 
 	
 # /back to the pervious page
 func _on_Cancel_pressed():
