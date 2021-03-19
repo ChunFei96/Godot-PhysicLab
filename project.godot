@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Physics Lab"
-run/main_scene="res://MainLevels/Mass/Level2/Level2.tscn"
+run/main_scene="res://MainLevels/Light/Cat/Cat.tscn"
 
 [autoload]
 
