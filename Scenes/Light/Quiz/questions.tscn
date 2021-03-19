@@ -1,13 +1,141 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Light/Quiz/question.gd" type="Script" id=1]
 
 [node name="questionHolder" type="Node"]
 
 [node name="question" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Electromagnetic spectrum does not represent the different forms of electromagnetic radiation."
 
 [node name="question1" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The sun radiates both visible and invisible energy."
+answer = true
 
 [node name="question2" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Heat radiation is also known as infrared waves."
+answer = true
 
 [node name="question3" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Both X-rays and gamma rays have lower frequencies than ultraviolet rays."
 
 [node name="question4" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Radio waves can be used to communicate with satellites."
+answer = true
+
+[node name="question5" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Microwaves are a type of electromagnetic radiation."
+answer = true
+
+[node name="question6" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Gamma rays cannot damage human tissue."
+
+[node name="question7" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "An overexposure to ultraviolet rays can result in sunburns and skin cancer."
+answer = true
+
+[node name="question8" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The use of surgical equipment sterile in a hospital is an application of microwaves."
+
+[node name="question9" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The S.I. unit for luminous intensity is cadela."
+answer = true
+
+[node name="question10" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "White light is not visible light."
+
+[node name="question11" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Blue light has the shortest wavelength."
+
+[node name="question12" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Red light is on the end of the spectrum."
+answer = true
+
+[node name="question13" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The angle of incidence is the angle between the incident ray and the normal."
+answer = true
+
+[node name="question14" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The normal is an imaginary line parallel to the surface of reflection drawn at the point of incidence."
+
+[node name="question15" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The angle of reflection is the angle between the incidence ray and the normal."
+
+[node name="question16" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The reflection of an image in a plane mirror is the same size of the object."
+answer = true
+
+[node name="question17" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The distance between the object and the mirror is not equal to the distance between the image and the mirror."
+
+[node name="question18" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The angle of incidence is equal to the angle of reflection (i=r)."
+answer = true
+
+[node name="question19" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Refraction is the bending of light when it travels from one medium to another."
+answer = true
+
+[node name="question20" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The refractive index when a ray passes from air (vacuum) into another medium is sin r / sin i."
+
+[node name="question21" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The medium glass is less dense than the medium air."
+
+[node name="question22" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "For two given mediums, the ratio of (sin i/sin r) is constant."
+answer = true
+
+[node name="question23" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The speed of light can change when travelling from air to another medium."
+answer = true
+
+[node name="question24" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The refractive index of a medium is calculated as refractive index = apparent depth/ real depth."
+
+[node name="question25" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The refractive index of a medium is calculated as refractive index = real depth/ apparent depth."
+answer = true
+
+[node name="question26" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "Critical angle is the angle of incidence in the optically denser medium when the angle of refraction in the less dense medium is -90 degree."
+
+[node name="question27" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "A converging lens is a piece of glass which is thicker at the edges and thinner at the centre."
+
+[node name="question28" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The principal focus, F, is the point when a beam of light, parallel to the principal axis, passing through a converging lens will converge to a point."
+answer = true
+
+[node name="question29" type="Node" parent="."]
+script = ExtResource( 1 )
+fact = "The distance between the principal focus and the centre of the lens is called the focal length, f."
+answer = true

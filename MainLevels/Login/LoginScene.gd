@@ -36,10 +36,9 @@ func ValidateLoginResponse(result, response_code, headers, body):
 #			print(data.result[0])
 #			print(data.result[1])
 #			print('----')
-			var isValidLogin = bool(data.result[0])
+			var isValidLogin = data.result[0]
 			
-			#print(isValidLogin)
-			if isValidLogin == true:
+			if isValidLogin.to_upper() == 'TRUE':
 				var SelectedCharacter = data.result[1]
 				#print('SelectedCharacter: ' + str(SelectedCharacter))
 				if SelectedCharacter == '':

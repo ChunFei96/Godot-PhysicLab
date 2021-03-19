@@ -1,0 +1,16 @@
+extends Node
+
+
+var points = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+func getScore(): #get score from database
+	return points
+	
+	
+func increaseScore(value):
+	points += value

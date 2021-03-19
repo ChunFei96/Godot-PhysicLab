@@ -1,15 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Mass/Level2/Bow/Bow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Mass/Level2/Arrow/Arrow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Mass/Level2/Background/Forest.jpg" type="Texture" id=3]
+[ext_resource path="res://Scenes/Mass/Level2/Target/Target.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Mass/Level2/Coin/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Dialogue/DialogManager.tscn" type="PackedScene" id=6]
+[ext_resource path="res://MainLevels/Mass/Level2/Level2.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Timer/timerDisplay.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GameOver/GameOver.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Bold.ttf" type="DynamicFontData" id=10]
 
-[node name="Level2" type="Node2D"]
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 10 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Level2" type="Control"]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backgroun" type="Sprite" parent="."]
 position = Vector2( 513, 389 )
 scale = Vector2( 1.024, 1.00769 )
 texture = ExtResource( 3 )
+
+[node name="Target" parent="." instance=ExtResource( 4 )]
+position = Vector2( 930, 443 )
 
 [node name="Bow" parent="." instance=ExtResource( 1 )]
 position = Vector2( 113, 481 )
@@ -30,9 +48,37 @@ position = Vector2( -113, 103 )
 position = Vector2( -115, 132 )
 
 [node name="Back" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_left = 883.664
+margin_top = 24.0271
+margin_right = 994.664
+margin_bottom = 44.0271
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 286.991, 441.832 )
+
+[node name="Coin2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 499.23, 397.782 )
+
+[node name="Coin3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 711.47, 435.158 )
+
+[node name="TimerManager" parent="." instance=ExtResource( 8 )]
+margin_left = 407.51
+margin_top = 20.6362
+margin_right = 669.51
+margin_bottom = 220.636
+
+[node name="DialogManager" parent="." instance=ExtResource( 6 )]
+
+[node name="GameOverLayer" parent="." instance=ExtResource( 9 )]
+
+[node name="Score" type="RichTextLabel" parent="."]
+margin_left = 43.776
+margin_top = 29.184
+margin_right = 243.776
+margin_bottom = 89.184
+custom_fonts/normal_font = SubResource( 1 )
 [connection signal="pressed" from="Back" to="Bow" method="_on_Back_pressed"]
