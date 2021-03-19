@@ -11,6 +11,7 @@ func _ready():
 	showTimer()
 	startTimer()
 	pass # Replace with function body.
+ 
 
 
 func initTimer(time):
