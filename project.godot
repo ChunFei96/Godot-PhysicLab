@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Physics Lab"
-run/main_scene="res://MainLevels/Login/LoginScene.tscn"
+run/main_scene="res://Assets/Common/Timer.tscn"
 
 [autoload]
 
@@ -36,3 +36,4 @@ pointing/emulate_mouse_from_touch=false
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+
