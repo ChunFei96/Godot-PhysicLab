@@ -25,9 +25,14 @@ func _process(delta):
 		current_projectile.rotation = velocity.angle()
 
 func load_projectile():
-	if len(projectiles) > 0:
-		current_projectile = projectiles.pop_back()
-		current_projectile.global_position = rest.global_position
+	
+	current_projectile = projectiles[0]
+	current_projectile.isFire = false
+	current_projectile.rotation = 0
+	current_projectile.global_position = rest.global_position
+#	if len(projectiles) > 0:
+#		current_projectile = projectiles.pop_back()
+#		current_projectile.global_position = rest.global_position
 		
 
 func _unhandled_input(event):

@@ -45,3 +45,7 @@ func load_dialog_file(filepath):
 
 func _on_Tween_tween_completed(object, key):
 	finished = true
+
+
+func DialogBox_queue_free():
+	print("queue_free()")

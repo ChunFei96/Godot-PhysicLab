@@ -7,13 +7,27 @@ func _ready():
 	$DialogManager/DialogBox.load_dialog($DialogManager/DialogBox.dialog)
 	
 	# init timer
-	$TimerManager.setTime(60)
+	$TimerManager.setTime(10)
 	
+	# setup signal
+	$DialogManager/DialogBox.connect("tree_exiting", self, "_on_dialogbox_tree_exiting")
+	$TimerManager.connect("tree_exiting", self, "_on_timer_tree_exiting")
+	
+	$GameOverLayer.visible = false
+	
+	# reset points
+	Global.points = 0
+	
+func _on_dialogbox_tree_exiting():
+	$TimerManager.timeStart()
+
+func _on_timer_tree_exiting():
+	$GameOverLayer.visible = true
+	$GameOverLayer/AnimationPlayer.play("Fade")
+	$GameOverLayer/ColorRect/PlayerScore.text = String(Global.getScore())
+
 func _process(delta):
-	if not is_instance_valid(get_node("DialogManager/DialogBox")) && is_instance_valid(get_node("TimerManager")):
-		$TimerManager.timeStart()
+	$Score.text = String(Global.getScore())
+	$GameOverLayer/ColorRect/PlayerScore.text = String(Global.getScore())
 	
-	#if not is_instance_valid(get_node("TimerManager")):
-	#	print("Time up")
-	pass
 

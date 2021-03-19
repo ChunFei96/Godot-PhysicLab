@@ -16,17 +16,11 @@ _global_script_class_icons={
 [application]
 
 config/name="Physics Lab"
-run/main_scene="res://MainLevels/Login/LoginScene.tscn"
+run/main_scene="res://MainLevels/Mass/Level2/Level2.tscn"
 
 [autoload]
 
-Data="*res://Scenes/Characters/data.gd"
-Global="*res://src/Global.gd"
-SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
-
-[display]
-
-window/size/width=800
+Global="*res://Global.gd"
 
 [input_devices]
 

@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_Coin_area_entered(area):
-	self.hide()
-	remove_child(self)
+	Global.increaseScore(10)
+	queue_free()
