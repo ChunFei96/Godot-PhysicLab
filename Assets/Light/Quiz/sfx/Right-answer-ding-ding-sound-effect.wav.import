@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Right-answer-ding-ding-sound-effect.wav-7349d7a57d29d9fee9ac3c42fd2e4902.sample"
+
+[deps]
+
+source_file="res://Assets/Light/Quiz/sfx/Right-answer-ding-ding-sound-effect.wav"
+dest_files=[ "res://.import/Right-answer-ding-ding-sound-effect.wav-7349d7a57d29d9fee9ac3c42fd2e4902.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

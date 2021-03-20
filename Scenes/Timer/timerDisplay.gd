@@ -10,7 +10,6 @@ func _process(delta):
 
 	if s == 0:
 		timePause()
-		queue_free()
 	$TimerDisplay.set_text( str(s) + " Seconds")
 
 func setTime(time):

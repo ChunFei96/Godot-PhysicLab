@@ -1,10 +1,96 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Light/Quiz/controller.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Timer/timerDisplay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Light/Quiz/background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Light/Quiz/animation/falseSlide.tres" type="Animation" id=4]
 [ext_resource path="res://Assets/Light/Quiz/animation/trueSlide.tres" type="Animation" id=5]
 [ext_resource path="res://Scenes/Light/Quiz/questions.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Dialogue/DialogManager.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/GameOver/GameOver.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Bold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Assets/Light/Quiz/sfx/Right-answer-ding-ding-sound-effect.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Light/Quiz/sfx/Wrong Clakson Sound Effect.wav" type="AudioStream" id=11]
+
+[sub_resource type="DynamicFontData" id=14]
+font_path = "res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=15]
+size = 20
+font_data = SubResource( 14 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 9 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.927734, 0.394715, 0.0905991, 1, 0.908203, 0.0248337, 0.0248337, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+min_value = -200.0
+max_value = 400.0
+_data = [ Vector2( 0, 400 ), 0.0, 17450.4, 0, 0, Vector2( 0.113122, 83.6364 ), -1937.34, -1937.34, 0, 0, Vector2( 1, -90.9091 ), 137.767, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+max_value = 2.5
+_data = [ Vector2( 0.00226244, 2.46591 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.738636 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 5 )
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="Gradient" id=9]
+colors = PoolColorArray( 0.599792, 0.96875, 0.0605469, 1, 0.279819, 0.574219, 0.0358887, 1 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
+
+[sub_resource type="Curve" id=12]
+max_value = 2.5
+_data = [ Vector2( 0.00226244, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.659091 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.2
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 10 )
 
 [node name="mainNode" type="Control"]
 script = ExtResource( 1 )
@@ -12,17 +98,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 questionTextPath = NodePath("questionText")
-trueAnswerPath = NodePath("answerLayer/trueAnswer")
-falseAnswerPath = NodePath("answerLayer/falseAnswer")
 animatorPath = NodePath("animator")
 timerPath = NodePath("timer")
 questionHolderPath = NodePath("questionHolder")
-scoreTextPath = NodePath("scoreText")
+scoreTextPath = NodePath("Score")
 trueButtonPath = NodePath("buttonLayer/trueButton")
 falseButtonPath = NodePath("buttonLayer/falseButton")
 
 [node name="questionBackground" type="Panel" parent="."]
-visible = false
 margin_right = 1024.0
 margin_bottom = 114.0
 __meta__ = {
@@ -32,6 +115,7 @@ __meta__ = {
 [node name="questionText" type="Label" parent="."]
 margin_right = 1022.0
 margin_bottom = 110.0
+custom_fonts/font = SubResource( 15 )
 text = "Question"
 align = 1
 valign = 1
@@ -41,12 +125,16 @@ __meta__ = {
 }
 
 [node name="buttonLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="trueButton" type="Button" parent="buttonLayer"]
 margin_top = 114.0
 margin_right = 512.0
 margin_bottom = 599.0
 text = "True"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="falseButton" type="Button" parent="buttonLayer"]
 margin_left = 512.0
@@ -57,42 +145,6 @@ text = "False"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="quitButton" type="Button" parent="buttonLayer"]
-margin_left = 882.0
-margin_top = 78.0
-margin_right = 1021.0
-margin_bottom = 109.0
-text = "Close Game"
-
-[node name="answerLayer" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="trueAnswer" type="Label" parent="answerLayer"]
-margin_top = 114.0
-margin_right = 512.0
-margin_bottom = 599.0
-custom_colors/font_color = Color( 0.953125, 0.930786, 0.934975, 1 )
-text = "Test"
-align = 1
-valign = 1
-
-[node name="trueAnswer" type="Panel" parent="answerLayer/trueAnswer"]
-
-[node name="falseAnswer" type="Label" parent="answerLayer"]
-margin_left = 512.0
-margin_top = 112.0
-margin_right = 1024.0
-margin_bottom = 597.0
-custom_colors/font_color = Color( 0.9375, 0.904541, 0.904541, 1 )
-text = "test"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="falseAnswer" type="Panel" parent="answerLayer/falseAnswer"]
 
 [node name="background" parent="." instance=ExtResource( 3 )]
 layer = -1
@@ -106,23 +158,53 @@ one_shot = true
 
 [node name="questionHolder" parent="." instance=ExtResource( 6 )]
 
-[node name="scoreText" type="Label" parent="."]
-margin_left = 97.5
-margin_top = 57.7063
-margin_right = 136.5
-margin_bottom = 71.7063
-custom_colors/font_color = Color( 0.0577424, 0.992188, 0.0503845, 1 )
-text = "Score:"
-align = 1
-valign = 1
+[node name="DialogManager" parent="." instance=ExtResource( 7 )]
+
+[node name="TimerManager" parent="." instance=ExtResource( 2 )]
+margin_left = 731.581
+margin_top = 79.0166
+margin_right = 931.581
+margin_bottom = 279.017
+
+[node name="GameOverLayer" parent="." instance=ExtResource( 8 )]
+
+[node name="Score" type="RichTextLabel" parent="."]
+margin_left = 55.4992
+margin_top = 82.4079
+margin_right = 255.499
+margin_bottom = 142.408
+custom_fonts/normal_font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelBackground" type="Panel" parent="scoreText"]
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="correct_SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="wrong_SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="wrong_effect" type="Particles2D" parent="."]
+position = Vector2( 256.333, 351.5 )
+scale = Vector2( 3, 3 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+randomness = 0.5
+process_material = SubResource( 8 )
+
+[node name="correct_effect" type="Particles2D" parent="."]
+position = Vector2( 786.122, 351.066 )
+scale = Vector2( 3, 3 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+randomness = 0.5
+process_material = SubResource( 11 )
 [connection signal="button_up" from="buttonLayer/trueButton" to="." method="_on_trueButton_button_up"]
 [connection signal="button_up" from="buttonLayer/falseButton" to="." method="_on_falseButton_button_up"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
