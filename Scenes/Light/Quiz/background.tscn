@@ -3,3 +3,6 @@
 [node name="background" type="CanvasLayer"]
 
 [node name="overallcolor" type="Panel" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}

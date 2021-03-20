@@ -70,7 +70,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 margin_top = -1.12247
 margin_right = 1024.0
 margin_bottom = 598.878
@@ -80,7 +79,6 @@ __meta__ = {
 }
 
 [node name="YourScoreTitle" type="RichTextLabel" parent="ColorRect"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -97,7 +95,6 @@ __meta__ = {
 }
 
 [node name="PlayerScore" type="RichTextLabel" parent="ColorRect"]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 454.266
 margin_top = 287.49
 margin_right = 766.266
@@ -112,7 +109,6 @@ __meta__ = {
 anims/Fade = SubResource( 3 )
 
 [node name="Back" type="Button" parent="."]
-visible = false
 margin_left = 410.821
 margin_top = 381.637
 margin_right = 610.821
