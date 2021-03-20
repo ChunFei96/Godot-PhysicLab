@@ -11,7 +11,7 @@ func GetStudentProfileRequest(username:String = ""):
 
 	var User = Database.new().User
 	var user = User.new()
-	var query = user.setGetStudentProfileQuery(username)
+	var query = user.setGetStudentProfileQuery(username,"true")
 	var url = user.setGetStudentProfileURL()
 	$HTTPRequest.request(url,headers,false,HTTPClient.METHOD_POST,query)
 	
@@ -29,7 +29,7 @@ func GetStudentProfileResponse(result, response_code, headers, body):
 				var ErrorNotificate = get_node("ErrorNotification")
 				ErrorNotificate.text = "No result found!"
 			else:
-				#print(data.result)
+				print(data.result)
 				
 				#	#Get your text fields
 				var name = get_node("NameInput")
@@ -52,7 +52,7 @@ func GetStudentProfileResponse(result, response_code, headers, body):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GetStudentProfileRequest("Student1")
+	GetStudentProfileRequest(Global.username)
 
 func _on_Back_pressed():
 	get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")

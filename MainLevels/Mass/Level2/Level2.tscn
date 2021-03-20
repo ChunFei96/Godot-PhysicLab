@@ -81,4 +81,7 @@ margin_top = 29.184
 margin_right = 243.776
 margin_bottom = 89.184
 custom_fonts/normal_font = SubResource( 1 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="Back" to="Bow" method="_on_Back_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

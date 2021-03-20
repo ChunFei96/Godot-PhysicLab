@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-SemiboldIt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Black.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-BoldIt.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://MainLevels/Login/LoginScene.gd" type="Script" id=4]
+[ext_resource path="res://Login/LoginScene.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80

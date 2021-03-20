@@ -20,8 +20,6 @@ class Topic:
 	#constructor
 	func _init(tpc):
 		topic = tpc
-		print(topic)
-		print('init')
 
 	func RetrieveTopic():
 		return topic
@@ -54,7 +52,7 @@ class Topic:
 		var url = localhost + "/api/game/save-game-score"
 		return str(url)
 		
-	func setQuery(username,topicname,levelnumber,score,timecompleted):
+	func setSaveGameScoreQuery(username,topicname,levelnumber,score,timecompleted):
 		return JSON.print({
 			"username" : str(username),
 			"topicname" : str(topicname),
@@ -114,15 +112,21 @@ class User:
 		var url = localhost + "/api/user/get-student-for-registration"
 		return str(url)
 	
+	func setGetValidStudentListURL():
+		var localhost = "http://localhost:53921"
+		var url = localhost + "/api/user/get-valid-students"
+		return str(url)
+	
 	func setGetStudentProfileURL():
 		var localhost = "http://localhost:53921"
 		var url = localhost + "/api/user/get-student-profile"
 		return str(url)
 	
 	# Set API's param.
-	func setGetStudentProfileQuery(username):
+	func setGetStudentProfileQuery(username,byEmail):
 		return JSON.print({
-			"username" : str(username)
+			"username" : str(username),
+			"byEmail" : str(byEmail)
 		})
 		
 
@@ -291,7 +295,12 @@ func UpdateStudentCharacterRequest(username:String = "",character:String = ""):
 func UpdateStudentCharacterResponse(result, response_code, headers, body):
 	if result == HTTPRequest.RESULT_SUCCESS:
 		if response_code == 200:
-			pass
+			var r_data = body.get_string_from_utf8()
+			var data = JSON.parse(r_data)
+			if typeof(data.result) == TYPE_BOOL:
+				print(data.result)
+			else:
+				print("Unexpected results.")
 		else:
 			print('HTTP Post error')
 			return null
@@ -334,10 +343,9 @@ func GetStudentProfileRequest(username:String = ""):
 	$HttpPost.connect("request_completed",self,"GetStudentProfileResponse")
 	
 	var user = User.new()
-	var query = user.setGetStudentProfileQuery(username)
+	var query = user.setGetStudentProfileQuery(username,"false")
 	var url = user.setGetStudentListURL()
 	$HttpPost.request(url,headers,false,HTTPClient.METHOD_POST,query)
-	
 	
 # Has return value
 func GetStudentProfileResponse(result, response_code, headers, body):
@@ -355,7 +363,33 @@ func GetStudentProfileResponse(result, response_code, headers, body):
 	else:
 		return null
 
-
+#Function 9 - 20/3/21 9:04pm
+func GetValidStudentListRequest():
+	var headers = ["Content-Type: application/json"]
+	$HttpGet.connect("request_completed",self,"GetValidStudentListResponse")
+	
+	var user = User.new()
+	var url = user.setGetValidStudentListURL()
+	$HttpGet.request(url,headers,false,HTTPClient.METHOD_GET,"")
+	
+# Has return value
+func GetValidStudentListResponse(result, response_code, headers, body):
+	if result == HTTPRequest.RESULT_SUCCESS:
+		if response_code == 200:
+			var r_data = body.get_string_from_utf8()
+			var data = JSON.parse(r_data)
+			if typeof(data.result) == TYPE_ARRAY:
+				if data.result.size() > 0:
+					print(data.result[0]) # Display 1st result from list
+				else:
+					print("No result found")
+			else:
+				print("Unexpected results.")
+		else:
+			print('HTTP Post error ')
+			return null
+	else:
+		return null
 
 
 

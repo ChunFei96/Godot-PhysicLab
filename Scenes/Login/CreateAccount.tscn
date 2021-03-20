@@ -40,9 +40,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -950.101
+margin_left = -951.783
 margin_top = -519.007
-margin_right = 969.899
+margin_right = 968.217
 margin_bottom = 560.993
 __meta__ = {
 "_edit_use_anchors_": false

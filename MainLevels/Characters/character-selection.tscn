@@ -131,6 +131,8 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="selection-intro/HBoxContainer/einstein" to="." method="_on_einstein_pressed"]
 [connection signal="pressed" from="selection-intro/HBoxContainer/galilei" to="." method="_on_galilei_pressed"]
 [connection signal="pressed" from="selection-intro/HBoxContainer/newton" to="." method="_on_newton_pressed"]

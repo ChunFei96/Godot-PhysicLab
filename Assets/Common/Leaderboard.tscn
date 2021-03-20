@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Common/Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Common/Leaderboard.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 1 )
+
+[node name="Leaderboard" type="Node2D" groups=[
+"items",
+]]
+script = ExtResource( 3 )
+dropdown_path = NodePath("dropdown")
+
+[node name="dropdown" type="OptionButton" parent="."]
+anchor_left = 0.286
+anchor_top = 0.347
+anchor_right = 0.286
+anchor_bottom = 0.347
+margin_left = 316.065
+margin_top = 116.575
+margin_right = 596.065
+margin_bottom = 149.575
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorNotification" type="Label" parent="."]
+margin_left = 146.326
+margin_top = 162.502
+margin_right = 652.326
+margin_bottom = 199.502
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DrpLabel" type="Label" parent="."]
+margin_left = 159.242
+margin_top = 116.471
+margin_right = 375.242
+margin_bottom = 161.471
+custom_fonts/font = SubResource( 1 )
+text = "Topic:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="."]
+margin_left = 17.3892
+margin_top = 11.0181
+margin_right = 766.389
+margin_bottom = 100.018
+custom_fonts/font = SubResource( 2 )
+text = "Leaderboard"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = 96.0
+margin_top = 184.0
+margin_right = 726.0
+margin_bottom = 240.0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="ItemLabel" parent="." instance=ExtResource( 2 )]
+margin_left = 96.0
+margin_top = 184.0
+margin_right = 726.0
+margin_bottom = 240.0
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
