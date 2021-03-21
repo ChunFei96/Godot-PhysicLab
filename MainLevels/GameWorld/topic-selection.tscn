@@ -8,8 +8,10 @@
 [node name="topic-selection" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 1.0
-margin_right = -2.0
+margin_left = 26.6762
+margin_top = -7.66974
+margin_right = 24.6761
+margin_bottom = -8.66974
 rect_pivot_offset = Vector2( 511.352, 176.836 )
 script = ExtResource( 6 )
 __meta__ = {
@@ -17,6 +19,44 @@ __meta__ = {
 }
 
 [node name="selection-intro" type="Node" parent="."]
+
+[node name="TextureButton4" type="TextureButton" parent="selection-intro"]
+margin_left = 137.91
+margin_top = 169.586
+margin_right = 426.91
+margin_bottom = 593.586
+texture_normal = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="selection-intro/TextureButton4"]
+margin_left = 117.986
+margin_top = 242.614
+margin_right = 202.986
+margin_bottom = 279.614
+text = "Light"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="selection-intro"]
+margin_left = 544.722
+margin_top = 174.254
+margin_right = 826.722
+margin_bottom = 598.254
+texture_normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="selection-intro/TextureButton"]
+margin_left = -14.7555
+margin_top = 247.905
+margin_right = 289.245
+margin_bottom = 284.905
+text = "Units of Measurements and Physical Quantities"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
 margin_left = 38.0
@@ -45,45 +85,10 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="selection-intro"]
-margin_left = 137.243
-margin_top = 169.586
-margin_right = 971.243
-margin_bottom = 593.586
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton" type="TextureButton" parent="selection-intro/HBoxContainer"]
-margin_right = 282.0
-margin_bottom = 424.0
-texture_normal = ExtResource( 4 )
-
-[node name="Label" type="Label" parent="selection-intro/HBoxContainer/TextureButton"]
-margin_left = -14.7555
-margin_top = 247.905
-margin_right = 289.245
-margin_bottom = 284.905
-text = "Units of Measurements and Physical Quantities"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton4" type="TextureButton" parent="selection-intro/HBoxContainer"]
-margin_left = 286.0
-margin_right = 575.0
-margin_bottom = 424.0
-texture_normal = ExtResource( 5 )
-
-[node name="Label" type="Label" parent="selection-intro/HBoxContainer/TextureButton4"]
-margin_left = 117.986
-margin_top = 242.614
-margin_right = 202.986
-margin_bottom = 279.614
-text = "Light"
-align = 1
-valign = 1
+margin_left = 446.02
+margin_top = 160.249
+margin_right = 1280.02
+margin_bottom = 584.249
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,7 +114,7 @@ text = "Profile"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="selection-intro/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="selection-intro/HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="selection-intro/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="selection-intro/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="buttons/Leaderboard" to="." method="_on_Leaderboard_pressed"]
 [connection signal="pressed" from="buttons/Profile" to="." method="_on_Profile_pressed"]

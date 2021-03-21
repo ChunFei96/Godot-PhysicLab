@@ -20,6 +20,25 @@ __meta__ = {
 
 [node name="selection-intro" type="Node" parent="."]
 
+[node name="tesla" type="TextureButton" parent="selection-intro"]
+margin_left = 273.629
+margin_top = 321.058
+margin_right = 337.629
+margin_bottom = 614.058
+texture_normal = ExtResource( 3 )
+
+[node name="Label4" type="Label" parent="selection-intro/tesla"]
+margin_left = 7.0
+margin_top = 99.0
+margin_right = 56.0
+margin_bottom = 130.0
+text = "Nikola
+Tesla"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
 margin_left = 38.0
 margin_top = 16.0
@@ -47,23 +66,25 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="selection-intro"]
-margin_left = 379.0
-margin_top = 159.0
-margin_right = 665.0
-margin_bottom = 251.0
+margin_left = 282.966
+margin_top = 340.398
+margin_right = 761.966
+margin_bottom = 633.398
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="einstein" type="TextureButton" parent="selection-intro/HBoxContainer"]
-margin_right = 64.0
-margin_bottom = 92.0
+[node name="einstein" type="TextureButton" parent="selection-intro"]
+margin_left = 570.402
+margin_top = 351.736
+margin_right = 634.402
+margin_bottom = 644.735
 toggle_mode = true
 pressed = true
 action_mode = 0
 texture_normal = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="selection-intro/HBoxContainer/einstein"]
+[node name="Label" type="Label" parent="selection-intro/einstein"]
 margin_left = 0.5
 margin_top = 99.5
 margin_right = 63.5
@@ -75,16 +96,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="galilei" type="TextureButton" parent="selection-intro/HBoxContainer"]
-margin_left = 68.0
-margin_right = 132.0
-margin_bottom = 92.0
+[node name="galilei" type="TextureButton" parent="selection-intro"]
+margin_left = 278.964
+margin_top = 155.665
+margin_right = 342.964
+margin_bottom = 448.665
 texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="selection-intro/HBoxContainer/galilei"]
+[node name="Label2" type="Label" parent="selection-intro/galilei"]
 margin_left = 4.0
 margin_top = 99.0
 margin_right = 67.0
@@ -96,13 +118,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="newton" type="TextureButton" parent="selection-intro/HBoxContainer"]
-margin_left = 136.0
-margin_right = 200.0
-margin_bottom = 92.0
+[node name="newton" type="TextureButton" parent="selection-intro"]
+margin_left = 601.0
+margin_top = 148.0
+margin_right = 767.0
+margin_bottom = 294.0
 texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label3" type="Label" parent="selection-intro/HBoxContainer/newton"]
+[node name="Label3" type="Label" parent="selection-intro/newton"]
 margin_left = 2.5
 margin_top = 98.5
 margin_right = 65.5
@@ -113,25 +139,7 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="tesla" type="TextureButton" parent="selection-intro/HBoxContainer"]
-margin_left = 204.0
-margin_right = 268.0
-margin_bottom = 92.0
-texture_normal = ExtResource( 3 )
-
-[node name="Label4" type="Label" parent="selection-intro/HBoxContainer/tesla"]
-margin_left = 7.0
-margin_top = 99.0
-margin_right = 56.0
-margin_bottom = 130.0
-text = "Nikola
-Tesla"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="selection-intro/HBoxContainer/einstein" to="." method="_on_einstein_pressed"]
-[connection signal="pressed" from="selection-intro/HBoxContainer/galilei" to="." method="_on_galilei_pressed"]
-[connection signal="pressed" from="selection-intro/HBoxContainer/newton" to="." method="_on_newton_pressed"]
-[connection signal="pressed" from="selection-intro/HBoxContainer/tesla" to="." method="_on_tesla_pressed"]
+[connection signal="pressed" from="selection-intro/tesla" to="." method="_on_tesla_pressed"]
+[connection signal="pressed" from="selection-intro/einstein" to="." method="_on_einstein_pressed"]
+[connection signal="pressed" from="selection-intro/galilei" to="." method="_on_galilei_pressed"]
+[connection signal="pressed" from="selection-intro/newton" to="." method="_on_newton_pressed"]
