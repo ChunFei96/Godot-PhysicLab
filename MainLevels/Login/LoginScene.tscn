@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-SemiboldIt.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/UI/wooden reg btn.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Black.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-BoldIt.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://MainLevels/Login/LoginScene.gd" type="Script" id=4]
 [ext_resource path="res://Assets/UI/MainPage.jpg" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/UI Logo.png" type="Texture" id=6]
@@ -15,23 +15,37 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=2]
 size = 40
 outline_color = Color( 0.0901961, 0.0784314, 0.0784314, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 40
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 25
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 70
-font_data = ExtResource( 1 )
+size = 40
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 1217, 432 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 70
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 1217, 432 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 70
+font_data = ExtResource( 3 )
 
 [node name="LoginScene" type="Control"]
 anchor_left = 0.5
@@ -64,7 +78,7 @@ __meta__ = {
 }
 
 [node name="UI Logo" type="Sprite" parent="Background"]
-position = Vector2( 932.011, 198.898 )
+position = Vector2( 932.895, 183.875 )
 scale = Vector2( 0.247087, 0.247087 )
 texture = ExtResource( 6 )
 
@@ -110,12 +124,13 @@ margin_top = 109.0
 margin_right = 1220.0
 margin_bottom = 159.0
 rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = SubResource( 4 )
 
 [node name="PasswordTitle" type="Label" parent="Background/VBoxContainer"]
 margin_top = 163.0
 margin_right = 1220.0
 margin_bottom = 214.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "Password"
 
 [node name="Password" type="LineEdit" parent="Background/VBoxContainer"]
@@ -123,6 +138,7 @@ margin_top = 218.0
 margin_right = 1220.0
 margin_bottom = 268.0
 rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = SubResource( 6 )
 secret = true
 
 [node name="ErrorNotification" type="Label" parent="Background/VBoxContainer"]
@@ -130,7 +146,7 @@ margin_top = 272.0
 margin_right = 1220.0
 margin_bottom = 304.0
 rect_min_size = Vector2( 0, 30 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.501961, 0.0313726, 0.0313726, 1 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="Background/VBoxContainer"]
@@ -144,7 +160,8 @@ margin_top = 362.0
 margin_right = 1220.0
 margin_bottom = 462.0
 rect_min_size = Vector2( 500, 100 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 8 )
 text = "Login"
 
 [node name="CreateAccount" type="Button" parent="Background/VBoxContainer"]
@@ -152,7 +169,8 @@ margin_top = 466.0
 margin_right = 1220.0
 margin_bottom = 566.0
 rect_min_size = Vector2( 500, 100 )
-custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 9 )
 text = "Create Account"
 
 [node name="TextureButton" type="TextureButton" parent="Background/VBoxContainer"]
