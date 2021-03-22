@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Characters/tesla-icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/tesla.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/character3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/character4.gd" type="Script" id=3]
 
@@ -10,6 +10,10 @@ script = ExtResource( 3 )
 [node name="character image" parent="HBoxContainer/CanvasLayer" index="0"]
 texture = ExtResource( 1 )
 
+[node name="VBoxContainer" parent="." index="3"]
+margin_top = 100.0
+margin_bottom = 406.0
+
 [node name="character name" parent="VBoxContainer" index="0"]
 text = "Nikola Tesla"
 
@@ -17,7 +21,7 @@ text = "Nikola Tesla"
 text = "Serbian-American Inventor"
 
 [node name="about" parent="VBoxContainer" index="2"]
-margin_bottom = 186.0
+margin_bottom = 306.0
 text = "- Born on July 10, 1856, in Smiljan, Austra Empire (now Croatia)
 - Widely recognised as one of the most influential scientists of all time
 - Discovered and patented rotating magnetic field, the basis of most alternating-current dynamos, transformers and motors
@@ -26,17 +30,19 @@ text = "- Born on July 10, 1856, in Smiljan, Austra Empire (now Croatia)
  - Work on carbon button lamp, power of electrical resonance and various types of lighting
 "
 
-[node name="reference" parent="." index="3"]
-margin_top = 354.676
-margin_bottom = 373.676
+[node name="reference" parent="." index="4"]
+margin_top = 467.676
+margin_bottom = 487.676
 text = "Read More at https://www.britannica.com/biography/Nikola-Tesla"
 
-[node name="select" parent="." index="4"]
-margin_left = 509.811
-margin_top = 422.92
-margin_right = 619.811
-margin_bottom = 485.92
+[node name="select" parent="." index="5"]
+margin_left = 301.397
+margin_top = 395.356
+margin_right = 411.397
+margin_bottom = 458.356
 
-[node name="back" parent="." index="5"]
-margin_top = 422.92
-margin_bottom = 485.92
+[node name="back" parent="." index="6"]
+margin_left = 592.059
+margin_top = 396.028
+margin_right = 705.059
+margin_bottom = 459.028

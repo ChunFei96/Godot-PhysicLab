@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Characters/newton-icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/newton.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/character1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/character3.gd" type="Script" id=3]
 
@@ -17,7 +17,7 @@ text = "Isaac Newton"
 text = "English Physicist & Mathematician"
 
 [node name="about" parent="VBoxContainer" index="2"]
-margin_bottom = 152.0
+margin_bottom = 237.0
 text = "- Born on January 4, 1643, in Lincolnshire, England
 - Widely recognised as one of the most influential scientists of all time
 - A key figure in the scientific revolution
@@ -26,5 +26,5 @@ text = "- Born on January 4, 1643, in Lincolnshire, England
 "
 autowrap = true
 
-[node name="reference" parent="." index="3"]
+[node name="reference" parent="." index="4"]
 text = "Read More at https://www.britannica.com/biography/Isaac-Newton"

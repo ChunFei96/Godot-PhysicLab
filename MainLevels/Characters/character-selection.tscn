@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Assets/Characters/newton-icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/galilei-hover.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/logo-icon.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Characters/tesla-icon.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Characters/galilei-icon.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Characters/einstein-icon.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/tesla-hover.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/UI/newton-hover.png" type="Texture" id=5]
 [ext_resource path="res://MainLevels/Characters/character-selection.gd" type="Script" id=6]
+[ext_resource path="res://Assets/UI/AdobeStock_254419949.jpeg" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/galilei.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/einstein.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/newton.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/einstein-hover.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/tesla.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 4 )
 
 [node name="character-selection" type="Control"]
 anchor_right = 1.0
@@ -18,16 +28,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AdobeStock_254419949" type="Sprite" parent="."]
+position = Vector2( 512.059, 293.926 )
+scale = Vector2( 0.207177, 0.207177 )
+texture = ExtResource( 7 )
+
 [node name="selection-intro" type="Node" parent="."]
 
+[node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
+margin_left = 38.0
+margin_top = 80.0
+margin_right = 989.0
+margin_bottom = 126.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo" type="TextureRect" parent="selection-intro/pagetitle"]
+visible = false
+margin_right = 951.0
+margin_bottom = 86.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="selection-intro/pagetitle"]
+margin_right = 951.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 1 )
+text = "Game Character Selection"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="selection-intro"]
+visible = false
+margin_left = 282.966
+margin_top = 340.398
+margin_right = 761.966
+margin_bottom = 633.398
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="tesla" type="TextureButton" parent="selection-intro"]
-margin_left = 273.629
-margin_top = 321.058
-margin_right = 337.629
-margin_bottom = 614.058
-texture_normal = ExtResource( 3 )
+anchor_top = 0.00171122
+anchor_bottom = 0.00171122
+margin_left = 326.899
+margin_top = 169.535
+margin_right = 499.899
+margin_bottom = 406.535
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label4" type="Label" parent="selection-intro/tesla"]
+visible = false
 margin_left = 7.0
 margin_top = 99.0
 margin_right = 56.0
@@ -39,52 +99,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
-margin_left = 38.0
-margin_top = 16.0
-margin_right = 989.0
-margin_bottom = 128.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="logo" type="TextureRect" parent="selection-intro/pagetitle"]
-margin_right = 951.0
-margin_bottom = 86.0
-texture = ExtResource( 2 )
-stretch_mode = 4
-
-[node name="Label" type="Label" parent="selection-intro/pagetitle"]
-margin_top = 90.0
-margin_right = 951.0
-margin_bottom = 104.0
-text = "Game Character Selection"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="selection-intro"]
-margin_left = 282.966
-margin_top = 340.398
-margin_right = 761.966
-margin_bottom = 633.398
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="einstein" type="TextureButton" parent="selection-intro"]
-margin_left = 570.402
-margin_top = 351.736
-margin_right = 634.402
-margin_bottom = 644.735
-toggle_mode = true
-pressed = true
+margin_left = 511.998
+margin_top = 172.497
+margin_right = 684.998
+margin_bottom = 409.497
 action_mode = 0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="selection-intro/einstein"]
+visible = false
 margin_left = 0.5
 margin_top = 99.5
 margin_right = 63.5
@@ -97,16 +126,23 @@ __meta__ = {
 }
 
 [node name="galilei" type="TextureButton" parent="selection-intro"]
-margin_left = 278.964
-margin_top = 155.665
-margin_right = 342.964
-margin_bottom = 448.665
-texture_normal = ExtResource( 4 )
+anchor_top = 0.00171122
+anchor_bottom = 0.00171122
+margin_left = 142.547
+margin_top = 167.825
+margin_right = 315.547
+margin_bottom = 404.825
+rect_pivot_offset = Vector2( 113.934, 185.962 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="Label2" type="Label" parent="selection-intro/galilei"]
+visible = false
 margin_left = 4.0
 margin_top = 99.0
 margin_right = 67.0
@@ -119,16 +155,19 @@ __meta__ = {
 }
 
 [node name="newton" type="TextureButton" parent="selection-intro"]
-margin_left = 601.0
-margin_top = 148.0
-margin_right = 767.0
-margin_bottom = 294.0
-texture_normal = ExtResource( 1 )
+margin_left = 697.915
+margin_top = 171.599
+margin_right = 870.915
+margin_bottom = 408.599
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label3" type="Label" parent="selection-intro/newton"]
+visible = false
 margin_left = 2.5
 margin_top = 98.5
 margin_right = 65.5
