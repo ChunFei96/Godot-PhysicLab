@@ -1,82 +1,80 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Characters/logo-icon.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Characters/pq.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Characters/light.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/wood bg 3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/unitofmeasure.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/UI/light.png" type="Texture" id=5]
 [ext_resource path="res://MainLevels/GameWorld/topic-selection.gd" type="Script" id=6]
+[ext_resource path="res://Assets/UI/leaderboard btn-pressed.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/profile btn pressed.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/profile btn.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/leaderboard btn.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/profile btn hover.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/wooden fill.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/leaderboard btn-hover.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 335, 335 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 335, 335 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 335, 335 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 334, 334 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 334, 334 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 334, 334 )
 
 [node name="topic-selection" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 1.0
-margin_right = -2.0
+anchor_right = 1.92
+anchor_bottom = 1.08
+margin_right = -1766.4
+margin_bottom = -86.4
 rect_pivot_offset = Vector2( 511.352, 176.836 )
+focus_mode = 2
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="blackboard 2" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 0.992854, 0.819375 )
+texture = ExtResource( 2 )
+
 [node name="selection-intro" type="Node" parent="."]
 
-[node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
-margin_left = 38.0
-margin_top = 16.0
-margin_right = 989.0
-margin_bottom = 128.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="logo" type="TextureRect" parent="selection-intro/pagetitle"]
-margin_right = 951.0
-margin_bottom = 86.0
-texture = ExtResource( 1 )
-stretch_mode = 4
-
-[node name="Label" type="Label" parent="selection-intro/pagetitle"]
-margin_top = 90.0
-margin_right = 951.0
-margin_bottom = 104.0
-text = "Game World Selection"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="selection-intro"]
-margin_left = 137.243
-margin_top = 169.586
-margin_right = 971.243
-margin_bottom = 593.586
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton" type="TextureButton" parent="selection-intro/HBoxContainer"]
-margin_right = 282.0
-margin_bottom = 424.0
-texture_normal = ExtResource( 4 )
-
-[node name="Label" type="Label" parent="selection-intro/HBoxContainer/TextureButton"]
-margin_left = -14.7555
-margin_top = 247.905
-margin_right = 289.245
-margin_bottom = 284.905
-text = "Units of Measurements and Physical Quantities"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton4" type="TextureButton" parent="selection-intro/HBoxContainer"]
-margin_left = 286.0
-margin_right = 575.0
-margin_bottom = 424.0
+[node name="TextureButton4" type="TextureButton" parent="selection-intro"]
+margin_left = 149.554
+margin_top = 243.878
+margin_right = 1087.55
+margin_bottom = 841.878
 texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="selection-intro/HBoxContainer/TextureButton4"]
+[node name="Label" type="Label" parent="selection-intro/TextureButton4"]
+visible = false
 margin_left = 117.986
 margin_top = 242.614
 margin_right = 202.986
@@ -88,28 +86,90 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureButton" type="TextureButton" parent="selection-intro"]
+margin_left = 940.038
+margin_top = 251.236
+margin_right = 1878.04
+margin_bottom = 849.236
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="selection-intro/TextureButton"]
+visible = false
+margin_left = -14.7555
+margin_top = 247.905
+margin_right = 289.245
+margin_bottom = 284.905
+text = "Units of Measurements and Physical Quantities"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wooden fill" type="Sprite" parent="selection-intro/TextureButton"]
+position = Vector2( 20.2858, -128.463 )
+scale = Vector2( 0.525328, 0.525328 )
+texture = ExtResource( 12 )
+
+[node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
+margin_left = 490.0
+margin_top = 90.0
+margin_right = 1441.0
+margin_bottom = 202.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo" type="TextureRect" parent="selection-intro/pagetitle"]
+visible = false
+margin_right = 951.0
+margin_bottom = 86.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="selection-intro/pagetitle"]
+margin_right = 951.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "Game World Selection"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="buttons" type="Node2D" parent="."]
+position = Vector2( -149.962, -94.8148 )
 
 [node name="Leaderboard" type="Button" parent="buttons"]
-margin_left = 657.551
-margin_top = 121.302
-margin_right = 817.551
-margin_bottom = 141.302
-text = "Leaderboard"
+margin_left = 1732.44
+margin_top = 144.079
+margin_right = 1877.44
+margin_bottom = 289.079
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Profile" type="Button" parent="buttons"]
-margin_left = 200.495
-margin_top = 119.025
-margin_right = 340.495
-margin_bottom = 139.025
-text = "Profile"
+margin_left = 305.722
+margin_top = 140.576
+margin_right = 450.722
+margin_bottom = 285.576
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="selection-intro/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="selection-intro/HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="selection-intro/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="selection-intro/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="buttons/Leaderboard" to="." method="_on_Leaderboard_pressed"]
 [connection signal="pressed" from="buttons/Profile" to="." method="_on_Profile_pressed"]

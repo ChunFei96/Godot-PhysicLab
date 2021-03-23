@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/GameOver/GameOver.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/wooden reg btn.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=1]
-size = 60
-font_data = ExtResource( 1 )
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 60
-font_data = ExtResource( 1 )
+[sub_resource type="DynamicFont" id=6]
+size = 70
+font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Fade"
@@ -63,6 +64,10 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 1217, 432 )
+
 [node name="GameOverLayer" type="Control"]
 script = ExtResource( 2 )
 __meta__ = {
@@ -83,11 +88,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -246.0
-margin_top = -180.5
-margin_right = 246.0
-margin_bottom = 44.5
-custom_fonts/normal_font = SubResource( 1 )
+margin_left = -254.308
+margin_top = -279.107
+margin_right = 341.692
+margin_bottom = -54.1073
+custom_fonts/normal_font = SubResource( 5 )
 text = "  
   Your Score"
 __meta__ = {
@@ -95,11 +100,11 @@ __meta__ = {
 }
 
 [node name="PlayerScore" type="RichTextLabel" parent="ColorRect"]
-margin_left = 454.266
-margin_top = 287.49
-margin_right = 766.266
-margin_bottom = 366.49
-custom_fonts/normal_font = SubResource( 2 )
+margin_left = 451.892
+margin_top = 283.93
+margin_right = 763.892
+margin_bottom = 362.93
+custom_fonts/normal_font = SubResource( 6 )
 text = "360"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -109,10 +114,11 @@ __meta__ = {
 anims/Fade = SubResource( 3 )
 
 [node name="Back" type="Button" parent="."]
-margin_left = 410.821
-margin_top = 381.637
-margin_right = 610.821
-margin_bottom = 431.637
+margin_left = 423.877
+margin_top = 389.352
+margin_right = 623.877
+margin_bottom = 439.352
+custom_styles/normal = SubResource( 4 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Physics Lab"
-run/main_scene="res://MainLevels/Light/Cat/Cat.tscn"
+run/main_scene="res://Login/LoginScene.tscn"
 
 [autoload]
 
@@ -28,6 +28,8 @@ SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input_devices]
 

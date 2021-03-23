@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Timer/timerDisplay.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 30
+size = 45
 font_data = ExtResource( 2 )
 
 [node name="timerDisplay" type="Control"]
@@ -68,6 +68,10 @@ __meta__ = {
 [node name="TimerDisplay" type="RichTextLabel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = 27.0
+margin_right = 166.0
+margin_bottom = 26.9998
 custom_fonts/normal_font = SubResource( 1 )
 text = "Timer"
 __meta__ = {

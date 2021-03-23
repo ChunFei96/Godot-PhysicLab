@@ -9,10 +9,10 @@
 [ext_resource path="res://MainLevels/Mass/Level2/Level2.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Timer/timerDisplay.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/GameOver/GameOver.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Bold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="DynamicFont" id=1]
-size = 20
+size = 50
 font_data = ExtResource( 10 )
 
 [node name="Level2" type="Control"]
@@ -72,14 +72,17 @@ margin_right = 669.51
 margin_bottom = 220.636
 
 [node name="DialogManager" parent="." instance=ExtResource( 6 )]
+margin_top = 0.664062
+margin_bottom = 40.6641
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 9 )]
+visible = false
 
 [node name="Score" type="RichTextLabel" parent="."]
-margin_left = 43.776
-margin_top = 29.184
-margin_right = 243.776
-margin_bottom = 89.184
+margin_left = 65.0312
+margin_top = 34.3594
+margin_right = 272.031
+margin_bottom = 110.359
 custom_fonts/normal_font = SubResource( 1 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
