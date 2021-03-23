@@ -1,9 +1,11 @@
 extends Control
 
+onready var ErrorNotificate = get_node("ErrorNotification")
 onready var Database =  preload("res://Scenes/API/Database.gd")
 
 var levelnumber = 2
 var topicname = "Mass"
+var set_total_time = 60
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +14,7 @@ func _ready():
 	$DialogManager/DialogBox.load_dialog($DialogManager/DialogBox.dialog)
 	
 	# init timer
-	$TimerManager.setTime(10)
+	$TimerManager.setTime(set_total_time)
 	
 	# setup signal
 	$DialogManager/DialogBox.connect("tree_exiting", self, "_on_dialogbox_tree_exiting")
@@ -28,29 +30,34 @@ func _on_dialogbox_tree_exiting():
 
 func _on_timer_tree_exiting():
 	$GameOverLayer.visible = true
-	$GameOverLayer/AnimationPlayer.play("Fade")
-	$GameOverLayer/ColorRect/PlayerScore.text = String(Global.getScore())
 	SaveScore()
+	$GameOverLayer/ColorRect/PlayerScore.text = String(Global.getScore())
+	$GameOverLayer/AnimationPlayer.play("Fade")
+	
 
 func _process(delta):
 	$Score.text = String(Global.getScore())
 	$GameOverLayer/ColorRect/PlayerScore.text = String(Global.getScore())
 	
 func SaveScore():
-	#TODO: wait for Lee method to return TotalTimeTaken, and replace the urgument below
-	SaveGameScoreRequest(str(Global.getScore()),"20")
+	var completion_time = $TimerManager.timeUsed()
+	print('completion_time: ' + str(completion_time))
+	SaveGameScoreRequest(str(Global.getScore()),str(completion_time))
 	pass
 	
 func SaveGameScoreRequest(score:String = "",timecompleted:String = ""):
 	var headers = ["Content-Type: application/json"]
 	$HTTPRequest.connect("request_completed",self,"SaveGameScoreResponse")
 	
-	var topic = Database.new().Topic
-	var game = topic.new(null)
-
-	var query = game.setSaveGameScoreQuery(Global.getUsername(),topicname,levelnumber,score,timecompleted)  
-	var url = game.setSaveGameScoreURL()
-	$HTTPRequest.request(url,headers,false,HTTPClient.METHOD_POST,query)
+	if Global.getUsername() == null:
+		ErrorNotificate.text = "Username is null"
+		pass
+	else:
+		var topic = Database.new().Topic
+		var game = topic.new(null)
+		var query = game.setSaveGameScoreQuery(Global.getUsername(),topicname,levelnumber,score,timecompleted)  
+		var url = game.setSaveGameScoreURL()
+		$HTTPRequest.request(url,headers,false,HTTPClient.METHOD_POST,query)
 	
 # Has return value
 func SaveGameScoreResponse(result, response_code, headers, body):
@@ -58,10 +65,9 @@ func SaveGameScoreResponse(result, response_code, headers, body):
 		if response_code == 200:
 			pass
 		else:
-			print('HTTP Post error')
-			return null
+			ErrorNotificate.text = "HTTP Post error"
 	else:
-		return null
+		ErrorNotificate.text = "HTTP Post error"
 
 
 #func _on_HTTPRequest_request_completed(result, response_code, headers, body):

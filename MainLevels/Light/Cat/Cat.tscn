@@ -61,26 +61,31 @@ color = Color( 0.290196, 0.290196, 0.290196, 1 )
 [node name="Cat" parent="." groups=[
 "Cats",
 ] instance=ExtResource( 4 )]
+frame = 0
 
 [node name="Cat2" parent="." groups=[
 "Cats",
 ] instance=ExtResource( 4 )]
 position = Vector2( 288.06, 482 )
+frame = 0
 
 [node name="Cat3" parent="." groups=[
 "Cats",
 ] instance=ExtResource( 4 )]
 position = Vector2( 955.06, 537 )
+frame = 0
 
 [node name="Cat4" parent="." groups=[
 "Cats",
 ] instance=ExtResource( 4 )]
 position = Vector2( 19.06, 169 )
+frame = 0
 
 [node name="Cat5" parent="." groups=[
 "Cats",
 ] instance=ExtResource( 4 )]
 position = Vector2( 268.06, 44 )
+frame = 0
 
 [node name="Back" type="Button" parent="."]
 margin_left = 762.0
@@ -106,4 +111,14 @@ __meta__ = {
 position = Vector2( 54.3136, 14.9831 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 9 )
+
+[node name="ErrorNotificate" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="Back" to="Lamp" method="_on_Back_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

@@ -9,7 +9,8 @@ var active = false
 func _process(delta):
 
 	if s == 0:
-		timePause()
+		#timePause()
+		queue_free()
 	$TimerDisplay.set_text( str(s) + " Seconds")
 
 func setTime(time):

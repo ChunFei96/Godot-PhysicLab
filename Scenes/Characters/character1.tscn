@@ -110,8 +110,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[node name="HttpPost" type="HTTPRequest" parent="."]
+
+[node name="ErrorNotification" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="reference" to="." method="_on_reference_pressed"]
 [connection signal="pressed" from="select" to="." method="_on_select_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="request_completed" from="HttpPost" to="." method="_on_HttpPost_request_completed"]

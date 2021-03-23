@@ -12,39 +12,39 @@
 [ext_resource path="res://Assets/Light/Quiz/sfx/Right-answer-ding-ding-sound-effect.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Light/Quiz/sfx/Wrong Clakson Sound Effect.wav" type="AudioStream" id=11]
 
-[sub_resource type="DynamicFontData" id=14]
+[sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=2]
 size = 20
-font_data = SubResource( 14 )
+font_data = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 20
 font_data = ExtResource( 9 )
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=4]
 colors = PoolColorArray( 0.927734, 0.394715, 0.0905991, 1, 0.908203, 0.0248337, 0.0248337, 1 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=6]
 min_value = -200.0
 max_value = 400.0
 _data = [ Vector2( 0, 400 ), 0.0, 17450.4, 0, 0, Vector2( 0.113122, 83.6364 ), -1937.34, -1937.34, 0, 0, Vector2( 1, -90.9091 ), 137.767, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
-
-[sub_resource type="Curve" id=6]
-max_value = 2.5
-_data = [ Vector2( 0.00226244, 2.46591 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.738636 ), 0.0, 0.0, 0, 0 ]
-
 [sub_resource type="CurveTexture" id=7]
 curve = SubResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=8]
+[sub_resource type="Curve" id=8]
+max_value = 2.5
+_data = [ Vector2( 0.00226244, 2.46591 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.738636 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=10]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -56,26 +56,26 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 100.0
 linear_accel_random = 0.2
-linear_accel_curve = SubResource( 5 )
+linear_accel_curve = SubResource( 7 )
 scale = 2.0
 scale_random = 1.0
-scale_curve = SubResource( 7 )
-color_ramp = SubResource( 3 )
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 5 )
 
-[sub_resource type="Gradient" id=9]
+[sub_resource type="Gradient" id=11]
 colors = PoolColorArray( 0.599792, 0.96875, 0.0605469, 1, 0.279819, 0.574219, 0.0358887, 1 )
 
-[sub_resource type="GradientTexture" id=10]
-gradient = SubResource( 9 )
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
 
-[sub_resource type="Curve" id=12]
+[sub_resource type="Curve" id=13]
 max_value = 2.5
 _data = [ Vector2( 0.00226244, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.659091 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=13]
-curve = SubResource( 12 )
+[sub_resource type="CurveTexture" id=14]
+curve = SubResource( 13 )
 
-[sub_resource type="ParticlesMaterial" id=11]
+[sub_resource type="ParticlesMaterial" id=15]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -89,8 +89,8 @@ linear_accel = 100.0
 linear_accel_random = 0.2
 scale = 2.0
 scale_random = 1.0
-scale_curve = SubResource( 13 )
-color_ramp = SubResource( 10 )
+scale_curve = SubResource( 14 )
+color_ramp = SubResource( 12 )
 
 [node name="mainNode" type="Control"]
 script = ExtResource( 1 )
@@ -115,7 +115,7 @@ __meta__ = {
 [node name="questionText" type="Label" parent="."]
 margin_right = 1022.0
 margin_bottom = 110.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 2 )
 text = "Question"
 align = 1
 valign = 1
@@ -173,7 +173,7 @@ margin_left = 55.4992
 margin_top = 82.4079
 margin_right = 255.499
 margin_bottom = 142.408
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -193,7 +193,7 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
 randomness = 0.5
-process_material = SubResource( 8 )
+process_material = SubResource( 10 )
 
 [node name="correct_effect" type="Particles2D" parent="."]
 position = Vector2( 786.122, 351.066 )
@@ -204,7 +204,10 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
 randomness = 0.5
-process_material = SubResource( 11 )
+process_material = SubResource( 15 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="button_up" from="buttonLayer/trueButton" to="." method="_on_trueButton_button_up"]
 [connection signal="button_up" from="buttonLayer/falseButton" to="." method="_on_falseButton_button_up"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
