@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Characters/logo-icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/blackboard 2.jpeg" type="Texture" id=2]
 [ext_resource path="res://Assets/Characters/pq.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Characters/light.png" type="Texture" id=5]
 [ext_resource path="res://MainLevels/GameWorld/topic-selection.gd" type="Script" id=6]
@@ -17,6 +18,11 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="blackboard 2" type="Sprite" parent="."]
+position = Vector2( 483.839, 308.345 )
+scale = Vector2( 0.204234, 0.204234 )
+texture = ExtResource( 2 )
 
 [node name="selection-intro" type="Node" parent="."]
 
@@ -85,10 +91,10 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="selection-intro"]
-margin_left = 446.02
-margin_top = 160.249
-margin_right = 1280.02
-margin_bottom = 584.249
+margin_left = 446.611
+margin_top = 157.294
+margin_right = 1280.61
+margin_bottom = 581.294
 __meta__ = {
 "_edit_use_anchors_": false
 }
