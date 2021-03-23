@@ -12,13 +12,10 @@ func _on_back_pressed():
 	
 #Confirm selection of character
 func _on_select_pressed():
-	pass # Replace with function body.
-	#Get variable from Global Script
-	var data = get_node("/root/Data")
-	data.characterSelection[3]=true
-	#Testing input
-	#print(data.characterSelection[3])
-	#Direct to select topic scene
+	
+	Global.setSelectedCharacter('Nikola_Tesla')
+	print('Selected Char: ' + Global.getSelectedCharacter())
+	
 	get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
 	
 #Link to browser for more details
