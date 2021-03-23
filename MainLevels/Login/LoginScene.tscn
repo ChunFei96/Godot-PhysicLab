@@ -49,19 +49,19 @@ size = 70
 extra_spacing_top = 13
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxTexture" id=13]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 1218, 433 )
-
-[sub_resource type="StyleBoxTexture" id=14]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 1218, 433 )
-
 [sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 1218, 433 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 1218, 433 )
+
+[sub_resource type="StyleBoxTexture" id=13]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 1217, 432 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=14]
 size = 70
 extra_spacing_top = 20
 font_data = ExtResource( 3 )
@@ -190,10 +190,10 @@ margin_top = 467.0
 margin_right = 753.0
 margin_bottom = 575.0
 rect_min_size = Vector2( 500, 100 )
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 14 )
-custom_styles/normal = SubResource( 11 )
-custom_fonts/font = SubResource( 12 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "Create Account"
 
 [node name="TextureButton" type="TextureButton" parent="Background/VBoxContainer"]
