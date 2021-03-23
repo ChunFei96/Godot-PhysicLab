@@ -37,7 +37,8 @@ func _on_TextureButton4_pressed():
 
 
 func _on_Leaderboard_pressed():
-	get_tree().change_scene("res://src/Mainscene.tscn")
+	#get_tree().change_scene("res://src/Mainscene.tscn")
+	get_tree().change_scene("res://Assets/Common/Leaderboard.tscn")
 	
 
 
