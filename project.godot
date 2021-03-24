@@ -20,9 +20,7 @@ run/main_scene="res://Login/LoginScene.tscn"
 
 [autoload]
 
-Data="*res://Scenes/Characters/data.gd"
-Global="*res://global.gd"
-SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+Global="*res://Global.gd"
 
 [display]
 

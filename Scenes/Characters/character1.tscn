@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Characters/logo-icon.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/wooden btn 3- hver.png" type="Texture" id=2]
@@ -43,6 +43,10 @@ region_rect = Rect2( 0, 0, 1144, 430 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 25
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 20
 font_data = ExtResource( 7 )
 
 [node name="character1-details" type="Node"]
@@ -170,8 +174,11 @@ __meta__ = {
 [node name="HttpPost" type="HTTPRequest" parent="."]
 
 [node name="ErrorNotification" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 404.727
+margin_top = 509.606
+margin_right = 444.727
+margin_bottom = 535.606
+custom_fonts/font = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

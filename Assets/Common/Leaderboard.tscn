@@ -1,11 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Common/Item.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Common/Leaderboard.gd" type="Script" id=3]
+[ext_resource path="res://Assets/UI/blackboard 4 bg.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 25
+size = 40
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -18,45 +27,54 @@ font_data = ExtResource( 1 )
 script = ExtResource( 3 )
 dropdown_path = NodePath("dropdown")
 
+[node name="blackboard 4 bg" type="Sprite" parent="."]
+position = Vector2( 959.79, 540.947 )
+scale = Vector2( 0.358969, 0.347559 )
+texture = ExtResource( 4 )
+
 [node name="dropdown" type="OptionButton" parent="."]
 anchor_left = 0.286
 anchor_top = 0.347
 anchor_right = 0.286
 anchor_bottom = 0.347
-margin_left = 316.065
-margin_top = 116.575
-margin_right = 596.065
-margin_bottom = 149.575
+margin_left = 905.822
+margin_top = 184.44
+margin_right = 1185.82
+margin_bottom = 217.44
+custom_fonts/font = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ErrorNotification" type="Label" parent="."]
-margin_left = 146.326
-margin_top = 162.502
-margin_right = 652.326
-margin_bottom = 199.502
+margin_left = 63.1674
+margin_top = 63.6675
+margin_right = 569.167
+margin_bottom = 100.667
+custom_fonts/font = SubResource( 4 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="DrpLabel" type="Label" parent="."]
-margin_left = 159.242
-margin_top = 116.471
-margin_right = 375.242
-margin_bottom = 161.471
+margin_left = 641.944
+margin_top = 178.601
+margin_right = 857.944
+margin_bottom = 229.601
 custom_fonts/font = SubResource( 1 )
 text = "Topic:"
+align = 2
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Header" type="Label" parent="."]
-margin_left = 17.3892
-margin_top = 11.0181
-margin_right = 766.389
-margin_bottom = 100.018
+margin_left = 577.515
+margin_top = 70.2806
+margin_right = 1326.51
+margin_bottom = 159.281
 custom_fonts/font = SubResource( 2 )
 text = "Leaderboard"
 align = 1
@@ -66,17 +84,16 @@ __meta__ = {
 }
 
 [node name="Item" parent="." instance=ExtResource( 2 )]
-visible = false
-margin_left = 96.0
-margin_top = 184.0
-margin_right = 726.0
-margin_bottom = 240.0
+margin_left = 667.596
+margin_top = 236.572
+margin_right = 1297.6
+margin_bottom = 292.572
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="ItemLabel" parent="." instance=ExtResource( 2 )]
-margin_left = 96.0
-margin_top = 184.0
-margin_right = 726.0
-margin_bottom = 240.0
+margin_left = 669.508
+margin_top = 236.572
+margin_right = 1357.51
+margin_bottom = 292.572
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

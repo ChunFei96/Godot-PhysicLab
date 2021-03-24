@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Font/fonts/montreal/Montreal-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -11,7 +11,7 @@ margin_left = 80.0
 margin_top = 160.0
 margin_right = 710.0
 margin_bottom = 216.0
-color = Color( 0.952941, 0.454902, 0.454902, 1 )
+color = Color( 0.952941, 0.454902, 0.454902, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

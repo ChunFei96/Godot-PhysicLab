@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blackboard2.png-bd3f58b75c8a4f1c455d8e60ed565042.stex"
+path="res://.import/profile page bg.png-5aa92bb53da31ec50c32d8286e9877e2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/blackboard2.png"
-dest_files=[ "res://.import/blackboard2.png-bd3f58b75c8a4f1c455d8e60ed565042.stex" ]
+source_file="res://Assets/UI/profile page bg.png"
+dest_files=[ "res://.import/profile page bg.png-5aa92bb53da31ec50c32d8286e9877e2.stex" ]
 
 [params]
 

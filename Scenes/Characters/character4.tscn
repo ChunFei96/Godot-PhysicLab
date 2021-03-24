@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/UI/tesla.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/character3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/character4.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 4 )
 
 [node name="character4-details" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
@@ -46,3 +51,10 @@ margin_left = 592.059
 margin_top = 396.028
 margin_right = 705.059
 margin_bottom = 459.028
+
+[node name="ErrorNotification" parent="." index="8"]
+margin_left = 376.877
+margin_top = 512.18
+margin_right = 416.877
+margin_bottom = 538.18
+custom_fonts/font = SubResource( 1 )
