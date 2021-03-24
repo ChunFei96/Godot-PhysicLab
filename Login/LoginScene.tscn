@@ -188,7 +188,12 @@ custom_fonts/font = SubResource( 10 )
 text = "Login"
 
 [node name="CreateAccount" type="Button" parent="Background/VBoxContainer"]
+<<<<<<< HEAD
 margin_top = 500.0
+=======
+visible = false
+margin_top = 467.0
+>>>>>>> final
 margin_right = 753.0
 margin_bottom = 608.0
 rect_min_size = Vector2( 500, 100 )
@@ -199,9 +204,15 @@ custom_fonts/font = SubResource( 14 )
 text = "Create Account"
 
 [node name="TextureButton" type="TextureButton" parent="Background/VBoxContainer"]
+<<<<<<< HEAD
 margin_top = 646.0
 margin_right = 753.0
 margin_bottom = 646.0
+=======
+margin_top = 467.0
+margin_right = 753.0
+margin_bottom = 467.0
+>>>>>>> final
 
 [node name="HttpPost" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="Background/VBoxContainer/Login" to="." method="_on_Login_pressed"]
