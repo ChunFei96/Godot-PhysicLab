@@ -39,17 +39,18 @@ func ValidateLoginResponse(result, response_code, headers, body):
 			
 			if isValidLogin.to_upper() == 'TRUE':
 				var SelectedCharacter = data.result[1]
-				#print('SelectedCharacter: ' + str(SelectedCharacter))
+				print('SelectedCharacter: ' + str(SelectedCharacter))
+								
 				
-				updateLoginInfo(SelectedCharacter)
 				if SelectedCharacter == '-1':
-					#print("Selected Character Page")
+					updateLoginInfo(SelectedCharacter,false)
 					get_tree().change_scene("res://MainLevels/Characters/character-selection.tscn")
-					#pass #SelectedCharacter Page
+				elif SelectedCharacter == '99':
+					updateLoginInfo(SelectedCharacter,true)
+					get_tree().change_scene("res://MainLevels/Teacher/TLanding.tscn")
 				else:
-					#print("Game Level Page")
+					updateLoginInfo(SelectedCharacter,false)
 					get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
-					#pass #Game Level Page÷
 			else:
 				ErrorNotificate.text = "Please provide a vaild email and password"
 		else:
@@ -70,8 +71,6 @@ func GetStudentProfileRequest(username:String = ""):
 
 	
 func GetStudentProfileResponse(result, response_code, headers, body):
-	print('test global.gd')
-	
 	if result == HTTPRequest.RESULT_SUCCESS:
 		if response_code == 200:
 			var r_data = body.get_string_from_utf8()
@@ -99,9 +98,12 @@ func _on_CreateAccount_pressed():
 	get_tree().change_scene("res://Scenes/Login/CreateAccount.tscn")
 	pass # Replace with function body.
 
-func updateLoginInfo(selectedChar):
+func updateLoginInfo(selectedChar,isTeacher):
 	Global.setUsername(Email)
-	Global.setSelectedCharacter(selectedChar)
+	
+	if isTeacher != true:
+		print('isTeacher: ' + str(isTeacher))
+		Global.setSelectedCharacter(selectedChar)
 	#Global.init_user()
 
 #func _on_HttpPost_request_completed(result, response_code, headers, body):

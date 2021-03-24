@@ -244,7 +244,5 @@ func addTotalNode(key,label,value):
 
 
 func _on_Back_pressed():
-	
-	#Pending: dont know why to redirect
-	get_tree().change_scene("res://MainLevels/Login/LoginScene.tscn")
-	pass # Replace with function body.
+	get_tree().change_scene("res://MainLevels/Teacher/TLanding.tscn")
+

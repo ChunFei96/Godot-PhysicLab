@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Common/TotalSummary.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Common/TopicSummary.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 60
 font_data = ExtResource( 1 )
 
@@ -23,7 +23,7 @@ margin_left = 457.74
 margin_top = 12.9093
 margin_right = 1490.74
 margin_bottom = 178.909
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "Mastery of Topic"
 align = 1
 valign = 1

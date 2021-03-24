@@ -1,0 +1,143 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://MainLevels/Teacher/TLanding.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/UI/wood bg 3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/logo-icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/unitofmeasure.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/leaderboard btn-pressed.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/light.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/wooden fill.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/leaderboard btn.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/leaderboard btn-hover.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 335, 335 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 335, 335 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 335, 335 )
+
+[node name="Tlanding" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selection-intro" type="Node" parent="."]
+
+[node name="Register" type="TextureButton" parent="selection-intro"]
+margin_left = 149.554
+margin_top = 243.878
+margin_right = 1087.55
+margin_bottom = 841.878
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="selection-intro/Register"]
+visible = false
+margin_left = 117.986
+margin_top = 242.614
+margin_right = 202.986
+margin_bottom = 279.614
+text = "Light"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mastery" type="TextureButton" parent="selection-intro"]
+margin_left = 940.038
+margin_top = 251.236
+margin_right = 1878.04
+margin_bottom = 849.236
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="selection-intro/Mastery"]
+visible = false
+margin_left = -14.7555
+margin_top = 247.905
+margin_right = 289.245
+margin_bottom = 284.905
+text = "Units of Measurements and Physical Quantities"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wooden fill" type="Sprite" parent="selection-intro/Mastery"]
+position = Vector2( 20.2858, -128.463 )
+scale = Vector2( 0.525328, 0.525328 )
+texture = ExtResource( 10 )
+
+[node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
+margin_left = 490.0
+margin_top = 90.0
+margin_right = 1441.0
+margin_bottom = 202.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo" type="TextureRect" parent="selection-intro/pagetitle"]
+visible = false
+margin_right = 951.0
+margin_bottom = 86.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="selection-intro/pagetitle"]
+margin_right = 951.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "Teacher Dashboard"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blackboard 2" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 0.992854, 0.819375 )
+texture = ExtResource( 3 )
+
+[node name="buttons" type="Node2D" parent="."]
+position = Vector2( -149.962, -94.8148 )
+
+[node name="Leaderboard" type="Button" parent="buttons"]
+margin_left = 1731.32
+margin_top = 144.079
+margin_right = 1876.32
+margin_bottom = 289.079
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="selection-intro/Register" to="." method="_on_Register_pressed"]
+[connection signal="pressed" from="selection-intro/Mastery" to="." method="_on_Mastery_pressed"]
+[connection signal="pressed" from="buttons/Leaderboard" to="." method="_on_Leaderboard_pressed"]

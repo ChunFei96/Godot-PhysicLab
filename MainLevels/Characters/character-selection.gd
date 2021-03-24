@@ -28,6 +28,6 @@ func _on_newton_pressed():
 # View Character Information - Tesla
 func _on_tesla_pressed():
 	#UpdateStudentCharacterRequest(Global.username,selectedChar)
-	UpdateStudentCharacterRequest("PlayerA",selectedChar)
-	#get_tree().change_scene("res://Scenes/Characters/character4.tscn")
+	#UpdateStudentCharacterRequest("PlayerA",selectedChar)
+	get_tree().change_scene("res://Scenes/Characters/character4.tscn")
 	

@@ -106,7 +106,8 @@ func _on_Register_pressed():
 	
 # /back to the pervious page
 func _on_Cancel_pressed():
-	get_tree().change_scene("res://Login/LoginScene.tscn")
+	#get_tree().change_scene("res://Login/LoginScene.tscn")
+	get_tree().change_scene("res://MainLevels/Teacher/TLanding.tscn")
 
 
 
