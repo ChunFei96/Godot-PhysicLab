@@ -22,7 +22,7 @@ text = "Galileo Galilei"
 text = "Italian natural philosopher, astronomer, and mathematician"
 
 [node name="about" parent="VBoxContainer" index="2"]
-margin_bottom = 237.0
+margin_bottom = 414.0
 text = "- Born on February 15, 1564, in Pisa, Italy
 - The first person to do quantitative research on dynamics
 - Made fundamental contributions to the sciences of motion, astronomy, the strength of materials, and the development of the scientific method

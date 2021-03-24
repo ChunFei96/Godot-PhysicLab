@@ -4,28 +4,28 @@
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/UI/wood bg 3.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Characters/logo-icon.png" type="Texture" id=4]
-[ext_resource path="res://Assets/UI/unitofmeasure.png" type="Texture" id=5]
-[ext_resource path="res://Assets/UI/leaderboard btn-pressed.png" type="Texture" id=6]
-[ext_resource path="res://Assets/UI/light.png" type="Texture" id=8]
-[ext_resource path="res://Assets/UI/wooden fill.png" type="Texture" id=10]
-[ext_resource path="res://Assets/UI/leaderboard btn.png" type="Texture" id=12]
-[ext_resource path="res://Assets/UI/leaderboard btn-hover.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/Mastery-hover.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/trophy-hover.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Acreation-hover.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/Acreation.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/Mastery.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/trophy.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
-size = 50
+size = 70
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 13 )
-region_rect = Rect2( 0, 0, 335, 335 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 1580, 760 )
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 335, 335 )
+region_rect = Rect2( 0, 0, 1580, 760 )
 
 [sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 12 )
-region_rect = Rect2( 0, 0, 335, 335 )
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 1580, 760 )
 
 [node name="Tlanding" type="Control"]
 margin_right = 40.0
@@ -35,16 +35,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="blackboard 2" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 0.992854, 0.819375 )
+texture = ExtResource( 3 )
+
 [node name="selection-intro" type="Node" parent="."]
 
 [node name="Register" type="TextureButton" parent="selection-intro"]
-margin_left = 149.554
-margin_top = 243.878
-margin_right = 1087.55
-margin_bottom = 841.878
+margin_left = 266.0
+margin_top = 212.0
+margin_right = 3305.0
+margin_bottom = 2151.0
+rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -63,11 +69,12 @@ __meta__ = {
 }
 
 [node name="Mastery" type="TextureButton" parent="selection-intro"]
-margin_left = 940.038
-margin_top = 251.236
-margin_right = 1878.04
-margin_bottom = 849.236
-texture_normal = ExtResource( 5 )
+margin_left = 878.986
+margin_top = 222.722
+margin_right = 3917.99
+margin_bottom = 2161.72
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 5 )
 __meta__ = {
@@ -87,11 +94,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="wooden fill" type="Sprite" parent="selection-intro/Mastery"]
-position = Vector2( 20.2858, -128.463 )
-scale = Vector2( 0.525328, 0.525328 )
-texture = ExtResource( 10 )
-
 [node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
 margin_left = 490.0
 margin_top = 90.0
@@ -110,7 +112,7 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="selection-intro/pagetitle"]
 margin_right = 951.0
-margin_bottom = 63.0
+margin_bottom = 88.0
 custom_fonts/font = SubResource( 1 )
 text = "Teacher Dashboard"
 align = 1
@@ -119,19 +121,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="blackboard 2" type="Sprite" parent="."]
-position = Vector2( 960, 540 )
-scale = Vector2( 0.992854, 0.819375 )
-texture = ExtResource( 3 )
-
 [node name="buttons" type="Node2D" parent="."]
 position = Vector2( -149.962, -94.8148 )
 
 [node name="Leaderboard" type="Button" parent="buttons"]
-margin_left = 1731.32
-margin_top = 144.079
-margin_right = 1876.32
-margin_bottom = 289.079
+margin_left = 1731.0
+margin_top = 144.0
+margin_right = 2043.0
+margin_bottom = 289.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )

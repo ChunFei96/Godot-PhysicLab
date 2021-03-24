@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Mass/Level2/Bow/Bow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Mass/Level2/Arrow/Arrow.tscn" type="PackedScene" id=2]
@@ -11,26 +11,38 @@
 [ext_resource path="res://Scenes/GameOver/GameOver.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=10]
 
+[sub_resource type="StyleBoxTexture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 10 )
+
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 10 )
 
 [node name="Level2" type="Control"]
+margin_left = 1.0
+margin_right = 1.0
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Backgroun" type="Sprite" parent="."]
-position = Vector2( 513, 389 )
-scale = Vector2( 1.024, 1.00769 )
+position = Vector2( 958.591, 731.025 )
+scale = Vector2( 1.91518, 1.88468 )
 texture = ExtResource( 3 )
 
 [node name="Target" parent="." instance=ExtResource( 4 )]
-position = Vector2( 930, 443 )
+position = Vector2( 1698.21, 829.262 )
 
 [node name="Bow" parent="." instance=ExtResource( 1 )]
-position = Vector2( 113, 481 )
+position = Vector2( 208.163, 813.962 )
 
 [node name="Arrow" parent="." groups=[
 "projectiles",
@@ -48,32 +60,40 @@ position = Vector2( -113, 103 )
 position = Vector2( -115, 132 )
 
 [node name="Back" type="Button" parent="."]
-margin_left = 883.664
-margin_top = 24.0271
-margin_right = 994.664
-margin_bottom = 44.0271
+margin_left = 1693.95
+margin_top = 43.4481
+margin_right = 1804.95
+margin_bottom = 63.4481
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Coin" parent="." instance=ExtResource( 5 )]
-position = Vector2( 286.991, 441.832 )
+position = Vector2( 506.017, 733.147 )
 
 [node name="Coin2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 499.23, 397.782 )
+position = Vector2( 927.571, 655.65 )
 
 [node name="Coin3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 711.47, 435.158 )
+position = Vector2( 1362.07, 710.289 )
 
 [node name="TimerManager" parent="." instance=ExtResource( 8 )]
-margin_left = 407.51
-margin_top = 20.6362
-margin_right = 669.51
-margin_bottom = 220.636
+margin_left = 827.219
+margin_top = 19.5573
+margin_right = 1089.22
+margin_bottom = 219.557
 
 [node name="DialogManager" parent="." instance=ExtResource( 6 )]
-margin_top = 0.664062
-margin_bottom = 40.6641
+visible = false
+margin_left = -4.0
+margin_top = -4.0
+margin_right = 42.0
+margin_bottom = 41.0
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 9 )]
 visible = false
@@ -84,6 +104,9 @@ margin_top = 34.3594
 margin_right = 272.031
 margin_bottom = 110.359
 custom_fonts/normal_font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 

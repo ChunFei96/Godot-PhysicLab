@@ -1,23 +1,55 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/UI/tesla.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/character3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/character4.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/UI/wooden btn 3- hver.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/wooden btn 3.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1144, 430 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 1144, 430 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1144, 430 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1144, 430 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 1144, 430 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 20
+size = 30
 font_data = ExtResource( 4 )
 
 [node name="character4-details" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 
+[node name="AdobeStock_254419949" parent="." index="0"]
+position = Vector2( 959.791, 540.801 )
+scale = Vector2( 0.382714, 0.359386 )
+
 [node name="character image" parent="HBoxContainer/CanvasLayer" index="0"]
+position = Vector2( 419.268, 468.343 )
+scale = Vector2( 1.50748, 1.50748 )
 texture = ExtResource( 1 )
 
 [node name="VBoxContainer" parent="." index="3"]
-margin_top = 100.0
-margin_bottom = 406.0
+margin_top = 200.0
+margin_bottom = 740.0
 
 [node name="character name" parent="VBoxContainer" index="0"]
 text = "Nikola Tesla"
@@ -26,7 +58,7 @@ text = "Nikola Tesla"
 text = "Serbian-American Inventor"
 
 [node name="about" parent="VBoxContainer" index="2"]
-margin_bottom = 306.0
+margin_bottom = 540.0
 text = "- Born on July 10, 1856, in Smiljan, Austra Empire (now Croatia)
 - Widely recognised as one of the most influential scientists of all time
 - Discovered and patented rotating magnetic field, the basis of most alternating-current dynamos, transformers and motors
@@ -36,25 +68,33 @@ text = "- Born on July 10, 1856, in Smiljan, Austra Empire (now Croatia)
 "
 
 [node name="reference" parent="." index="4"]
-margin_top = 467.676
-margin_bottom = 487.676
+margin_left = 676.036
+margin_top = 858.559
+margin_right = 1531.04
+margin_bottom = 897.559
 text = "Read More at https://www.britannica.com/biography/Nikola-Tesla"
 
 [node name="select" parent="." index="5"]
-margin_left = 301.397
-margin_top = 395.356
-margin_right = 411.397
-margin_bottom = 458.356
+margin_left = 608.236
+margin_top = 737.081
+margin_right = 768.236
+margin_bottom = 827.081
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 
 [node name="back" parent="." index="6"]
-margin_left = 592.059
-margin_top = 396.028
-margin_right = 705.059
-margin_bottom = 459.028
+margin_left = 1150.24
+margin_top = 736.96
+margin_right = 1310.24
+margin_bottom = 826.96
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 
 [node name="ErrorNotification" parent="." index="8"]
-margin_left = 376.877
-margin_top = 512.18
-margin_right = 416.877
-margin_bottom = 538.18
+margin_left = 724.0
+margin_top = 922.0
+margin_right = 764.0
+margin_bottom = 834.88
 custom_fonts/font = SubResource( 1 )

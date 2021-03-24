@@ -1,14 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/GameOver/GameOver.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/wooden reg btn.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 100
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 size = 70
 font_data = ExtResource( 4 )
 
@@ -68,6 +68,11 @@ tracks/3/keys = {
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 1217, 432 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 35
+extra_spacing_top = 9
+font_data = ExtResource( 4 )
+
 [node name="GameOverLayer" type="Control"]
 script = ExtResource( 2 )
 __meta__ = {
@@ -75,9 +80,9 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_top = -1.12247
-margin_right = 1024.0
-margin_bottom = 598.878
+margin_top = -1.0
+margin_right = 1920.0
+margin_bottom = 1079.0
 color = Color( 0, 0, 0, 0.588235 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -92,7 +97,7 @@ margin_left = -254.308
 margin_top = -279.107
 margin_right = 341.692
 margin_bottom = -54.1073
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 1 )
 text = "  
   Your Score"
 __meta__ = {
@@ -100,11 +105,11 @@ __meta__ = {
 }
 
 [node name="PlayerScore" type="RichTextLabel" parent="ColorRect"]
-margin_left = 451.892
-margin_top = 283.93
-margin_right = 763.892
-margin_bottom = 362.93
-custom_fonts/normal_font = SubResource( 6 )
+margin_left = 886.0
+margin_top = 522.0
+margin_right = 1148.0
+margin_bottom = 601.0
+custom_fonts/normal_font = SubResource( 2 )
 text = "360"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -114,11 +119,12 @@ __meta__ = {
 anims/Fade = SubResource( 3 )
 
 [node name="Back" type="Button" parent="."]
-margin_left = 423.877
-margin_top = 389.352
-margin_right = 623.877
-margin_bottom = 439.352
+margin_left = 857.535
+margin_top = 627.581
+margin_right = 1057.54
+margin_bottom = 677.581
 custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false

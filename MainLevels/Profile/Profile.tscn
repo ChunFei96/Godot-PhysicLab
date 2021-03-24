@@ -18,19 +18,19 @@ extra_spacing_char = 1
 extra_spacing_space = 6
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 1513, 628 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 40
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 30
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=6]
 size = 60
 font_data = ExtResource( 1 )
 
@@ -170,12 +170,12 @@ __meta__ = {
 }
 
 [node name="Back" type="Button" parent="."]
-margin_left = 1823.77
-margin_top = -337.757
-margin_right = 2067.77
-margin_bottom = -257.757
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+margin_left = 1812.68
+margin_top = -354.971
+margin_right = 2112.68
+margin_bottom = -255.971
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Back"
 __meta__ = {
@@ -189,7 +189,7 @@ margin_left = 1220.17
 margin_top = 166.027
 margin_right = 1730.17
 margin_bottom = 205.027
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -200,7 +200,7 @@ margin_left = 1175.27
 margin_top = -345.144
 margin_right = 1802.27
 margin_bottom = -228.144
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Player Profle"
 align = 1

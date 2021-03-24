@@ -14,24 +14,22 @@ size = 80
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 55
+size = 40
 outline_color = Color( 0.0901961, 0.0784314, 0.0784314, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 40
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 55
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=5]
 size = 40
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 3 )
+
 [sub_resource type="DynamicFont" id=6]
-size = 30
+size = 25
 font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxTexture" id=7]
@@ -136,50 +134,50 @@ rect_min_size = Vector2( 0, 50 )
 [node name="EmailTitle" type="Label" parent="Background/VBoxContainer"]
 margin_top = 54.0
 margin_right = 753.0
-margin_bottom = 124.0
+margin_bottom = 105.0
 custom_fonts/font = SubResource( 2 )
 text = "Email"
 
 [node name="Email" type="LineEdit" parent="Background/VBoxContainer"]
-margin_top = 128.0
+margin_top = 109.0
 margin_right = 753.0
-margin_bottom = 189.0
+margin_bottom = 159.0
 rect_min_size = Vector2( 0, 50 )
 custom_fonts/font = SubResource( 3 )
 
 [node name="PasswordTitle" type="Label" parent="Background/VBoxContainer"]
-margin_top = 193.0
+margin_top = 163.0
 margin_right = 753.0
-margin_bottom = 263.0
+margin_bottom = 214.0
 custom_fonts/font = SubResource( 4 )
 text = "Password"
 
 [node name="Password" type="LineEdit" parent="Background/VBoxContainer"]
-margin_top = 267.0
+margin_top = 218.0
 margin_right = 753.0
-margin_bottom = 328.0
+margin_bottom = 268.0
 rect_min_size = Vector2( 0, 50 )
 custom_fonts/font = SubResource( 5 )
 secret = true
 
 [node name="ErrorNotification" type="Label" parent="Background/VBoxContainer"]
-margin_top = 332.0
+margin_top = 272.0
 margin_right = 753.0
-margin_bottom = 371.0
+margin_bottom = 304.0
 rect_min_size = Vector2( 0, 30 )
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.501961, 0.0313726, 0.0313726, 1 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="Background/VBoxContainer"]
-margin_top = 375.0
+margin_top = 308.0
 margin_right = 753.0
-margin_bottom = 425.0
+margin_bottom = 358.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="Login" type="Button" parent="Background/VBoxContainer"]
-margin_top = 400.0
+margin_top = 362.0
 margin_right = 753.0
-margin_bottom = 501.0
+margin_bottom = 463.0
 rect_min_size = Vector2( 500, 100 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
@@ -188,14 +186,10 @@ custom_fonts/font = SubResource( 10 )
 text = "Login"
 
 [node name="CreateAccount" type="Button" parent="Background/VBoxContainer"]
-<<<<<<< HEAD
-margin_top = 500.0
-=======
 visible = false
 margin_top = 467.0
->>>>>>> final
 margin_right = 753.0
-margin_bottom = 608.0
+margin_bottom = 575.0
 rect_min_size = Vector2( 500, 100 )
 custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 12 )
@@ -204,15 +198,9 @@ custom_fonts/font = SubResource( 14 )
 text = "Create Account"
 
 [node name="TextureButton" type="TextureButton" parent="Background/VBoxContainer"]
-<<<<<<< HEAD
-margin_top = 646.0
-margin_right = 753.0
-margin_bottom = 646.0
-=======
 margin_top = 467.0
 margin_right = 753.0
 margin_bottom = 467.0
->>>>>>> final
 
 [node name="HttpPost" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="Background/VBoxContainer/Login" to="." method="_on_Login_pressed"]

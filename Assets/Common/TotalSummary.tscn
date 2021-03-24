@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Font/fonts/droid-sans/DroidSans-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
 size = 34
@@ -23,7 +23,7 @@ margin_top = -7.76132
 margin_right = 618.935
 margin_bottom = 114.239
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.0431373, 0.0117647, 0.0117647, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Value"
 align = 1
 valign = 1
@@ -37,7 +37,7 @@ margin_top = 18.4086
 margin_right = 376.428
 margin_bottom = 83.4086
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.0431373, 0.0117647, 0.0117647, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Text"
 align = 1
 valign = 1

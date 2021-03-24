@@ -14,7 +14,7 @@
 [ext_resource path="res://Assets/UI/tesla.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
-size = 30
+size = 60
 font_data = ExtResource( 4 )
 
 [node name="character-selection" type="Control"]
@@ -29,17 +29,17 @@ __meta__ = {
 }
 
 [node name="AdobeStock_254419949" type="Sprite" parent="."]
-position = Vector2( 515.329, 302.646 )
-scale = Vector2( 0.205869, 0.201364 )
+position = Vector2( 959.639, 539.667 )
+scale = Vector2( 0.383913, 0.359911 )
 texture = ExtResource( 7 )
 
 [node name="selection-intro" type="Node" parent="."]
 
 [node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
-margin_left = 38.0
-margin_top = 80.0
-margin_right = 989.0
-margin_bottom = 126.0
+margin_left = 500.0
+margin_top = 180.0
+margin_right = 1451.0
+margin_bottom = 256.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -53,7 +53,7 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="selection-intro/pagetitle"]
 margin_right = 951.0
-margin_bottom = 39.0
+margin_bottom = 76.0
 custom_fonts/font = SubResource( 1 )
 text = "Game Character Selection"
 align = 1
@@ -75,10 +75,11 @@ __meta__ = {
 [node name="tesla" type="TextureButton" parent="selection-intro"]
 anchor_top = 0.00171122
 anchor_bottom = 0.00171122
-margin_left = 326.899
-margin_top = 169.535
-margin_right = 499.899
-margin_bottom = 406.535
+margin_left = 645.0
+margin_top = 298.152
+margin_right = 818.0
+margin_bottom = 535.152
+rect_scale = Vector2( 1.8, 1.8 )
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -100,10 +101,11 @@ __meta__ = {
 }
 
 [node name="einstein" type="TextureButton" parent="selection-intro"]
-margin_left = 511.998
-margin_top = 172.497
-margin_right = 684.998
-margin_bottom = 409.497
+margin_left = 980.0
+margin_top = 300.0
+margin_right = 1153.0
+margin_bottom = 537.0
+rect_scale = Vector2( 1.8, 1.8 )
 action_mode = 0
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 11 )
@@ -128,10 +130,11 @@ __meta__ = {
 [node name="galilei" type="TextureButton" parent="selection-intro"]
 anchor_top = 0.00171122
 anchor_bottom = 0.00171122
-margin_left = 142.547
-margin_top = 167.825
-margin_right = 315.547
-margin_bottom = 404.825
+margin_left = 394.019
+margin_top = 443.152
+margin_right = 567.019
+margin_bottom = 680.152
+rect_scale = Vector2( 1.8, 1.8 )
 rect_pivot_offset = Vector2( 113.934, 185.962 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 1 )
@@ -155,10 +158,11 @@ __meta__ = {
 }
 
 [node name="newton" type="TextureButton" parent="selection-intro"]
-margin_left = 697.915
-margin_top = 171.599
-margin_right = 870.915
-margin_bottom = 408.599
+margin_left = 1310.0
+margin_top = 300.0
+margin_right = 1483.0
+margin_bottom = 537.0
+rect_scale = Vector2( 1.8, 1.8 )
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 5 )

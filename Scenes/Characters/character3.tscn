@@ -22,7 +22,7 @@ text = "Isaac Newton"
 text = "English Physicist & Mathematician"
 
 [node name="about" parent="VBoxContainer" index="2"]
-margin_bottom = 237.0
+margin_bottom = 414.0
 text = "- Born on January 4, 1643, in Lincolnshire, England
 - Widely recognised as one of the most influential scientists of all time
 - A key figure in the scientific revolution
