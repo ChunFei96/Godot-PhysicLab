@@ -56,6 +56,8 @@ func UpdateStudentCharacterResponse(result, response_code, headers, body):
 				
 				#isUpdateOK = false #test
 				if isUpdateOK == true:
+					ErrorNotificate.text = "Character selected successfully!"
+					yield(get_tree().create_timer(5.0), "timeout")
 					get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
 				else:
 					ErrorNotificate.text = "Invalid character selection"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://MainLevels/Teacher/TLanding.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=2]
@@ -11,21 +11,31 @@
 [ext_resource path="res://Assets/UI/Mastery.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/trophy.png" type="Texture" id=11]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=12]
 size = 70
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=13]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 1580, 760 )
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=14]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 1580, 760 )
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 1580, 760 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=9]
+
+[sub_resource type="StyleBoxTexture" id=10]
+
+[sub_resource type="DynamicFont" id=11]
+size = 40
+font_data = ExtResource( 2 )
 
 [node name="Tlanding" type="Control"]
 margin_right = 40.0
@@ -113,7 +123,7 @@ stretch_mode = 4
 [node name="Label" type="Label" parent="selection-intro/pagetitle"]
 margin_right = 951.0
 margin_bottom = 88.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 12 )
 text = "Teacher Dashboard"
 align = 1
 valign = 1
@@ -129,12 +139,27 @@ margin_left = 1731.0
 margin_top = 144.0
 margin_right = 2043.0
 margin_bottom = 289.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SignOut" type="Button" parent="."]
+margin_left = 1393.04
+margin_top = 92.8159
+margin_right = 1551.04
+margin_bottom = 168.816
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+text = "SignOut"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="selection-intro/Register" to="." method="_on_Register_pressed"]
 [connection signal="pressed" from="selection-intro/Mastery" to="." method="_on_Mastery_pressed"]
 [connection signal="pressed" from="buttons/Leaderboard" to="." method="_on_Leaderboard_pressed"]
+[connection signal="pressed" from="SignOut" to="." method="_on_SignOut_pressed"]

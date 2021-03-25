@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Physics Lab"
-run/main_scene="res://Login/LoginScene.tscn"
+run/main_scene="res://Scenes/Login/LoginRegister.tscn"
 
 [autoload]
 

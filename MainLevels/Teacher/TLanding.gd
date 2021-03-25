@@ -27,3 +27,7 @@ func _on_Mastery_pressed():
 
 func _on_Leaderboard_pressed() -> void:
 	get_tree().change_scene("res://Assets/Common/Leaderboard.tscn")
+
+
+func _on_SignOut_pressed() -> void:
+	get_tree().change_scene("res://Scenes/Login/LoginRegister.tscn")

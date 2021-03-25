@@ -22,7 +22,7 @@ func _on_select_pressed():
 	if Global.getUsername() == null:
 		ErrorNotificate.text = "Username is null"
 		pass
-	else:
+	else:		
 		UpdateStudentCharacterRequest(Global.getUsername(),Global.getSelectedCharacter())
 		print('Selected Char: ' + Global.getSelectedCharacter())
 	
@@ -55,6 +55,8 @@ func UpdateStudentCharacterResponse(result, response_code, headers, body):
 				
 				#isUpdateOK = false #test
 				if isUpdateOK == true:
+					ErrorNotificate.text = "Character selected successfully!"
+					yield(get_tree().create_timer(5.0), "timeout")
 					get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
 				else:
 					ErrorNotificate.text = "Invalid character selection"

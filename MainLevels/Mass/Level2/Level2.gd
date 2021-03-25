@@ -5,7 +5,7 @@ onready var Database =  preload("res://Scenes/API/Database.gd")
 
 var levelnumber = 2
 var topicname = "Mass"
-var set_total_time = 8
+var set_total_time = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

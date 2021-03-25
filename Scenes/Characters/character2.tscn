@@ -34,8 +34,8 @@ autowrap = true
 text = "Read More at https://www.britannica.com/biography/Galileo-Galilei"
 
 [node name="ErrorNotification" parent="." index="8"]
-margin_left = 394.642
-margin_top = 511.623
-margin_right = 434.642
-margin_bottom = 537.623
+margin_left = 759.621
+margin_top = 189.73
+margin_right = 1246.62
+margin_bottom = 263.73
 custom_fonts/font = SubResource( 1 )

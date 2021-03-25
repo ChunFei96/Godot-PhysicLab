@@ -7,7 +7,7 @@ onready var Database =  preload("res://Scenes/API/Database.gd")
 var levelnumber = 1
 var topicname = "Light"
 var rescuedCatCount = 0;
-var set_total_time = 8
+var set_total_time = 60
 
 func _ready():
 	# init dialog 
