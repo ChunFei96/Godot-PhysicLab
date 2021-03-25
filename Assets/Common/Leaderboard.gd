@@ -55,7 +55,8 @@ func createBoardItem(index,data,y_axis):
 	time_node.text = str(data['timeCompleted'])
 	
 	#Set the "item" position
-	i.rect_position = Vector2(96,y_axis)
+	#i.rect_position = Vector2(96,y_axis)
+	i.rect_position = Vector2(670,y_axis)
 	
 	#Append new object to scene
 	add_child(i)
@@ -65,7 +66,7 @@ func createBoardItem(index,data,y_axis):
 	
 func displayBoardList(data):
 	var index = 1
-	var y_axis = 244 # 184
+	var y_axis = 307 # 184
 	resetBoardList()
 	for i in data:
 		createBoardItem(index,i,y_axis)
@@ -126,6 +127,5 @@ func GetLeaderboardByTopicResponse(result, response_code, headers, body):
 #================= End: API Methods =================
 
 
-
-func _on_Button_toggled(button_pressed):
-	get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
+func _on_Button_pressed() -> void:
+	get_tree().change_scene("res://MainLevels/Teacher/TLanding.tscn")

@@ -11,17 +11,17 @@
 [ext_resource path="res://Scenes/GameOver/GameOver.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=10]
 
+[sub_resource type="StyleBoxTexture" id=1]
+
 [sub_resource type="StyleBoxTexture" id=2]
 
 [sub_resource type="StyleBoxTexture" id=3]
 
-[sub_resource type="StyleBoxTexture" id=4]
-
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 40
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 size = 50
 font_data = ExtResource( 10 )
 
@@ -64,10 +64,10 @@ margin_left = 1693.95
 margin_top = 43.4481
 margin_right = 1804.95
 margin_bottom = 63.4481
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -89,21 +89,19 @@ margin_right = 1089.22
 margin_bottom = 219.557
 
 [node name="DialogManager" parent="." instance=ExtResource( 6 )]
-visible = false
 margin_left = -4.0
 margin_top = -4.0
 margin_right = 42.0
 margin_bottom = 41.0
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 9 )]
-visible = false
 
 [node name="Score" type="RichTextLabel" parent="."]
 margin_left = 65.0312
 margin_top = 34.3594
 margin_right = 272.031
 margin_bottom = 110.359
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
