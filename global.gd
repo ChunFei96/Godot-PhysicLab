@@ -6,6 +6,7 @@ var username
 var playerID
 var SelectedCharacter
 var points = 0
+var role = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -43,5 +44,10 @@ func setPlayerID(id):
 func init_user():
 	pass
 
+func getRole():
+	return role
 
+func setRole(r):
+	role = r
+	print('set global role: ' + r)
 

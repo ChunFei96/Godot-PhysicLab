@@ -42,10 +42,10 @@ func ValidateLoginResponse(result, response_code, headers, body):
 				print('SelectedCharacter: ' + str(SelectedCharacter))
 								
 				
-				if SelectedCharacter == '-1':
+				if SelectedCharacter == '-1':					
 					updateLoginInfo(SelectedCharacter,false)
 					get_tree().change_scene("res://MainLevels/Characters/character-selection.tscn")
-				elif SelectedCharacter == '99':
+				elif SelectedCharacter == '99':					
 					updateLoginInfo(SelectedCharacter,true)
 					get_tree().change_scene("res://MainLevels/Teacher/TLanding.tscn")
 				else:
@@ -104,6 +104,9 @@ func updateLoginInfo(selectedChar,isTeacher):
 	if isTeacher != true:
 		print('isTeacher: ' + str(isTeacher))
 		Global.setSelectedCharacter(selectedChar)
+		Global.setRole('student')
+	else:
+		Global.setRole('teacher')
 	#Global.init_user()
 
 #func _on_HttpPost_request_completed(result, response_code, headers, body):

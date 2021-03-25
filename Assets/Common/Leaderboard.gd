@@ -15,9 +15,24 @@ var selectedTopic
 func _ready():
 	dropdown.connect("item_selected",self,"on_item_selected")
 	addTopicOption()
-	
+	toggleBackBtn()
 	pass # Replace with function body.
+
+func toggleBackBtn():
+	var tBackBtn = get_node("Button")
+	var sBackBtn = get_node("Back_S")
 	
+	var role = Global.getRole()
+	print('.... ' + role)
+	
+	if role == 'student':
+		tBackBtn.hide()
+		sBackBtn.show()
+	else:
+		tBackBtn.show()
+		sBackBtn.hide()
+	pass
+
 func on_item_selected(id):
 	selectedTopic = topicList[id]
 
@@ -129,3 +144,7 @@ func GetLeaderboardByTopicResponse(result, response_code, headers, body):
 
 func _on_Button_pressed() -> void:
 	get_tree().change_scene("res://MainLevels/Teacher/TLanding.tscn")
+
+
+func _on_Back_S_pressed() -> void:
+	get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
