@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scenes/Light/Quiz/controller.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Timer/timerDisplay.tscn" type="PackedScene" id=2]
@@ -8,74 +8,111 @@
 [ext_resource path="res://Scenes/Light/Quiz/questions.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Dialogue/DialogManager.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/GameOver/GameOver.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Bold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Assets/FX/Game 2 (quiz) - One in a Million - no guitar melody.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Light/Quiz/sfx/Right-answer-ding-ding-sound-effect.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Light/Quiz/sfx/Wrong Clakson Sound Effect.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/UI/blackboard 5.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=13]
 
-[sub_resource type="DynamicFontData" id=1]
-font_path = "res://Assets/Font/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Bold.ttf"
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 20
-font_data = SubResource( 1 )
+[sub_resource type="StyleBoxTexture" id=27]
 
-[sub_resource type="DynamicFont" id=3]
-size = 20
-font_data = ExtResource( 9 )
+[sub_resource type="StyleBoxTexture" id=28]
 
-[sub_resource type="Gradient" id=4]
-colors = PoolColorArray( 0.927734, 0.394715, 0.0905991, 1, 0.908203, 0.0248337, 0.0248337, 1 )
+[sub_resource type="StyleBoxTexture" id=29]
 
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
+[sub_resource type="DynamicFont" id=30]
+size = 40
+font_data = ExtResource( 13 )
 
-[sub_resource type="Curve" id=6]
-min_value = -200.0
-max_value = 400.0
-_data = [ Vector2( 0, 400 ), 0.0, 17450.4, 0, 0, Vector2( 0.113122, 83.6364 ), -1937.34, -1937.34, 0, 0, Vector2( 1, -90.9091 ), 137.767, 0.0, 0, 0 ]
+[sub_resource type="StyleBoxTexture" id=2]
 
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 6 )
+[sub_resource type="StyleBoxTexture" id=3]
 
-[sub_resource type="Curve" id=8]
-max_value = 2.5
-_data = [ Vector2( 0.00226244, 2.46591 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.738636 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="StyleBoxTexture" id=23]
 
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 8 )
+[sub_resource type="StyleBoxTexture" id=24]
 
-[sub_resource type="ParticlesMaterial" id=10]
-emission_shape = 1
-emission_sphere_radius = 2.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
-initial_velocity_random = 0.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 100.0
-linear_accel_random = 0.2
-linear_accel_curve = SubResource( 7 )
-scale = 2.0
-scale_random = 1.0
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 5 )
+[sub_resource type="StyleBoxTexture" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+
+[sub_resource type="StyleBoxTexture" id=25]
+
+[sub_resource type="StyleBoxTexture" id=26]
+
+[sub_resource type="StyleBoxTexture" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+size = 100
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+font_data = ExtResource( 13 )
 
 [sub_resource type="Gradient" id=11]
-colors = PoolColorArray( 0.599792, 0.96875, 0.0605469, 1, 0.279819, 0.574219, 0.0358887, 1 )
+colors = PoolColorArray( 0.927734, 0.394715, 0.0905991, 1, 0.908203, 0.0248337, 0.0248337, 1 )
 
 [sub_resource type="GradientTexture" id=12]
 gradient = SubResource( 11 )
 
 [sub_resource type="Curve" id=13]
-max_value = 2.5
-_data = [ Vector2( 0.00226244, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.659091 ), 0.0, 0.0, 0, 0 ]
+min_value = -200.0
+max_value = 400.0
+_data = [ Vector2( 0, 400 ), 0.0, 17450.4, 0, 0, Vector2( 0.113122, 83.6364 ), -1937.34, -1937.34, 0, 0, Vector2( 1, -90.9091 ), 137.767, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=14]
 curve = SubResource( 13 )
 
-[sub_resource type="ParticlesMaterial" id=15]
+[sub_resource type="Curve" id=15]
+max_value = 2.5
+_data = [ Vector2( 0.00226244, 2.46591 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.738636 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=16]
+curve = SubResource( 15 )
+
+[sub_resource type="ParticlesMaterial" id=17]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 14 )
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 16 )
+color_ramp = SubResource( 12 )
+
+[sub_resource type="Gradient" id=18]
+colors = PoolColorArray( 0.599792, 0.96875, 0.0605469, 1, 0.279819, 0.574219, 0.0358887, 1 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
+
+[sub_resource type="Curve" id=20]
+max_value = 2.5
+_data = [ Vector2( 0.00226244, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.659091 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
+
+[sub_resource type="ParticlesMaterial" id=22]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -89,8 +126,8 @@ linear_accel = 100.0
 linear_accel_random = 0.2
 scale = 2.0
 scale_random = 1.0
-scale_curve = SubResource( 14 )
-color_ramp = SubResource( 12 )
+scale_curve = SubResource( 21 )
+color_ramp = SubResource( 19 )
 
 [node name="mainNode" type="Control"]
 script = ExtResource( 1 )
@@ -102,10 +139,16 @@ animatorPath = NodePath("animator")
 timerPath = NodePath("timer")
 questionHolderPath = NodePath("questionHolder")
 scoreTextPath = NodePath("Score")
-trueButtonPath = NodePath("buttonLayer/trueButton")
-falseButtonPath = NodePath("buttonLayer/falseButton")
+trueButtonPath = NodePath("trueButton")
+falseButtonPath = NodePath("falseButton")
+
+[node name="blackboard 5" type="Sprite" parent="."]
+position = Vector2( 959.873, 539.79 )
+scale = Vector2( 0.999812, 1.00005 )
+texture = ExtResource( 12 )
 
 [node name="questionBackground" type="Panel" parent="."]
+visible = false
 margin_right = 1024.0
 margin_bottom = 114.0
 __meta__ = {
@@ -113,9 +156,11 @@ __meta__ = {
 }
 
 [node name="questionText" type="Label" parent="."]
-margin_right = 1022.0
-margin_bottom = 110.0
-custom_fonts/font = SubResource( 2 )
+margin_left = 470.521
+margin_top = 130.144
+margin_right = 1492.52
+margin_bottom = 240.144
+custom_fonts/font = SubResource( 1 )
 text = "Question"
 align = 1
 valign = 1
@@ -124,27 +169,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="buttonLayer" type="CanvasLayer" parent="."]
-layer = -1
+[node name="BackButton" type="Button" parent="."]
+margin_left = 1666.95
+margin_top = 73.3188
+margin_right = 1828.95
+margin_bottom = 164.319
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
+custom_fonts/font = SubResource( 30 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="trueButton" type="Button" parent="buttonLayer"]
-margin_top = 114.0
-margin_right = 512.0
-margin_bottom = 599.0
+[node name="trueButton" type="Button" parent="."]
+margin_left = 320.0
+margin_top = 360.0
+margin_right = 830.0
+margin_bottom = 660.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 23 )
+custom_styles/disabled = SubResource( 24 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "True"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="falseButton" type="Button" parent="buttonLayer"]
-margin_left = 512.0
-margin_top = 112.0
-margin_right = 1024.0
-margin_bottom = 597.0
+[node name="falseButton" type="Button" parent="."]
+margin_left = 1187.04
+margin_top = 360.0
+margin_right = 1697.04
+margin_bottom = 660.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 25 )
+custom_styles/disabled = SubResource( 26 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "False"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="buttonLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="background" parent="." instance=ExtResource( 3 )]
 layer = -1
@@ -159,21 +231,23 @@ one_shot = true
 [node name="questionHolder" parent="." instance=ExtResource( 6 )]
 
 [node name="DialogManager" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [node name="TimerManager" parent="." instance=ExtResource( 2 )]
-margin_left = 731.581
-margin_top = 79.0166
-margin_right = 931.581
-margin_bottom = 279.017
+margin_left = 901.0
+margin_top = 41.0
+margin_right = 1101.0
+margin_bottom = 241.0
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [node name="Score" type="RichTextLabel" parent="."]
-margin_left = 55.4992
-margin_top = 82.4079
-margin_right = 255.499
-margin_bottom = 142.408
-custom_fonts/normal_font = SubResource( 3 )
+margin_left = 110.105
+margin_top = 55.1049
+margin_right = 310.105
+margin_bottom = 115.105
+custom_fonts/normal_font = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -185,29 +259,36 @@ stream = ExtResource( 10 )
 stream = ExtResource( 11 )
 
 [node name="wrong_effect" type="Particles2D" parent="."]
-position = Vector2( 256.333, 351.5 )
-scale = Vector2( 3, 3 )
+position = Vector2( 579.755, 509.206 )
+scale = Vector2( 2.5, 2 )
 emitting = false
 amount = 100
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
 randomness = 0.5
-process_material = SubResource( 10 )
+process_material = SubResource( 17 )
 
 [node name="correct_effect" type="Particles2D" parent="."]
-position = Vector2( 786.122, 351.066 )
-scale = Vector2( 3, 3 )
+position = Vector2( 1446.58, 503.384 )
+scale = Vector2( 2.5, 2 )
 emitting = false
 amount = 100
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
 randomness = 0.5
-process_material = SubResource( 15 )
+process_material = SubResource( 22 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
-[connection signal="button_up" from="buttonLayer/trueButton" to="." method="_on_trueButton_button_up"]
-[connection signal="button_up" from="buttonLayer/falseButton" to="." method="_on_falseButton_button_up"]
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -35.0
+[connection signal="tree_entered" from="." to="." method="_on_mainNode_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_mainNode_tree_exiting"]
+[connection signal="button_up" from="trueButton" to="." method="_on_trueButton_button_up"]
+[connection signal="button_up" from="falseButton" to="." method="_on_falseButton_button_up"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]

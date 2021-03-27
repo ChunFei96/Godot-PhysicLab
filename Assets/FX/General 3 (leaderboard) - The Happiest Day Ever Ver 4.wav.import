@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/General 3 (leaderboard) - The Happiest Day Ever Ver 4.wav-3f5a0501fabd4d48d460662e8592b132.sample"
+
+[deps]
+
+source_file="res://Assets/FX/General 3 (leaderboard) - The Happiest Day Ever Ver 4.wav"
+dest_files=[ "res://.import/General 3 (leaderboard) - The Happiest Day Ever Ver 4.wav-3f5a0501fabd4d48d460662e8592b132.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

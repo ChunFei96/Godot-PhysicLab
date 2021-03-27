@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://MainLevels/Teacher/TLanding.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=2]
@@ -9,31 +9,40 @@
 [ext_resource path="res://Assets/UI/Acreation-hover.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/Acreation.png" type="Texture" id=8]
 [ext_resource path="res://Assets/UI/Mastery.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/back btn.png" type="Texture" id=10]
 [ext_resource path="res://Assets/UI/trophy.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/logout-pressed.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/back btn hover.png" type="Texture" id=13]
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=1]
 size = 70
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=13]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 1580, 760 )
 
-[sub_resource type="StyleBoxTexture" id=14]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 1580, 760 )
 
-[sub_resource type="StyleBoxTexture" id=15]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 1580, 760 )
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 334, 334 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 336, 336 )
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 334, 334 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=8]
 size = 40
 font_data = ExtResource( 2 )
 
@@ -79,10 +88,10 @@ __meta__ = {
 }
 
 [node name="Mastery" type="TextureButton" parent="selection-intro"]
-margin_left = 878.986
-margin_top = 222.722
-margin_right = 3917.99
-margin_bottom = 2161.72
+margin_left = 880.068
+margin_top = 217.313
+margin_right = 3919.07
+margin_bottom = 2156.31
 rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 5 )
@@ -123,7 +132,7 @@ stretch_mode = 4
 [node name="Label" type="Label" parent="selection-intro/pagetitle"]
 margin_right = 951.0
 margin_bottom = 88.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 1 )
 text = "Teacher Dashboard"
 align = 1
 valign = 1
@@ -135,27 +144,27 @@ __meta__ = {
 position = Vector2( -149.962, -94.8148 )
 
 [node name="Leaderboard" type="Button" parent="buttons"]
-margin_left = 1731.0
-margin_top = 144.0
-margin_right = 2043.0
-margin_bottom = 289.0
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 14 )
-custom_styles/normal = SubResource( 15 )
+margin_left = 399.235
+margin_top = 140.754
+margin_right = 711.235
+margin_bottom = 285.754
+rect_scale = Vector2( 1.3, 1.3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SignOut" type="Button" parent="."]
-margin_left = 1393.04
-margin_top = 92.8159
-margin_right = 1551.04
-margin_bottom = 168.816
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 11 )
-text = "SignOut"
+margin_left = 1536.93
+margin_top = 102.553
+margin_right = 1656.93
+margin_bottom = 222.553
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

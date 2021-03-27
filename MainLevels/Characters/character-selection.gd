@@ -31,3 +31,18 @@ func _on_tesla_pressed():
 	#UpdateStudentCharacterRequest("PlayerA",selectedChar)
 	get_tree().change_scene("res://Scenes/Characters/character4.tscn")
 	
+
+
+func _on_characterselection_tree_entered():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_characterselection_tree_exiting():
+	$bgm.stop()
+	pass # Replace with function body.
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.

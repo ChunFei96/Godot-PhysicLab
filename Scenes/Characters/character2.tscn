@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 20
+size = 30
 font_data = ExtResource( 4 )
 
 [node name="character2-details" instance=ExtResource( 2 )]
@@ -39,3 +39,8 @@ margin_top = 189.73
 margin_right = 1246.62
 margin_bottom = 263.73
 custom_fonts/font = SubResource( 1 )
+
+[node name="bgm2" type="AudioStreamPlayer" parent="." index="10"]
+[connection signal="tree_entered" from="." to="." method="_on_character2details_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_character2details_tree_exiting"]
+[connection signal="finished" from="bgm2" to="." method="_on_bgm2_finished"]

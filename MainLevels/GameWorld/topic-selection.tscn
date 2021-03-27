@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Assets/Characters/logo-icon.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/wood bg 3.png" type="Texture" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Assets/UI/profile btn hover.png" type="Texture" id=11]
 [ext_resource path="res://Assets/UI/wooden fill.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/leaderboard btn-hover.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/logout-pressed.png" type="Texture" id=14]
+[ext_resource path="res://Assets/UI/back btn.png" type="Texture" id=15]
+[ext_resource path="res://Assets/UI/back btn hover.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -43,10 +46,16 @@ texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 334, 334 )
 
 [sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 334, 334 )
 
 [sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 336, 336 )
 
 [sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 334, 334 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 40
@@ -157,10 +166,10 @@ __meta__ = {
 position = Vector2( -149.962, -94.8148 )
 
 [node name="Leaderboard" type="Button" parent="buttons"]
-margin_left = 1731.32
-margin_top = 144.079
-margin_right = 1876.32
-margin_bottom = 289.079
+margin_left = 513.352
+margin_top = 141.921
+margin_right = 658.352
+margin_bottom = 286.921
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
@@ -181,20 +190,24 @@ __meta__ = {
 }
 
 [node name="SignOut" type="Button" parent="."]
-margin_left = 1393.04
-margin_top = 92.8159
-margin_right = 1551.04
-margin_bottom = 168.816
+margin_left = 1615.31
+margin_top = 54.1631
+margin_right = 1760.31
+margin_bottom = 199.163
 custom_styles/hover = SubResource( 8 )
 custom_styles/pressed = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
 custom_fonts/font = SubResource( 11 )
-text = "SignOut"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+[connection signal="tree_entered" from="." to="." method="_on_topicselection_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_topicselection_tree_exiting"]
 [connection signal="pressed" from="selection-intro/TextureButton4" to="." method="_on_TextureButton4_pressed"]
 [connection signal="pressed" from="selection-intro/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="buttons/Leaderboard" to="." method="_on_Leaderboard_pressed"]
 [connection signal="pressed" from="buttons/Profile" to="." method="_on_Profile_pressed"]
 [connection signal="pressed" from="SignOut" to="." method="_on_SignOut_pressed"]
+[connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]

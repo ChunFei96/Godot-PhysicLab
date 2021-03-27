@@ -68,3 +68,19 @@ func UpdateStudentCharacterResponse(result, response_code, headers, body):
 	else:
 		ErrorNotificate.text = "HTTP Post error"
 
+
+
+
+func _on_character2details_tree_exiting():
+	$bgm2.stop()
+	pass # Replace with function body.
+
+
+func _on_character2details_tree_entered():
+	$bgm2.play()
+	pass # Replace with function body.
+
+
+func _on_bgm2_finished():
+	$bgm.play()
+	pass # Replace with function body.

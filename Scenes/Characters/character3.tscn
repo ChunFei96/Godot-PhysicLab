@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 20
+size = 30
 font_data = ExtResource( 4 )
 
 [node name="character3-details" instance=ExtResource( 2 )]
@@ -37,8 +37,13 @@ text = "Read More at https://www.britannica.com/biography/Isaac-Newton"
 [node name="ErrorNotification" parent="." index="8"]
 anchor_right = 0.075
 anchor_bottom = 0.114
-margin_left = 395.987
-margin_top = 512.295
-margin_right = 291.987
-margin_bottom = 415.175
+margin_left = 761.29
+margin_top = 208.495
+margin_right = 1002.29
+margin_bottom = 121.375
 custom_fonts/font = SubResource( 1 )
+
+[node name="bgm3" type="AudioStreamPlayer" parent="." index="10"]
+[connection signal="tree_entered" from="." to="." method="_on_character3details_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_character3details_tree_exiting"]
+[connection signal="finished" from="bgm3" to="." method="_on_bgm3_finished"]

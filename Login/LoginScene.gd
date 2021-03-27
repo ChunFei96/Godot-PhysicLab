@@ -93,9 +93,11 @@ func _on_Login_pressed():
 	Email = email_input.text
 	Password = userpassword_input.text
 	ValidateLoginRequest(Email,Password)
+	$bgm.stop()
 			
 func _on_CreateAccount_pressed():
 	get_tree().change_scene("res://Scenes/Login/CreateAccount.tscn")
+	$bgm.stop()
 	pass # Replace with function body.
 
 func updateLoginInfo(selectedChar,isTeacher):
@@ -112,3 +114,8 @@ func updateLoginInfo(selectedChar,isTeacher):
 #func _on_HttpPost_request_completed(result, response_code, headers, body):
 #	print('hi')
 #	pass # Replace with function body.
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.

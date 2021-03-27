@@ -25,3 +25,18 @@ func _on_Profile_pressed():
 
 func _on_SignOut_pressed() -> void:
 	get_tree().change_scene("res://Scenes/Login/LoginRegister.tscn")
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_topicselection_tree_entered():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_topicselection_tree_exiting():
+	$bgm.play()
+	pass # Replace with function body.

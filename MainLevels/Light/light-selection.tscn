@@ -1,25 +1,38 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Characters/logo-icon.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/wood bg 3.png" type="Texture" id=2]
-[ext_resource path="res://Assets/UI/unitofmeasure.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/Acreation-hover.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/UI/light.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/findcat-hover.png" type="Texture" id=5]
 [ext_resource path="res://MainLevels/Light/light-selection.gd" type="Script" id=6]
+[ext_resource path="res://Assets/UI/Acreation.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/wooden reg btn.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/wooden reg btn-hover.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/findcat.png" type="Texture" id=10]
 [ext_resource path="res://Assets/UI/wooden fill.png" type="Texture" id=12]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="AudioStreamSample" id=1]
+
+[sub_resource type="DynamicFont" id=2]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=2]
-
 [sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 1218, 433 )
 
 [sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 1218, 433 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 1217, 432 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 40
+extra_spacing_top = 10
 font_data = ExtResource( 4 )
 
 [node name="light-selection" type="Control"]
@@ -39,14 +52,24 @@ position = Vector2( 960, 540 )
 scale = Vector2( 0.992854, 0.819375 )
 texture = ExtResource( 2 )
 
+[node name="bgm" type="AudioStreamPlayer" parent="blackboard 2"]
+stream = SubResource( 1 )
+volume_db = -35.0
+
+[node name="wooden fill" type="Sprite" parent="."]
+position = Vector2( 960.324, 122.773 )
+scale = Vector2( 0.525328, 0.525328 )
+texture = ExtResource( 12 )
+
 [node name="selection-intro" type="Node" parent="."]
 
 [node name="CatBtn" type="TextureButton" parent="selection-intro"]
-margin_left = 149.554
-margin_top = 243.878
-margin_right = 1087.55
-margin_bottom = 841.878
-texture_normal = ExtResource( 5 )
+margin_left = 175.405
+margin_top = 207.872
+margin_right = 1629.4
+margin_bottom = 1136.87
+rect_scale = Vector2( 0.65, 0.65 )
+texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 5 )
 __meta__ = {
@@ -67,11 +90,12 @@ __meta__ = {
 }
 
 [node name="QuizBtn" type="TextureButton" parent="selection-intro"]
-margin_left = 940.038
-margin_top = 251.236
-margin_right = 1878.04
-margin_bottom = 849.236
-texture_normal = ExtResource( 3 )
+margin_left = 913.198
+margin_top = 212.467
+margin_right = 3952.2
+margin_bottom = 2151.47
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
 __meta__ = {
@@ -90,11 +114,6 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="wooden fill" type="Sprite" parent="selection-intro/QuizBtn"]
-position = Vector2( 20.2858, -128.463 )
-scale = Vector2( 0.525328, 0.525328 )
-texture = ExtResource( 12 )
 
 [node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
 margin_left = 490.0
@@ -115,7 +134,7 @@ stretch_mode = 4
 [node name="Label" type="Label" parent="selection-intro/pagetitle"]
 margin_right = 951.0
 margin_bottom = 63.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Light Games Selection"
 align = 1
 valign = 1
@@ -124,14 +143,14 @@ __meta__ = {
 }
 
 [node name="Back" type="Button" parent="."]
-margin_left = 1620.33
-margin_top = 111.407
-margin_right = 1731.33
-margin_bottom = 162.407
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+margin_left = 1542.12
+margin_top = 81.0593
+margin_right = 1759.12
+margin_bottom = 167.059
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -28,6 +28,7 @@ var score = 0
 var answer = null
 
 func _ready():
+	$bgm.play()
 	randomize()
 	set_question()
 	
@@ -161,3 +162,18 @@ func SaveGameScoreResponse(result, response_code, headers, body):
 
 #func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 #	pass # Replace with function body.
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_mainNode_tree_entered():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_mainNode_tree_exiting():
+	$bgm.play()
+	pass # Replace with function body.

@@ -88,6 +88,7 @@ func RegisterStudentResponse(result, response_code, headers, body):
 				ErrorNotificate.text = "Registration Sucessful"
 				yield(get_tree().create_timer(1.0), "timeout")
 				get_tree().change_scene("res://Login/LoginScene.tscn")
+				$bgm.stop()
 			else:
 				print("Unexpected results.")
 				ErrorNotificate.text = "HTTP Post error"
@@ -108,6 +109,7 @@ func _on_Register_pressed():
 func _on_Cancel_pressed():
 	#get_tree().change_scene("res://Login/LoginScene.tscn")
 	get_tree().change_scene("res://MainLevels/Teacher/TLanding.tscn")
+	$bgm.stop()
 
 
 
@@ -117,3 +119,8 @@ func _on_Cancel_pressed():
 
 #func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 #	pass # Replace with function body.
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.

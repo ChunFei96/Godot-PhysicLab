@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Common/Item.tscn" type="PackedScene" id=2]
@@ -9,25 +9,32 @@
 size = 25
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 25
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 40
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 size = 70
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=5]
-
-[sub_resource type="StyleBoxTexture" id=6]
-
 [sub_resource type="StyleBoxTexture" id=7]
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="StyleBoxTexture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=9]
+
+[sub_resource type="DynamicFont" id=10]
 size = 40
 font_data = ExtResource( 1 )
 
@@ -51,7 +58,8 @@ margin_left = 905.822
 margin_top = 184.44
 margin_right = 1185.82
 margin_bottom = 222.44
-custom_fonts/font = SubResource( 1 )
+theme = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,7 +69,7 @@ margin_left = 63.1674
 margin_top = 63.6675
 margin_right = 569.167
 margin_bottom = 100.667
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -72,7 +80,7 @@ margin_left = 641.944
 margin_top = 178.601
 margin_right = 857.944
 margin_bottom = 229.601
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "Topic:"
 align = 2
 valign = 1
@@ -85,7 +93,7 @@ margin_left = 577.515
 margin_top = 70.2806
 margin_right = 1326.51
 margin_bottom = 159.281
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "Leaderboard"
 align = 1
 valign = 1
@@ -113,10 +121,10 @@ margin_left = 1655.41
 margin_top = 81.2469
 margin_right = 1817.41
 margin_bottom = 168.247
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -127,10 +135,10 @@ margin_left = 1655.41
 margin_top = 81.2469
 margin_right = 1817.41
 margin_bottom = 168.247
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false

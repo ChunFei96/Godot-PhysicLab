@@ -97,3 +97,18 @@ func SaveGameScoreResponse(result, response_code, headers, body):
 			ErrorNotificate.text = "HTTP Post error"
 	else:
 		ErrorNotificate.text = "HTTP Post error"
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_Cat_tree_entered():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_Cat_tree_exiting():
+	$bgm.play()
+	pass # Replace with function body.
