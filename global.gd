@@ -32,14 +32,14 @@ func getSelectedCharacter():
 	
 func setSelectedCharacter(selectedChar):
 	SelectedCharacter = selectedChar
-	print('SelectedCharacter: ' + str(getSelectedCharacter()))
+	#print('SelectedCharacter: ' + str(getSelectedCharacter()))
 	
 func getPlayerID():
 	return playerID
 	
 func setPlayerID(id):
 	playerID = id
-	print('username: ' + str(getPlayerID()))
+	#print('username: ' + str(getPlayerID()))
 
 func init_user():
 	pass
@@ -49,5 +49,5 @@ func getRole():
 
 func setRole(r):
 	role = r
-	print('set global role: ' + r)
+	#print('set global role: ' + r)
 

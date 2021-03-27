@@ -2,10 +2,10 @@ extends Control
 
 onready var Data =  preload("Data.gd")
 onready var Database =  preload("res://Scenes/API/Database.gd")
-
+onready var ErrorNotificate = get_node("ErrorNotification")
 
 func GetStudentProfileRequest(username:String = ""):
-	print('inner request')
+	#print('inner request')
 	var headers = ["Content-Type: application/json"]
 	$HTTPRequest.connect("request_completed",self,"GetStudentProfileResponse")
 
@@ -18,7 +18,7 @@ func GetStudentProfileRequest(username:String = ""):
 	
 # Has return value
 func GetStudentProfileResponse(result, response_code, headers, body):
-	print('inner response')
+	#print('inner response')
 	if result == HTTPRequest.RESULT_SUCCESS:
 		if response_code == 200:
 			var r_data = body.get_string_from_utf8()
@@ -26,10 +26,9 @@ func GetStudentProfileResponse(result, response_code, headers, body):
 			#data = null #testing to toggle invalid case
 			
 			if data == null:
-				var ErrorNotificate = get_node("ErrorNotification")
 				ErrorNotificate.text = "No result found!"
 			else:
-				print(data.result)
+				#print(data.result)
 				
 				#	#Get your text fields
 				var name = get_node("NameInput")
@@ -43,10 +42,9 @@ func GetStudentProfileResponse(result, response_code, headers, body):
 				gender.text = data.result['gender']
 				selectedChar.text = data.result['selectedCharacter']
 		else:
-			print('HTTP Post error ')
-			return null
+			ErrorNotificate.text = "HTTP Post error "
 	else:
-		return null
+		ErrorNotificate.text = "HTTP Post error "
 
 
 

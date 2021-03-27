@@ -39,7 +39,7 @@ func ValidateLoginResponse(result, response_code, headers, body):
 			
 			if isValidLogin.to_upper() == 'TRUE':
 				var SelectedCharacter = data.result[1]
-				print('SelectedCharacter: ' + str(SelectedCharacter))
+				#print('SelectedCharacter: ' + str(SelectedCharacter))
 								
 				
 				if SelectedCharacter == '-1':					
@@ -54,7 +54,7 @@ func ValidateLoginResponse(result, response_code, headers, body):
 			else:
 				ErrorNotificate.text = "Please provide a vaild email and password"
 		else:
-			print('HTTP Post error ')
+			#'HTTP Post error ')
 			ErrorNotificate.text = "HTTP Post error"
 	else:
 		ErrorNotificate.text = "HTTP Post error"
@@ -104,7 +104,7 @@ func updateLoginInfo(selectedChar,isTeacher):
 	Global.setUsername(Email)
 	
 	if isTeacher != true:
-		print('isTeacher: ' + str(isTeacher))
+		#print('isTeacher: ' + str(isTeacher))
 		Global.setSelectedCharacter(selectedChar)
 		Global.setRole('student')
 	else:

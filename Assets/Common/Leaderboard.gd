@@ -38,7 +38,7 @@ func on_item_selected(id):
 
 	if selectedTopic != 'Select a Topic':
 		GetLeaderboardByTopicRequest(selectedTopic)
-		print(selectedTopic)
+		#print(selectedTopic)
 	else:
 		resetBoardList()
 		#queue_free()
@@ -82,9 +82,16 @@ func createBoardItem(index,data,y_axis):
 func displayBoardList(data):
 	var index = 1
 	var y_axis = 307 # 184
+	
+	var username = Global.getUsername()
+	var role = Global.getRole()
+	
 	resetBoardList()
-	for i in data:
-		createBoardItem(index,i,y_axis)
+	for i in data:		
+		if role == 'student' and i.student == username:
+			createBoardItem(index,i,y_axis)
+		if role == 'teacher':
+			createBoardItem(index,i,y_axis)
 		index += 1
 		y_axis += 60
 	pass

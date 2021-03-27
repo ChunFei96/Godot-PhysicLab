@@ -45,12 +45,16 @@ func resetPlayerInfo():
 	var age = get_node("AgeInput")
 	var gender = get_node("GenderInput")
 	var selectedChar = get_node("CharacterInput")
+	var mass = get_node("Summary_mass")
+	var light = get_node("Summary_light")
 	
 	#Update UI's text fields  
 	name.text = "-"
 	age.text = "-"
 	gender.text = "-"
 	selectedChar.text = "-"
+	mass.get_child(0).text = "0"
+	light.get_child(0).text = "0"
 	
 func resetTotalInfo():
 	initTotalLabels()
@@ -231,10 +235,22 @@ func showStatisticsByTotal(username,arr):
 	
 	var mass_index = newList.total_topics.find("Mass")
 	var light_index = newList.total_topics.find("Light")
-	displayTopicSummary(newList.total_topics_score[mass_index],newList.total_topics_score[light_index]) #(x = Mass,y=Light)
-	print('summary of newList')
-	print(newList)	
-	return newList
+	
+	var update_massS = 0
+	var update_lightS = 0
+	
+	if mass_index != -1:
+		#print('mass_index: ' + str(mass_index))
+		update_massS = newList.total_topics_score[mass_index]
+	if light_index != -1:
+		#print('light_index: ' + str(light_index))
+		update_lightS = newList.total_topics_score[light_index]
+	
+	displayTopicSummary(update_massS,update_lightS) #(x = Mass,y=Light)	
+
+	#print('summary of newList')
+	#print(newList)	
+
 
 func addTotalNode(key,label,value):
 	var element = get_node(key)
