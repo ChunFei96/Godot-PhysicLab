@@ -52,7 +52,7 @@ func ValidateLoginResponse(result, response_code, headers, body):
 					updateLoginInfo(SelectedCharacter,false)
 					get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
 			else:
-				ErrorNotificate.text = "Please provide a vaild email and password"
+				ErrorNotificate.text = "Invalid login attempt"
 		else:
 			#'HTTP Post error ')
 			ErrorNotificate.text = "HTTP Post error"
@@ -92,7 +92,11 @@ func GetStudentProfileResponse(result, response_code, headers, body):
 func _on_Login_pressed():
 	Email = email_input.text
 	Password = userpassword_input.text
-	ValidateLoginRequest(Email,Password)
+	
+	if Email == '' or Password == '':
+		ErrorNotificate.text = "Please provide a vaild email and password"
+	else:
+		ValidateLoginRequest(Email,Password)
 	$bgm.stop()
 			
 func _on_CreateAccount_pressed():
