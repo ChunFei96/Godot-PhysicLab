@@ -262,3 +262,18 @@ func addTotalNode(key,label,value):
 func _on_Back_pressed():
 	get_tree().change_scene("res://MainLevels/Teacher/TLanding.tscn")
 
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_MasteryTopic_tree_entered():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_MasteryTopic_tree_exiting():
+	$bgm.stop()
+	pass # Replace with function body.

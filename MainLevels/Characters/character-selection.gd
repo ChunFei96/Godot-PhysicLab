@@ -38,11 +38,6 @@ func _on_characterselection_tree_entered():
 	pass # Replace with function body.
 
 
-func _on_characterselection_tree_exiting():
-	$bgm.stop()
-	pass # Replace with function body.
-
-
 func _on_bgm_finished():
 	$bgm.play()
 	pass # Replace with function body.

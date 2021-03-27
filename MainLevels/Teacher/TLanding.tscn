@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://MainLevels/Teacher/TLanding.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/UI/trophy.png" type="Texture" id=11]
 [ext_resource path="res://Assets/UI/logout-pressed.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/back btn hover.png" type="Texture" id=13]
+[ext_resource path="res://Assets/FX/General 2 (setting) - The Happiest Day Ever Ver 3.wav" type="AudioStream" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -168,7 +169,14 @@ custom_fonts/font = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -35.0
+[connection signal="tree_entered" from="." to="." method="_on_Tlanding_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_Tlanding_tree_exiting"]
 [connection signal="pressed" from="selection-intro/Register" to="." method="_on_Register_pressed"]
 [connection signal="pressed" from="selection-intro/Mastery" to="." method="_on_Mastery_pressed"]
 [connection signal="pressed" from="buttons/Leaderboard" to="." method="_on_Leaderboard_pressed"]
 [connection signal="pressed" from="SignOut" to="." method="_on_SignOut_pressed"]
+[connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]

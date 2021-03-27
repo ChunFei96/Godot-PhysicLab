@@ -58,3 +58,18 @@ func _on_Back_pressed():
 #
 #func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 #	pass # Replace with function body.
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_LoginScreen_tree_entered():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_LoginScreen_tree_exiting():
+	$bgm.stop()
+	pass # Replace with function body.

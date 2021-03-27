@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/GameOver/GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Timer/timerDisplay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://MainLevels/Light/Cat/Cat.gd" type="Script" id=7]
+[ext_resource path="res://Assets/FX/Game 3 (car) - Rock-n-Roll Party.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Light/Cat/cat_tongue1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=10]
 
@@ -31,8 +32,6 @@ font_data = ExtResource( 10 )
 [sub_resource type="DynamicFont" id=7]
 size = 30
 font_data = ExtResource( 10 )
-
-[sub_resource type="AudioStreamSample" id=8]
 
 [node name="Cat" type="Node2D"]
 position = Vector2( 31, 29 )
@@ -151,7 +150,7 @@ __meta__ = {
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = SubResource( 8 )
+stream = ExtResource( 8 )
 volume_db = -35.0
 [connection signal="tree_entered" from="." to="." method="_on_Cat_tree_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_Cat_tree_exiting"]

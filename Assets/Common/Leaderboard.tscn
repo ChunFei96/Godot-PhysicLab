@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Common/Item.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Common/Leaderboard.gd" type="Script" id=3]
 [ext_resource path="res://Assets/UI/blackboard 4 bg.png" type="Texture" id=4]
+[ext_resource path="res://Assets/FX/General 3 (leaderboard) - The Happiest Day Ever Ver 4.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -43,6 +44,10 @@ font_data = ExtResource( 1 )
 ]]
 script = ExtResource( 3 )
 dropdown_path = NodePath("dropdown")
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -35.0
 
 [node name="blackboard 4 bg" type="Sprite" parent="."]
 position = Vector2( 959.79, 540.947 )
@@ -143,6 +148,9 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="tree_entered" from="." to="." method="_on_Leaderboard_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_Leaderboard_tree_exiting"]
+[connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Back_S" to="." method="_on_Back_S_pressed"]

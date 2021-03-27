@@ -155,3 +155,18 @@ func _on_Button_pressed() -> void:
 
 func _on_Back_S_pressed() -> void:
 	get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_Leaderboard_tree_entered():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_Leaderboard_tree_exiting():
+	$bgm.stop()
+	pass # Replace with function body.

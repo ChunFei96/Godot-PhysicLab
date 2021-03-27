@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Common/MasteryTopic.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Common/TotalSummary.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Common/TopicSummary.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/UI/blackboard 4 bg.png" type="Texture" id=5]
+[ext_resource path="res://Assets/FX/General 3 (leaderboard) - The Happiest Day Ever Ver 4.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -300,6 +301,13 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -35.0
+[connection signal="tree_entered" from="." to="." method="_on_MasteryTopic_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_MasteryTopic_tree_exiting"]
 [connection signal="request_completed" from="Http_stuProfile" to="." method="_on_Http_stuProfile_request_completed"]
 [connection signal="request_completed" from="Http_leaderboard" to="." method="_on_Http_leaderboard_request_completed"]
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]

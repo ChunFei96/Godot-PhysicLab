@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/UI/galilei.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/character1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/character2.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/FX/Character Selection - Ukulele Fun.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -41,6 +42,8 @@ margin_bottom = 263.73
 custom_fonts/font = SubResource( 1 )
 
 [node name="bgm2" type="AudioStreamPlayer" parent="." index="10"]
+stream = ExtResource( 5 )
+volume_db = -35.0
 [connection signal="tree_entered" from="." to="." method="_on_character2details_tree_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_character2details_tree_exiting"]
 [connection signal="finished" from="bgm2" to="." method="_on_bgm2_finished"]

@@ -31,3 +31,18 @@ func _on_Leaderboard_pressed() -> void:
 
 func _on_SignOut_pressed() -> void:
 	get_tree().change_scene("res://Scenes/Login/LoginRegister.tscn")
+
+
+func _on_bgm_finished():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_Tlanding_tree_entered():
+	$bgm.play()
+	pass # Replace with function body.
+
+
+func _on_Tlanding_tree_exiting():
+	$bgm.stop()
+	pass # Replace with function body.
