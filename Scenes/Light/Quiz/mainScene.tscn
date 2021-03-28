@@ -18,70 +18,70 @@
 size = 50
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxTexture" id=27]
-
-[sub_resource type="StyleBoxTexture" id=28]
-
-[sub_resource type="StyleBoxTexture" id=29]
-
-[sub_resource type="DynamicFont" id=30]
-size = 40
-font_data = ExtResource( 13 )
-
 [sub_resource type="StyleBoxTexture" id=2]
 
 [sub_resource type="StyleBoxTexture" id=3]
 
-[sub_resource type="StyleBoxTexture" id=23]
-
-[sub_resource type="StyleBoxTexture" id=24]
-
 [sub_resource type="StyleBoxTexture" id=4]
 
 [sub_resource type="DynamicFont" id=5]
-size = 100
+size = 40
 font_data = ExtResource( 13 )
 
 [sub_resource type="StyleBoxTexture" id=6]
 
 [sub_resource type="StyleBoxTexture" id=7]
 
-[sub_resource type="StyleBoxTexture" id=25]
-
-[sub_resource type="StyleBoxTexture" id=26]
-
 [sub_resource type="StyleBoxTexture" id=8]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="StyleBoxTexture" id=9]
+
+[sub_resource type="StyleBoxTexture" id=10]
+
+[sub_resource type="DynamicFont" id=11]
 size = 100
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="StyleBoxTexture" id=12]
+
+[sub_resource type="StyleBoxTexture" id=13]
+
+[sub_resource type="StyleBoxTexture" id=14]
+
+[sub_resource type="StyleBoxTexture" id=15]
+
+[sub_resource type="StyleBoxTexture" id=16]
+
+[sub_resource type="DynamicFont" id=17]
+size = 100
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=18]
 size = 30
 font_data = ExtResource( 13 )
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=19]
 colors = PoolColorArray( 0.927734, 0.394715, 0.0905991, 1, 0.908203, 0.0248337, 0.0248337, 1 )
 
-[sub_resource type="GradientTexture" id=12]
-gradient = SubResource( 11 )
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 19 )
 
-[sub_resource type="Curve" id=13]
+[sub_resource type="Curve" id=21]
 min_value = -200.0
 max_value = 400.0
 _data = [ Vector2( 0, 400 ), 0.0, 17450.4, 0, 0, Vector2( 0.113122, 83.6364 ), -1937.34, -1937.34, 0, 0, Vector2( 1, -90.9091 ), 137.767, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=14]
-curve = SubResource( 13 )
+[sub_resource type="CurveTexture" id=22]
+curve = SubResource( 21 )
 
-[sub_resource type="Curve" id=15]
+[sub_resource type="Curve" id=23]
 max_value = 2.5
 _data = [ Vector2( 0.00226244, 2.46591 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.738636 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=16]
-curve = SubResource( 15 )
+[sub_resource type="CurveTexture" id=24]
+curve = SubResource( 23 )
 
-[sub_resource type="ParticlesMaterial" id=17]
+[sub_resource type="ParticlesMaterial" id=25]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -93,26 +93,26 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 100.0
 linear_accel_random = 0.2
-linear_accel_curve = SubResource( 14 )
+linear_accel_curve = SubResource( 22 )
 scale = 2.0
 scale_random = 1.0
-scale_curve = SubResource( 16 )
-color_ramp = SubResource( 12 )
+scale_curve = SubResource( 24 )
+color_ramp = SubResource( 20 )
 
-[sub_resource type="Gradient" id=18]
+[sub_resource type="Gradient" id=26]
 colors = PoolColorArray( 0.599792, 0.96875, 0.0605469, 1, 0.279819, 0.574219, 0.0358887, 1 )
 
-[sub_resource type="GradientTexture" id=19]
-gradient = SubResource( 18 )
+[sub_resource type="GradientTexture" id=27]
+gradient = SubResource( 26 )
 
-[sub_resource type="Curve" id=20]
+[sub_resource type="Curve" id=28]
 max_value = 2.5
 _data = [ Vector2( 0.00226244, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.659091 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=21]
-curve = SubResource( 20 )
+[sub_resource type="CurveTexture" id=29]
+curve = SubResource( 28 )
 
-[sub_resource type="ParticlesMaterial" id=22]
+[sub_resource type="ParticlesMaterial" id=30]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -126,8 +126,8 @@ linear_accel = 100.0
 linear_accel_random = 0.2
 scale = 2.0
 scale_random = 1.0
-scale_curve = SubResource( 21 )
-color_ramp = SubResource( 19 )
+scale_curve = SubResource( 29 )
+color_ramp = SubResource( 27 )
 
 [node name="mainNode" type="Control"]
 script = ExtResource( 1 )
@@ -174,10 +174,10 @@ margin_left = 1666.95
 margin_top = 73.3188
 margin_right = 1828.95
 margin_bottom = 164.319
-custom_styles/hover = SubResource( 27 )
-custom_styles/pressed = SubResource( 28 )
-custom_styles/normal = SubResource( 29 )
-custom_fonts/font = SubResource( 30 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -188,12 +188,12 @@ margin_left = 320.0
 margin_top = 360.0
 margin_right = 830.0
 margin_bottom = 660.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 23 )
-custom_styles/disabled = SubResource( 24 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "True"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -204,12 +204,12 @@ margin_left = 1187.04
 margin_top = 360.0
 margin_right = 1697.04
 margin_bottom = 660.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 25 )
-custom_styles/disabled = SubResource( 26 )
-custom_styles/normal = SubResource( 8 )
-custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
 text = "False"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -247,7 +247,7 @@ margin_left = 110.105
 margin_top = 55.1049
 margin_right = 310.105
 margin_bottom = 115.105
-custom_fonts/normal_font = SubResource( 10 )
+custom_fonts/normal_font = SubResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -267,7 +267,7 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
 randomness = 0.5
-process_material = SubResource( 17 )
+process_material = SubResource( 25 )
 
 [node name="correct_effect" type="Particles2D" parent="."]
 position = Vector2( 1446.58, 503.384 )
@@ -278,7 +278,7 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
 randomness = 0.5
-process_material = SubResource( 22 )
+process_material = SubResource( 30 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
@@ -287,6 +287,7 @@ stream = ExtResource( 9 )
 volume_db = -35.0
 [connection signal="tree_entered" from="." to="." method="_on_mainNode_tree_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_mainNode_tree_exiting"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="button_up" from="trueButton" to="." method="_on_trueButton_button_up"]
 [connection signal="button_up" from="falseButton" to="." method="_on_falseButton_button_up"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
