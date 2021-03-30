@@ -39,7 +39,7 @@ func ValidateLoginResponse(result, response_code, headers, body):
 			
 			if isValidLogin.to_upper() == 'TRUE':
 				var SelectedCharacter = data.result[1]
-				#print('SelectedCharacter: ' + str(SelectedCharacter))
+				print('SelectedCharacter: ' + str(SelectedCharacter))
 								
 				
 				if SelectedCharacter == '-1':					

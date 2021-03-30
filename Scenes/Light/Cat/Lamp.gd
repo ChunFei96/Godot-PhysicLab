@@ -25,6 +25,6 @@ func _input(event):
 
 
 func _on_Back_pressed():
-	get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
+	get_tree().change_scene("res://MainLevels/Light/light-selection.tscn")
 
 

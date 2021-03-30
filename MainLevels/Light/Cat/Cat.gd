@@ -47,11 +47,11 @@ func _on_timer_tree_exiting():
 	SaveScore()
 	$GameOverLayer/AnimationPlayer.play("Fade")
 	$GameOverLayer/ColorRect/PlayerScore.text = String(Global.getScore())
-	print('_on_timer_tree_exiting')
+	#print('_on_timer_tree_exiting')
 	
 
 func _on_cat_tree_exiting():
-	print('_on_cat_tree_exiting')
+	#print('_on_cat_tree_exiting')
 	rescuedCatCount += 1
 	$CatCount.text = String(rescuedCatCount) + "/" + String(len(cats))
 	if rescuedCatCount == len(cats):
@@ -65,10 +65,10 @@ func _process(delta):
 	$GameOverLayer/ColorRect/PlayerScore.text = String(Global.getScore())
 
 func SaveScore():
-	print('SaveScore()')
+	#print('SaveScore()')
 	var completion_time = $TimerManager.timeUsed()
-	print('completion_time: ' + str(completion_time))
-	print('scores: ' + str(Global.getScore()))
+	#print('completion_time: ' + str(completion_time))
+	#print('scores: ' + str(Global.getScore()))
 	
 	Global.setUsername("Student1") #test
 	if Global.getUsername() == null:
