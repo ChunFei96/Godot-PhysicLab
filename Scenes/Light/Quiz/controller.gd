@@ -32,7 +32,7 @@ func _ready():
 	randomize()
 	set_question()
 	
-	$DialogManager/DialogBox.dialog = $DialogManager/DialogBox.load_dialog_file('res://MainLevels/Mass/Level2/dialogs.txt')
+	$DialogManager/DialogBox.dialog = $DialogManager/DialogBox.load_dialog_file('res://Scenes/Light/Quiz/dialogs.txt')
 	$DialogManager/DialogBox.load_dialog($DialogManager/DialogBox.dialog)
 	
 	# init timer

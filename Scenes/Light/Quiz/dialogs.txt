@@ -1,0 +1,5 @@
+Read the question. [Enter spacebar to continue]
+Select either “True” or “False” as your answer. [Enter spacebar to continue]
+You will earn 10 points for each correct answer selected. [Enter spacebar to continue]
+Complete all the quiz questions to end the game. [Enter spacebar to continue]
+Your final score of the game will appear. [Enter spacebar to continue]

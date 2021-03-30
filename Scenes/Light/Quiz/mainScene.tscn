@@ -231,7 +231,6 @@ one_shot = true
 [node name="questionHolder" parent="." instance=ExtResource( 6 )]
 
 [node name="DialogManager" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [node name="TimerManager" parent="." instance=ExtResource( 2 )]
 margin_left = 901.0
@@ -240,7 +239,6 @@ margin_right = 1101.0
 margin_bottom = 241.0
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 8 )]
-visible = false
 
 [node name="Score" type="RichTextLabel" parent="."]
 margin_left = 110.105
