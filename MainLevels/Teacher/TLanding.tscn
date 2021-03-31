@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://MainLevels/Teacher/TLanding.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/UI/logout-pressed.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/back btn hover.png" type="Texture" id=13]
 [ext_resource path="res://Assets/FX/General 2 (setting) - The Happiest Day Ever Ver 3.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/UI/wooden fill.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -56,9 +57,15 @@ __meta__ = {
 }
 
 [node name="blackboard 2" type="Sprite" parent="."]
-position = Vector2( 960, 540 )
+position = Vector2( 118.527, 357.306 )
 scale = Vector2( 0.992854, 0.819375 )
 texture = ExtResource( 3 )
+offset = Vector2( 847.529, 222.968 )
+
+[node name="wooden fill" type="Sprite" parent="."]
+position = Vector2( 969.242, 156.621 )
+scale = Vector2( 0.648998, 0.648998 )
+texture = ExtResource( 15 )
 
 [node name="selection-intro" type="Node" parent="."]
 
@@ -90,9 +97,9 @@ __meta__ = {
 
 [node name="Mastery" type="TextureButton" parent="selection-intro"]
 margin_left = 880.068
-margin_top = 217.313
+margin_top = 218.395
 margin_right = 3919.07
-margin_bottom = 2156.31
+margin_bottom = 2157.39
 rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 5 )
@@ -116,9 +123,9 @@ __meta__ = {
 
 [node name="pagetitle" type="VBoxContainer" parent="selection-intro"]
 margin_left = 490.0
-margin_top = 90.0
+margin_top = 110.0
 margin_right = 1441.0
-margin_bottom = 202.0
+margin_bottom = 222.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

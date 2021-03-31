@@ -81,6 +81,7 @@ margin_top = 304.152
 margin_right = 1474.0
 margin_bottom = 541.152
 rect_scale = Vector2( 1.8, 1.8 )
+toggle_mode = true
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )

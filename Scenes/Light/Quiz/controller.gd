@@ -64,7 +64,7 @@ func set_question():
 		answer = whichQuestion.answer
 		print("Answer: ", answer)
 	else:
-		questionText.set_text(" The game has fineshed. Please press on close button")
+		questionText.set_text(" The game has finshed. Please press on close button")
 		trueButton.disabled = true
 		falseButton.disabled = true
 		$Score.text = "Score: " + str(Global.getScore())
