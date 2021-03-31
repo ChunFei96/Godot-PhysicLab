@@ -87,7 +87,7 @@ func RegisterStudentResponse(result, response_code, headers, body):
 			if typeof(data.result) == TYPE_BOOL: # and tt == true
 				#print(data.result)
 				remove_all()
-				ErrorNotificate.text = "Registration Sucessful"
+				ErrorNotificate.text = "Registration Successful"
 				yield(get_tree().create_timer(5.0), "timeout")
 				get_tree().change_scene("res://Login/LoginScene.tscn")
 				$bgm.stop()
