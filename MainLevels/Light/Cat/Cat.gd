@@ -70,7 +70,7 @@ func SaveScore():
 	#print('completion_time: ' + str(completion_time))
 	#print('scores: ' + str(Global.getScore()))
 	
-	Global.setUsername("Student1") #test
+	#Global.setUsername("Student1") #test
 	if Global.getUsername() == null:
 		ErrorNotificate.text = "Username is null"
 		pass

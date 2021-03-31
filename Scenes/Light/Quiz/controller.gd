@@ -135,7 +135,7 @@ func SaveGameScoreRequest(score:String = "",timecompleted:String = ""):
 	var headers = ["Content-Type: application/json"]
 	$HTTPRequest.connect("request_completed",self,"SaveGameScoreResponse")
 	
-	Global.setUsername('Student1') #test
+	#Global.setUsername('Student1') #test
 	if Global.getUsername() == null:
 		ErrorNotificate.text = "Username is null"
 		pass

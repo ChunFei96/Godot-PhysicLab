@@ -172,6 +172,8 @@ __meta__ = {
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[node name="HTTP" type="HTTPRequest" parent="."]
+
 [node name="ErrorNotification" type="Label" parent="."]
 margin_left = 844.465
 margin_top = 370.456
@@ -189,4 +191,5 @@ autoplay = true
 [connection signal="pressed" from="Background/Register" to="." method="_on_Register_pressed"]
 [connection signal="pressed" from="Background/Cancel" to="." method="_on_Cancel_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="request_completed" from="HTTP" to="." method="_on_HTTP_request_completed"]
 [connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]
