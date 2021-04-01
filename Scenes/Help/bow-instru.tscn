@@ -111,16 +111,14 @@ margin_top = 297.555
 margin_right = 1835.66
 margin_bottom = 844.555
 custom_fonts/font = SubResource( 4 )
-text = "- Before we begin, you need to know the following rules. [Enter spacebar to continue]
-- You would have to shoot the target within 60 seconds. [Enter spacebar to continue]
+text = "- Before we begin, you need to know the following rules. 
+- You would have to shoot the target within 60 seconds. 
 - Use your mouse cursor to move up, down, left or right before you release the arrow from the bow.
-  [Enter spacebar to continue]
-- If you manage to hit a bull’s eye, you earn 100 points. [Enter spacebar to continue]
-- Earn extra 10 points each by shooting the coins. [Enter spacebar to continue]
+- If you manage to hit a bull’s eye, you earn 100 points. 
+- Earn extra 10 points each by shooting the coins. 
 - Here you can find out how vector of the arrow would affect the parabola and hits the target. 
-  [Enter spacebar to continue]
-- Once the time is up, your final score of the game will appear. [Enter spacebar to continue]
-- Let us start now! [Enter spacebar to continue]"
+- Once the time is up, your final score of the game will appear.
+- Let us start now! "
 __meta__ = {
 "_edit_use_anchors_": false
 }
