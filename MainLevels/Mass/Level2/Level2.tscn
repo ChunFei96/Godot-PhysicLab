@@ -118,14 +118,12 @@ margin_right = 1089.22
 margin_bottom = 219.557
 
 [node name="DialogManager" parent="." instance=ExtResource( 6 )]
-visible = false
 margin_left = -4.0
 margin_top = -4.0
 margin_right = 42.0
 margin_bottom = 41.0
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 9 )]
-visible = false
 
 [node name="Score" type="RichTextLabel" parent="."]
 margin_left = 65.0312
