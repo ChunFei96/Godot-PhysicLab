@@ -1,0 +1,142 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/UI/blackboard6.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/Font/fonts/Pangolin/Pangolin-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/UI/whiteboxup.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Help/cat-instru.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 37
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 1394, 1138 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 1394, 1138 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 1394, 1138 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 55
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.35876
+margin_top = -4.77649
+margin_right = 8.35876
+margin_bottom = -4.77649
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blackboard6" type="Sprite" parent="."]
+position = Vector2( 952.3, 545.063 )
+scale = Vector2( 0.812773, 0.752161 )
+texture = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = 4.0
+margin_right = 1910.0
+margin_bottom = 1084.0
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblGameTitle" type="Label" parent="."]
+margin_left = 754.794
+margin_top = 86.8807
+margin_right = 1183.79
+margin_bottom = 174.881
+custom_fonts/font = SubResource( 1 )
+text = "Find the cat"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl---" type="Label" parent="."]
+margin_left = 674.313
+margin_top = 139.345
+margin_right = 1272.31
+margin_bottom = 183.345
+custom_fonts/font = SubResource( 2 )
+text = "________________________"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblGame" type="Label" parent="."]
+margin_left = 742.69
+margin_top = 193.125
+margin_right = 1172.69
+margin_bottom = 276.125
+custom_fonts/font = SubResource( 3 )
+text = "How to play?"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblInstruction" type="Label" parent="."]
+margin_left = 96.655
+margin_top = 297.555
+margin_right = 1835.66
+margin_bottom = 844.555
+custom_fonts/font = SubResource( 4 )
+text = "- Before we begin, you need to know the following rules. [Enter spacebar to continue]
+- You would have to find 5 hidden cats on the map within 60 seconds. [Enter spacebar to continue]
+- Use your mouse cursor to navigate around the map. The lamp light will uncover the area around you as you 
+   move the cursor to find the mouse. [Enter spacebar to continue]
+- Here you can find out how light ray behaves when there are obstacles and whether it can pass through an object.
+- If you find a mouse, hold the cursor around the area till the progression bar turns 100%. 
+   [Enter spacebar to continue]
+- Each catching of the mouse will earn you 100 points. [Enter spacebar to continue]
+- Once the time is up, your final score of the game will appear. [Enter spacebar to continue]
+- Let us start now! [Enter spacebar to continue]
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 874.165
+margin_top = 859.372
+margin_right = 1084.17
+margin_bottom = 936.372
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+text = "Noted!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

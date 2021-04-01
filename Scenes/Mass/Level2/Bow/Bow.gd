@@ -71,3 +71,7 @@ func _on_ReloadTimer_timeout():
 
 func _on_Back_pressed():
 	get_tree().change_scene("res://MainLevels/GameWorld/topic-selection.tscn")
+
+
+func _on_Help_pressed():
+	get_tree().change_scene("res://Scenes/Help/bow-instru.tscn")

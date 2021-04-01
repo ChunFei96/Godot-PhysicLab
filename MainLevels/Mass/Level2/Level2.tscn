@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Mass/Level2/Bow/Bow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Mass/Level2/Arrow/Arrow.tscn" type="PackedScene" id=2]
@@ -22,11 +22,21 @@
 size = 40
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="StyleBoxTexture" id=5]
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=9]
 size = 50
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=10]
 size = 30
 font_data = ExtResource( 10 )
 
@@ -39,8 +49,8 @@ __meta__ = {
 }
 
 [node name="Backgroun" type="Sprite" parent="."]
-position = Vector2( 958.591, 731.025 )
-scale = Vector2( 1.91518, 1.88468 )
+position = Vector2( 959.994, 731.025 )
+scale = Vector2( 1.91799, 1.88468 )
 texture = ExtResource( 3 )
 
 [node name="Target" parent="." instance=ExtResource( 4 )]
@@ -78,6 +88,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Help" type="Button" parent="."]
+margin_left = 1519.56
+margin_top = 41.0692
+margin_right = 1593.56
+margin_bottom = 92.0692
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+text = "Help"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Coin" parent="." instance=ExtResource( 5 )]
 position = Vector2( 506.017, 733.147 )
 
@@ -94,19 +118,21 @@ margin_right = 1089.22
 margin_bottom = 219.557
 
 [node name="DialogManager" parent="." instance=ExtResource( 6 )]
+visible = false
 margin_left = -4.0
 margin_top = -4.0
 margin_right = 42.0
 margin_bottom = 41.0
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 9 )]
+visible = false
 
 [node name="Score" type="RichTextLabel" parent="."]
 margin_left = 65.0312
 margin_top = 34.3594
 margin_right = 272.031
 margin_bottom = 110.359
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -116,7 +142,7 @@ __meta__ = {
 [node name="ErrorNotification" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -127,5 +153,6 @@ volume_db = -35.0
 [connection signal="tree_entered" from="." to="." method="_on_Level2_tree_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_Level2_tree_exiting"]
 [connection signal="pressed" from="Back" to="Bow" method="_on_Back_pressed"]
+[connection signal="pressed" from="Help" to="Bow" method="_on_Help_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]

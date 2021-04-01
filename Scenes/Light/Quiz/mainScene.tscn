@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scenes/Light/Quiz/controller.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Timer/timerDisplay.tscn" type="PackedScene" id=2]
@@ -25,6 +25,16 @@ font_data = ExtResource( 13 )
 [sub_resource type="StyleBoxTexture" id=4]
 
 [sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxTexture" id=31]
+
+[sub_resource type="StyleBoxTexture" id=32]
+
+[sub_resource type="StyleBoxTexture" id=33]
+
+[sub_resource type="DynamicFont" id=34]
 size = 40
 font_data = ExtResource( 13 )
 
@@ -183,6 +193,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="helpButton" type="Button" parent="."]
+margin_left = 1522.6
+margin_top = 91.0099
+margin_right = 1596.6
+margin_bottom = 142.01
+custom_styles/hover = SubResource( 31 )
+custom_styles/pressed = SubResource( 32 )
+custom_styles/normal = SubResource( 33 )
+custom_fonts/font = SubResource( 34 )
+text = "Help"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="trueButton" type="Button" parent="."]
 margin_left = 320.0
 margin_top = 360.0
@@ -231,14 +255,17 @@ one_shot = true
 [node name="questionHolder" parent="." instance=ExtResource( 6 )]
 
 [node name="DialogManager" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [node name="TimerManager" parent="." instance=ExtResource( 2 )]
+visible = false
 margin_left = 901.0
 margin_top = 41.0
 margin_right = 1101.0
 margin_bottom = 241.0
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [node name="Score" type="RichTextLabel" parent="."]
 margin_left = 110.105
@@ -286,6 +313,7 @@ volume_db = -35.0
 [connection signal="tree_entered" from="." to="." method="_on_mainNode_tree_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_mainNode_tree_exiting"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="helpButton" to="." method="_on_helpButton_pressed"]
 [connection signal="button_up" from="trueButton" to="." method="_on_trueButton_button_up"]
 [connection signal="button_up" from="falseButton" to="." method="_on_falseButton_button_up"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

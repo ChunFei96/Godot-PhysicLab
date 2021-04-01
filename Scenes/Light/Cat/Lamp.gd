@@ -28,3 +28,5 @@ func _on_Back_pressed():
 	get_tree().change_scene("res://MainLevels/Light/light-selection.tscn")
 
 
+func _on_helpButton_pressed():
+	get_tree().change_scene("res://Scenes/Help/cat-instru.tscn")

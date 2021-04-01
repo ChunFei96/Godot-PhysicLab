@@ -181,3 +181,7 @@ func _on_mainNode_tree_exiting():
 
 func _on_BackButton_pressed() -> void:
 	get_tree().change_scene("res://MainLevels/Light/light-selection.tscn")
+
+
+func _on_helpButton_pressed():
+	get_tree().change_scene("res://Scenes/Help/quiz-instru.tscn")
