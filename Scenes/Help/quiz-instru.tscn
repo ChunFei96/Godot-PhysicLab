@@ -115,8 +115,7 @@ text = "- Read the question.
 - Select either “True” or “False” as your answer.
 - You will earn 10 points for each correct answer selected.
 - Complete all the quiz questions to end the game.
-- Your final score of the game will appear.
-"
+- Your final score of the game will appear."
 __meta__ = {
 "_edit_use_anchors_": false
 }

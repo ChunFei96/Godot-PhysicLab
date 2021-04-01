@@ -106,22 +106,21 @@ __meta__ = {
 }
 
 [node name="lblInstruction" type="Label" parent="."]
-margin_left = 96.655
-margin_top = 297.555
-margin_right = 1835.66
-margin_bottom = 844.555
+margin_left = 97.0
+margin_top = 298.0
+margin_right = 1828.0
+margin_bottom = 845.0
 custom_fonts/font = SubResource( 4 )
 text = "- Before we begin, you need to know the following rules. [Enter spacebar to continue]
 - You would have to find 5 hidden cats on the map within 60 seconds. [Enter spacebar to continue]
-- Use your mouse cursor to navigate around the map. The lamp light will uncover the area around you as you 
-   move the cursor to find the mouse. [Enter spacebar to continue]
+- Use your mouse cursor to navigate around the map. The lamp light will uncover the area around you
+  as you move the cursor to find the cat. [Enter spacebar to continue]
 - Here you can find out how light ray behaves when there are obstacles and whether it can pass through an object.
-- If you find a mouse, hold the cursor around the area till the progression bar turns 100%. 
-   [Enter spacebar to continue]
-- Each catching of the mouse will earn you 100 points. [Enter spacebar to continue]
+- If you find a mouse, hold the cursor around the area till the progression bar turns 100%.
+  [Enter spacebar to continue]
+- Each catching of the cat will earn you 100 points. [Enter spacebar to continue]
 - Once the time is up, your final score of the game will appear. [Enter spacebar to continue]
-- Let us start now! [Enter spacebar to continue]
-"
+- Let us start now! [Enter spacebar to continue]"
 __meta__ = {
 "_edit_use_anchors_": false
 }
