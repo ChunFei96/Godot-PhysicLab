@@ -56,11 +56,9 @@ tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 1, -65535, 1, 1, -65534, 1, 1, -6
 [node name="Lamp" parent="." instance=ExtResource( 3 )]
 position = Vector2( 873.533, 439.163 )
 
-[node name="DialogManager" parent="." instance=ExtResource( 1 )]
-margin_left = -44.0
-margin_top = -48.0
-margin_right = -4.0
-margin_bottom = -8.0
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.290196, 0.290196, 0.290196, 1 )
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 5 )]
 margin_left = -32.3359
@@ -81,9 +79,6 @@ custom_fonts/normal_font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.290196, 0.290196, 0.290196, 1 )
 
 [node name="Cat" parent="." groups=[
 "Cats",
@@ -172,6 +167,12 @@ __meta__ = {
 }
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="DialogManager" parent="." instance=ExtResource( 1 )]
+margin_left = -43.0
+margin_top = -48.0
+margin_right = -3.0
+margin_bottom = -8.0
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
