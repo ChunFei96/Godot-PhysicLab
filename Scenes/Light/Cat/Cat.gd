@@ -28,4 +28,5 @@ func _on_CatArea_area_exited(area):
 	isRescue = false;
 
 func _on_Cat_tree_exiting():
-	Global.increaseScore(100)
+	print('test')
+	#Global.increaseScore(100)

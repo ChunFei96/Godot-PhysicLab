@@ -34,6 +34,8 @@ func _ready():
 	
 	# disable light collision before game start
 	$Lamp/LightDetection/CollisionShape2D.disabled = true
+	
+	
 
 func _on_dialogbox_tree_exiting():
 	$TimerManager.timeStart()
@@ -54,10 +56,12 @@ func _on_cat_tree_exiting():
 	#print('_on_cat_tree_exiting')
 	rescuedCatCount += 1
 	$CatCount.text = String(rescuedCatCount) + "/" + String(len(cats))
+	Global.increaseScore(100)
 	if rescuedCatCount == len(cats):
 		$CanvasModulate.visible = false
 		$Lamp.visible = false
 		_on_timer_tree_exiting()
+		
 	
 
 func _process(delta):
@@ -65,7 +69,6 @@ func _process(delta):
 	$GameOverLayer/ColorRect/PlayerScore.text = String(Global.getScore())
 
 func SaveScore():
-	#print('SaveScore()')
 	var completion_time = $TimerManager.timeUsed()
 	#print('completion_time: ' + str(completion_time))
 	#print('scores: ' + str(Global.getScore()))
@@ -75,7 +78,8 @@ func SaveScore():
 		ErrorNotificate.text = "Username is null"
 		pass
 	else:
-		SaveGameScoreRequest(str(Global.getScore()),str(completion_time))
+		var score = str(Global.getScore())
+		SaveGameScoreRequest(score,str(completion_time))
 
 	
 func SaveGameScoreRequest(score:String = "",timecompleted:String = ""):

@@ -88,7 +88,8 @@ func displayBoardList(data):
 	
 	resetBoardList()
 	for i in data:		
-		if role == 'student' and i.student == username:
+		#if role == 'student' and i.student == username:
+		if role == 'student':
 			createBoardItem(index,i,y_axis)
 		if role == 'teacher':
 			createBoardItem(index,i,y_axis)
